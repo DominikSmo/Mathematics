@@ -1,0 +1,351 @@
+\begin{definition}
+Definicja sumy zbiorów.
+Niech $A$ i $B$ będą dowolnymi zbiorami. Wówczas sumę zbiorów $A$ i $B$ określamy jako:
+$A\cup B=\{x:x\in A\vee x\in B\}$
+\end{definition}
+\begin{definition}
+Definicja przynależności elementu do sumy zbiorów:
+$x\in A\cup B\Leftrightarrow x\in A\vee x\in B$
+\end{definition}
+\begin{remark}
+Zaprzeczenie przynależności elementu do sumy zbiorów:
+\(
+\neg(x \in A \cup B)\Leftrightarrow\neg(x \in A \vee x \in B)\Leftrightarrow
+\neg(x \in A) \wedge \neg(x \in B)\Leftrightarrow x \notin A \wedge x \notin B
+\)
+\end{remark}
+\begin{definition}
+Definicja iloczynu(przekroju) zbiorów.
+Niech $A$ i $B$ będą dowolnymi zbiorami. Wówczas iloczyn zbiorów $A$ i $B$ określamy jako:
+$A\cap B=\{x:x\in A\wedge x\in B\}$
+\end{definition}
+\begin{definition}
+Definicja przynależności elementu do iloczynu zbiorów:
+$x\in A\cap C\Leftrightarrow (x\in A\wedge x\in C)$
+\end{definition}
+\begin{remark}
+Zaprzeczenie definicji przynależności elementu do iloczynu zbiorów:
+\(
+\neg(x\in A\cap B)\Leftrightarrow\neg(x\in A\wedge x\in B)\neg(x\in A)\vee\neg(x\in B)\Leftrightarrow(x\notin A)
+\vee(x\notin B)
+\)
+\end{remark}
+\begin{definition}
+Definicja różnicy zbiorów.
+Niech $A$ i $B$ będą dowolnymi zbiorami. Wówczas różnicę zbiorów $A$ i $B$ określamy jako:
+$A\setminus B=\{x:x\in A\wedge x\notin B\}$
+\end{definition}
+\begin{definition}
+Definicja przynależności elementu do różnicy zbiorów:
+$x\in A\setminus B\Leftrightarrow (x\in A\wedge x\notin B)$
+\end{definition}
+\begin{remark}
+Zaprzeczenie przynależności elementu do różnicy zbiorów:
+\(
+\neg(x\in A\setminus B)\Leftrightarrow\neg(x\in A\wedge x\notin B)
+\Leftrightarrow\neg(x\in A)\vee \neg(x\notin B)\Leftrightarrow
+(x\notin A)\vee (x\in B)
+\)
+\end{remark}
+\begin{definition}
+Definicja dopełnienia zbioru:
+Dopełnieniem zbioru $A\subseteq X$ do zbioru $X$ względem przestrzeni $X$ nazywamy taki zbiór $A^c$, że $A^c=X\setminus A$. Wówczas dla każdego $x\in X$ jest $x\in A^c\Leftrightarrow x\notin A$.
+\end{definition}
+\begin{property}
+Przemienność sumy zbiorów:
+dla dowolnych zbiorów $A$ i $B$ zachodzi równość: 
+$A\cup B=B\cup A$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory ${A,B}$. 
+Niech $x\in B\cup A$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in B$ lub $x\in A$. 
+Ale z przemienności alternatywy zdań jest $x\in A$ lub $x\in B$ co 
+z definicji sumy zbiorów daje nam $x\in A\cup B$. Zatem $B\cup A\subseteq A\cup B$.$\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A\cup B$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in A$ lub $x\in B$. 
+Ale z przemienności alternatywy zdań mamy $x\in B$ lub $x\in A$. 
+Stąd $x\in B\cup A$. Czyli $\boldsymbol{A\cup B\subseteq B\cup A}$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Przemienność iloczynu zbiorów:
+dla dowolnych zbiorów $\boldsymbol{A}$ i $\boldsymbol{B}$ zachodzi równość: $\boldsymbol{A\cap B=B\cap A}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B}$. 
+Niech $\boldsymbol{x\in B\cap A}$. Wówczas z definicji iloczynu zbiorów wynika, 
+że $\boldsymbol{x\in B}$ i $\boldsymbol{x\in A}$. Ale z przemienności koniunkcji zdań jest 
+$\boldsymbol{x\in A}$ i $\boldsymbol{x\in B}$ co z definicji daje nam $\boldsymbol{x\in A\cap B}$. 
+Zatem $\boldsymbol{B\cap A\subseteq A\cap B}$. $\\$
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B}$. 
+Niech $\boldsymbol{x\in A\cap B}$. Wówczas z definicji iloczynu zbiorów wynika, 
+że $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B}$. Ale z przemienności koniunkcji zdań mamy 
+$\boldsymbol{x\in B}$ i $\boldsymbol{x\in A}$. Zatem z definicji jest $\boldsymbol{x\in B\cap A}$. 
+Stąd $\boldsymbol{A\cap B\subseteq B\cap A}$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Łączność sumy zbiorów:
+dla dowolnych zbiorów $\boldsymbol{A}$, $\boldsymbol{B}$ i $\boldsymbol{C}$ zachodzi równość: $\\$
+$\boldsymbol{(A\cup B)\cup C=A\cup (B\cup C)}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. 
+Niech $\boldsymbol{x\in A\cup(B\cup C)}$. 
+Wówczas z definicji sumy zbiorów wynika, że $\boldsymbol{x\in A}$ lub $\boldsymbol{x\in B\cup C}$. 
+Ale z definicji $\boldsymbol{x\in B}$ lub $\boldsymbol{x\in C}$. Skoro $\boldsymbol{x\in A}$ 
+lub $\boldsymbol{x\in B}$ 
+lub $\boldsymbol{x\in C}$ to z łączności alternatywy zdań wynika $(x \in A$ lub $x\in B)$
+lub $\boldsymbol{x\in C}$ a wówczas z definicji sumy zbiorów jest $\boldsymbol{x\in(A\cup B)\cup C}$. 
+Stąd $\boldsymbol{A\cup(B\cup C)\subseteq (A\cup B)\cup C}$. $\\$
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. 
+Niech $\boldsymbol{x\in(A\cup B)\cup C}$. 
+Wówczas z definicji sumy zbiorów wynika, że $\boldsymbol{x\in A\cup B}$ lub $\boldsymbol{x\in C}$. 
+Ale dalej z definicji jest $\boldsymbol{x\in A}$ lub $\boldsymbol{x\in B}$. 
+Zatem skoro $\boldsymbol{x\in A}$ 
+lub $\boldsymbol{x\in B}$ lub $\boldsymbol{x\in C}$ to 
+z łączności alternatywy zdań mamy $\boldsymbol{x\in A}$ 
+lub $(x\in B$ lub $x\in C)$. 
+Stąd z definicji $\boldsymbol{x\in A\cup(B\cup C)}$. 
+Zatem $\boldsymbol{(A\cup B)\cup C\subseteq A\cup(B\cup C)}$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Łączność iloczynu zbiorów:
+dla dowolnych zbiorów $\boldsymbol{A}$, $\boldsymbol{B}$ i $\boldsymbol{C}$ zachodzi równość:
+$\boldsymbol{(A\cap B)\cap C=A\cap(B\cap C)}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. Niech $\boldsymbol{x\in A\cap(B\cap C)}$. 
+Wówczas z definicji iloczynu zbiorów wynika, że $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B\cap C}$. 
+Ale z definicji $\boldsymbol{x\in B}$ i $\boldsymbol{x\in C}$. Skoro $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B}$ i $\boldsymbol{x\in C}$ 
+to z łączności koniunkcji zdań mamy $(x\in A$ i $x\in B)$ i $\boldsymbol{x\in C}$. 
+Stąd z definicji $\boldsymbol{x\in (A\cap B)\cap C}$. Zatem $\boldsymbol{A\cap(B\cap C)\subseteq (A\cap B)\cap C}$. $\\$
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. Niech \(
+\boldsymbol{x\in}\\ \boldsymbol{(A\cap B)\cap C}
+\). 
+Wówczas z definicji iloczynu zbiorów wynika, że 
+$\boldsymbol{x\in A\cap B}$ i $\boldsymbol{x\in C}$. 
+Ale z definicji $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B}$. Ponieważ $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B}$ i $\boldsymbol{x\in C}$ 
+to z łączności koniunkcji zdań jest $\boldsymbol{x\in A}$ i $(x\in B$ i $x\in C)$. 
+Co z definicji daje nam $\boldsymbol{x\in A\cap(B\cap C)}$. 
+Zatem $\boldsymbol{(A\cap B)\cap C\subseteq A\cap(B\cap C)}$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Rozdzielność iloczynu względem sumy zbiorów:
+dla dowolnych zbiorów $\boldsymbol{A}$, $\boldsymbol{B}$ i $\boldsymbol{C}$ zachodzi równość:
+$\boldsymbol{A\cap(B\cup C)=(A\cap B)\cup(A\cap C)}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $\boldsymbol{x}$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. Niech $\boldsymbol{x\in(A\cap B)\cup(A\cap C)}$.  
+Wówczas z definicji sumy zbiorów wynika, że $\boldsymbol{x\in A\cap B}$ lub $\boldsymbol{x\in A\cap C}$. 
+Następnie z definicji iloczynu zbiorów mamy, że $(x\in A$ i $x\in B)$ 
+lub $(x\in A$ i $x\in C)$. Ale z rozdzielności koniunkcji względem alternatywy zdań 
+dostajemy $\boldsymbol{x\in A}$ i $(x\in B$ lub $x\in C)$. Co z definicji daje nam $\boldsymbol{x\in A\cap(B\cup C)}$. 
+Zatem \(
+\boldsymbol{(A\cap B)\cup(A\cap C)\subseteq} 
+\boldsymbol{A\cap(B\cup C)}. 
+\) $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $\boldsymbol{A,B,C}$. Niech \(
+\boldsymbol{x\in}\boldsymbol{A\cap(B\cup C)}
+\). 
+Wówczas z definicji iloczynu zbiorów wynika, że $\boldsymbol{x\in A}$ i $\boldsymbol{x\in B\cup C}$. 
+Następnie z definicji sumy zbiorów jest $\boldsymbol{x\in B}$ lub $\boldsymbol{x\in C}$. Wówczas z rozdzielności 
+koniunkcji względem alternatywy zdań mamy $(x\in A$ i $x\in B)$ lub $(x\in A$ i $x\in C)$. 
+Zatem z definicji iloczynu i sumy zbiorów dostajemy $\boldsymbol{x\in(A\cap B)\cup(A\cap C)}$. 
+Stąd \(
+\boldsymbol{A\cap(B\cup C)\subseteq}\boldsymbol{(A\cap B)\cup(A\cap C)}
+\). $\\$ Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Rozdzielność sumy względem iloczynu zbiorów:
+dla dowolnych zbiorów $\boldsymbol{A}$, $\boldsymbol{B}$ i $\boldsymbol{C}$ zachodzi równość:
+$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\cup B)\cap(A\cup C)$. 
+Wówczas z definicji iloczynu zbiorów wynika, że $x\in A\cup B$ i $x\in A\cup C$. Następnie z definicji 
+sumy zbiorów mamy $(x\in A$ lub $x\in B)$ i $(x\in A$ lub $x\in C)$. Zatem z rozdzielności alternatywy 
+względem koniunkcji zdań jest $x\in A$ lub $(x\in B$ i $x\in C)$. Co z definicji daje nam 
+$x\in A\cup(B\cap C)$. Zatem $(A\cup B)\cap(A\cup C)\subseteq A\cup(B\cap C)$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in A\cup(B\cap C)$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in A$ lub $x\in B\cap C$. Następnie z definicji 
+iloczynu zbiorów mamy, że $x\in B$ i $x\in C$. Stąd $x\in A$ lub $(x\in B$ i $x\in C)$. 
+Co z rozdzielności alternatywy względem koniunkcji daje nam 
+$(x\in A$ lub $x\in B)$ i $(x\in A$ lub $x\in C)$. Wówczas z definicji dostajemy 
+$x\in (A\cup B)\cap(A\cup C)$. Zatem $A\cup(B\cap C)\subseteq (A\cup B)\cap(A\cup C)$.
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Czy prawdziwa jest równość dla dowolnych zbiorów $A,B,C$: $(A\cup B\cup C)\setminus (A\cup B)=C$ ?
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in C$. Wówczas z definicji 
+$x\in A\cup B\cup C$. Jeżeli $x\in A$ lub $x\in B$ to wówczas także z definicji wynika, 
+że $x\in A\cup B$, a zatem z definicji różnicy zbiorów $x\notin (A\cup B\cup C)\setminus(A\cup B)$. 
+Czyli zadana równość nie jest prawdziwa w ogólności. Jeżeli natomiast $x\notin A$ i $x\notin B$ 
+to wówczas $x\in(A\cup B\cup C)\setminus(A\cup B)$. Stąd $C\subseteq(A\cup B\cup C)\setminus(A\cup B)$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\cup B\cup C)\setminus(A\cup B)$. 
+Wówczas z definicji różnicy zbiorów wynika, że $x\in A\cup B\cup C$ i $x\notin A\cup B$. 
+Zatem $x\in C$ czyli $(A\cup B\cup C)\setminus(A\cup B)\subseteq C$ zachodzi dla dowolnych 
+zbiorów $A,B$ i $C$. Natomiast zadana równość zachodzi wtedy i tylko wtedy, 
+gdy $x\in C$ i $x\notin A$ i $x\notin B$.
+Co można zapisać jako:
+$(A\cup B\cup C)\setminus (A\cup B)=\\ =C\Leftrightarrow C\cap(A\cup B)=\emptyset$
+\end{proof}
+\begin{property}
+Czy równość $A=(A\cap B)\cup(A\setminus B)$ jest prawdziwa dla dowolnych zbiorów $A$ i $B$ ?
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A$. Wówczas mamy dwie możliwości: 
+$x\in B$ lub $x\notin B$. Jeżeli $x\in B$ to z definicji $x\in A\cap B$. Wówczas pomimo, że 
+z definicji różnicy zbiorów $x\notin A\setminus B$ to z definicji sumy zbiorów 
+$x\in (A\cap B)\cup(A\setminus B)$, a zatem $A\subseteq (A\cap B)\cup(A\setminus B)$. 
+Jeżeli $x\notin B$ to wówczas z definicji iloczynu zbiorów wynika, że $x\notin A\cap B$. 
+Ale z definicji różnicy zbiorów jest $x\in A\setminus B$. Zatem z definicji sumy zbiorów dostajemy, że 
+$x\in (A\cap B)\cup(A\setminus B)$. I w tym przypadku mamy wobec dowolności wyboru elementu $x$, że 
+$A\subseteq (A\cap B)\cup(A\setminus B)$. Zatem bez względu na to czy element $x$ należał bądź nie 
+należał do zbioru $B$ to inkluzja $A\subseteq (A\cap B)\cup(A\setminus B)$ jest zawsze prawdziwa. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in(A\cap B)\cup(A\setminus B)$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in A\cap B$ lub $x\in A\setminus B$. Zatem z definicji 
+iloczynu zbiorów dostajemy, że $x\in A$ i $x\in B$. Ale z definicji różnicy zbiorów mamy 
+$x\in A$ i $x\notin B$. Stąd jeżeli $x\in A\cap B$ to $x\notin A\setminus B$. Ale 
+$x\in (A\cap B)\cup(A\setminus B)$. Jeżeli zaś $x\in A\setminus B$ to $x\notin A\cap B$. 
+Ale $x\in (A\cap B)\cup(A\setminus B)$. Ponieważ $x$ został wybrany dowolnie to 
+$(A\cap B)\cup(A\setminus B)\subseteq A$. Zatem zadana równość jest prawdziwa w ogólności.
+\end{proof}
+\begin{property}
+Prawo de Morgana dla różnicy zbiorów. Dla dowolnych zbiorów $A,B,C$ zachodzi równość:
+$A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\setminus B)\cap(A\setminus C)$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in A\setminus B$ i $x\in A\setminus C$. 
+Następnie z definicji różnicy zbiorów jest $x\in A$ i $x\notin B$ i $x\in A$ i $x\notin C$. 
+Stąd $x\in A$ i $x\notin B$ i $x\notin C$. Wówczas z definicji sumy zbiorów wynika, że 
+$\notin B\cup C$. Czyli $x\in A$ i $x\notin B\cup C$. Co z definicji różnicy zbiorów daje 
+nam $x\in A\setminus(B\cup C)$. Ponieważ element $x$ został wybrany dowolnie to zachodzi 
+$(A\setminus B)\cap(A\setminus C)\subseteq A\setminus(B\cup C)$.
+$\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in A\setminus(B\cup C)$. 
+Wówczas z definicji różnicy zbiorów $x\in A$ i $x\notin B\cup C$. Następnie z definicji sumy zbiorów 
+wynika, że $x\notin B$ i $x\notin C$. Stąd $x\in A$ i $x\notin B$ i $x\notin C$. Wówczas prawdą jest, 
+że $x\in A$ i $x\notin B$ i $x\in A$ i $x\notin C$. Co z definicji różnicy zbiorów daje 
+nam $x\in A\setminus B$ i $x\in A\setminus C$. I finalnie z definicji iloczynu zbiorów otrzymujemy, 
+że $x\in(A\setminus B)\cap(A\setminus C)$. Stąd $A\setminus(B\cup C)\subseteq(A\setminus B)\cap(A\setminus C)$.
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Prawo de Morgana dla różnicy zbiorów. Dla dowolnych zbiorów $A,B$ i $C$ zachodzi:
+$A\setminus(B\cap C)=(A\setminus B)\cup (A\setminus C)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$ i $C$. Niech $x\in(A\setminus B)\cup (A\setminus C)$. Wówczas z definicji sumy zbiorów $x\in A\setminus B$ lub $x\in A\setminus C$. Z definicji różnicy zbiorów dostajemy $(x\in A$ i $x\notin B)$ lub $(x\in A$ i $x\notin C)$. Korzystając z rozdzielności koniunkcji względem alternatywy otrzymujemy, że $x\in A$ i $(x\notin B$ lub $x\notin C)$. Stąd $x\in A$ i $x\notin B\cap C$. Czyli $x\in A\setminus(B\cap C)$. Ponieważ $x$ został wybrany dowolnie to zachodzi inkluzja $(A\setminus B)\cup (A\setminus C)\subseteq A\setminus(B\cap C)$. $\\$
+Niech $x\in A\setminus(B\cap C)$. Wówczas z definicji różnicy zbiorów wynika, że $x\in A$ i $x\notin B\cap C$. Czyli $x\in A$ i $(x\notin B$ lub $x\notin C)$. Korzystając z rozdzielności koniunkcji względem alternatywy dostajemy, że $(x\in A$ i $x\notin B)$ lub $(x\in A$ i $x\notin C)$. Z definicji różnicy zbiorów mamy wówczas $(x\in A\setminus B)$ lub $(x\in A\setminus C)$. A z definicji sumy zbiorów jest $x\in(A\setminus B)\cup(A\setminus C)$. Ponieważ $x$ został wybrany w sposób dowolny to zachodzi $A\setminus(B\cap C)\subseteq(A\setminus B)\cup (A\setminus C)$. $\\$
+Wobec tego, że zachodzą obie inkluzje to zadana równość w ogólności jest prawdziwa.
+\end{proof}
+\begin{property}
+Rozdzielność różnicy względem sumy zbiorów. Dla dowolnych zbiorów $A,B,C$ zachodzi równość:
+$(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\setminus C)\cup(B\setminus C)$. 
+Wówczas z definicji sumy zbiorów wynika, że $x\in A\setminus C$ lub $x\in B\setminus C$. 
+Następnie z definicji róznicy zbiorów mamy $x\in A$ i $x\notin C$ lub $x\in B$ i $x\notin C$. 
+Stąd z rozdzielności koniunkcji względem alternatywy zdań $x\in A$ lub $x\in B$ i $x\notin C$. 
+Co z definicji sumy, a następnie z definicji różnicy zbiorów daje nam $x\in(A\cup B)\setminus C$. 
+Ponieważ $x$ był wybrany w sposób dowolny to zachodzi $(A\setminus C)\cup(B\setminus C)\subseteq(A\cup B)\setminus C$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\cup B)\setminus C$. 
+Wówczas z definicji różnicy zbiorów wynika, że $x\in A\cup B$ i $x\notin C$. Następnie z definicji 
+sumy zbiorów mamy $x\in A$ lub $x\in B$. Co daje nam $x\in A$ lub $x\in B$ i $x\notin C$. 
+Wówczas z prawa rozdzielności koniunkcji względem alternatywy zdań wynika 
+$x\in A$ i $x\notin C$ lub $x\in B$ i $x\notin C$. 
+Stąd z definicji różnicy zbiorów dostajemy $x\in A\setminus C$ lub $x\in B\setminus C$. 
+Zatem z definicji sumy zbiorów jest $x\in(A\setminus C)\cup(B\setminus C)$. Ponieważ element 
+$x$ został wybrany jako dowolny to otrzymujemy, że 
+$(A\cup B)\setminus C\subseteq (A\setminus C)\cup(B\setminus C)$. Ponieważ zachodzą
+obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A,B,C$ zachodzi równość:
+$A\setminus(B\setminus C)=(A\setminus B)\cup(A\cap C)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\setminus B)\cup(A\cap C)$.  Wówczas z definicji sumy zbiorów wynika, że $x\in A\setminus B$ lub $x\in A\cap C$. Wówczas z rozdzielności koniunkcji względem alternatywy otrzymujemy $x\in A$ i $(x\notin B$ lub $x\in C)$. Ale z definicji różnicy zbiorów wynika, że $x\notin B\setminus C$. A ponieważ $x\in A$ to z definicji jest $x\in A\setminus(B\setminus C)$. Stąd $(A\setminus B)\cup(A\cap C)\subseteq A\setminus (B\setminus C)$ $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in A\setminus(B\setminus C)$. Wówczas z definicji różnicy zbiorów wynika, że $x\in A$ i $x\notin B\setminus C$. I dalej z definicji różnicy zbiorów mamy $x\notin B$ lub $x\in C$. Ale $x\in A$ stąd $x\in A$ i $(x\notin B$ lub $x\in C)$ co z prawa rozdzielności koniunkcji względem alternatywy daje nam $(x\in A$ i $x\notin B)$ lub $(x\in A$ i $x\in C)$. 
+Wówczas z definicji sumy zbiorów dostajemy, że $x\in(A\setminus B)\cup(A\cap C)$. Zatem $A\setminus(B\setminus C)\subseteq(A\setminus B)\cup(A\cap C)$. Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A,B$ zachodzi równość:
+$A\setminus(A\cap B)=\\=A\setminus B$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A\setminus B$. Wówczas z definicji wynika, że $x\in A$ i $x\notin B$. Następnie z definicji iloczynu zbiorów jest $x\notin A\cap B$. Co z definicji różnicy zbiorów daje nam $x\in A\setminus(A\cap B)$. Stąd $A\setminus B\subseteq A\setminus (A\cap B)$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A\setminus(A\cap B)$. Wówczas z definicji różnicy zbiorów wynika, że $x\in A$ i $x\notin A\cap B$. Następnie z definicji iloczynu zbiorów jest $x\notin A$ lub $x\notin B$. Ale z założenia $x\in A$. A wobec tego $x\in A$ i $x\notin B$ co z definicji różnicy zbiorów daje nam $x\in A\setminus B$. Stąd $A\setminus(A\cap B)\subseteq A\setminus B$. $\\$ Ponieważ zachodzą obie inkluzje to $A\setminus(A\cap B)=A\setminus B$
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A,B,C$ zachodzi równość:
+$A\cap(B\setminus C)=(A\cap B)\setminus C$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in(A\cap B)\setminus C$. Wówczas z definicji różnicy zbiorów wynika, że $x\in A\cap B$ i $x\notin C$. Następnie z definicji iloczynu zbiorów jest $x\in A$ i $x\in B$. Korzystając z łączności koniunkcji otrzymujemy $x\in A$ i $(x\in B$ i $x\notin C)$. Czyli z definicji iloczynu i różnicy zbiorów dostajemy $x\in A\cap( B\setminus C)$. Zatem $(A\cap B)\setminus C\subseteq A\cap(B\setminus C)$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B,C$. Niech $x\in A\cap(B\setminus C)$. Wówczas z definicji iloczynu zbiorów wynika, że $x\in A$ i $x\in B\setminus C$. Następnie z definicji różnicy zbiorów jest $x\in B$ i $x\notin C$. Korzystając z łączności koniunkcji otrzymujemy, że $(x\in A$ i $x\in B)$ i $x\notin C$. Stąd z definicji iloczynu i różnicy zbiorów mamy $x\in(A\cap B)\setminus C$. Zatem $A\cap(B\setminus C)\subseteq (A\cap B)\setminus C$. Ponieważ zachodzą obie inkluzje to $A\cap(B\setminus C)=(A\cap B)\setminus C$.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A$ i $B$ zachodzi $A\cup(B\setminus A)=A\cup B$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A\cup B$. Wówczas z definicji sumy zbiorów wynika, że $x\in A$ lub $x\in B$. Zatem jedną z możliwości jest, że $x\in A$ i $x\in B$. Wówczas $x\notin B\setminus A$. Ale z definicji $x\in A\cup(B\setminus A)$ bo $x\in A$. Kolejny przypadek to taki w którym $x\in A$ i $x\notin B$. Wówczas $x\notin B\setminus A$. Ale $x\in A\cup(B\setminus A)$, ponieważ $x\in A$. Trzecia możliwość to $x\notin A$ i $x\in B$. Wówczas z definicji jest $x\in B\setminus A$ i $x\in A\cup(B\setminus A)$. W każdym z trzech przypadków, które pokazaliśmy w celu weryfikacji czy któryś z nich nie prowadzi do sprzeczności dla dowolnego $x\in A\cup B$ jest $x\in A\cup(B\setminus A)$, a zatem $A\cup B\subseteq A\cup(B\setminus A)$. $\\$ $\\$
+Ustalmy dowolny element $x$ oraz dowolne zbiory $A,B$. Niech $x\in A\cup(B\setminus A)$. Wówczas z definicji sumy zbiorów wynika, że $x\in A$ lub $x\in B\setminus A$. Zatem jeżeli $x\in A$ to z definicji $x\notin B\setminus A$, a zatem $x\notin B$. Ale z definicji sumy zbiorów $x\in A\cup B$ bo przecież $x\in A$. Jeżeli zaś $x\notin A$ to z założenia $x\in B\setminus A$. Wówczas z definicji różnicy zbiorów jest $x\in B$. Stąd z definicji sumy zbiorów mamy $x\in A\cup B$. Czyli w każdym z przypadków otrzymujemy $x\in A\cup B$ co daje nam $A\cup(B\setminus A)\subseteq A\cup B$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{property}
+Dopełnieniem dowolnego zbioru $X$ do niego samego jest zbiór pusty, czyli $X^c=\emptyset$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny zbiór $X$. Z definicji dopełnienia zbioru względem zbioru uniwersalnego $U=X$ otrzymujemy $X^c=X\setminus X=\emptyset$.
+\end{proof}
+\begin{property}
+Dopełnieniem zbioru pustego do dowolnego zbioru $X$ w przestrzeni $X$ jest zbiór $X$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny zbiór $X$. Wówczas z definicji $\emptyset^c=X\setminus\emptyset$. Ponieważ z definicji zbiór pusty nie zawiera żadnego elementu to otrzymujemy $X\setminus\emptyset=\\=X$.
+Stąd $\emptyset^c=X$.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $X,A$ zachodzi $(A^c)^c= A$, gdzie $A^c=\\=X\setminus A$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $X$ i $A\subseteq X$. Z definicji $X\setminus A=A^c$. Wówczas $(A^c)^c=X\setminus(X\setminus A)$. Korzystając z rozdzielności różnicy względem sumy zbiorów wynika, że $X\setminus(X\setminus A)=(X\setminus X)\cup(X\cap A)$. Z założenia $A\subseteq X$ czyli $X\cap A=A$. Wówczas otrzymujemy $X\setminus(X\setminus A)=\emptyset\cup A=A=(A^c)^c$.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów zachodzi $A\cup A^c=X$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $X$ i $A\subseteq X$. Wówczas z definicji $X\setminus A=\\=A^c$. Zatem $A\cup A^c=A\cup (X\setminus A)$. Ale korzystając z równości $A\cup(B\setminus A)=\\=A\cup B$, która zachodzi dla dowolnych zbiorów, otrzymujemy, że $\\$ $A\cup(X\setminus A)=A\cup X$. Ponieważ z założenia $A\subseteq X$ to $A\cup X=X$ czyli $A\cup(X\setminus A)=X$. Stąd $A\cup A^c=X$.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów zachodzi $A\cap A^c=\emptyset$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolny zbiór $X$ i $A\subseteq X$. Niech $x\in A\cap A^c$. Wówczas z definicji $x\in A$ i $x\in A^c$. Ale z definicji $A^c=X\setminus A$. Stąd mamy, że $x\notin A$. Wobec sprzeczności otrzymujemy, że $x\notin A\cap A^c$. A ponieważ $x$ został wybrany dowolnie to $A\cap A^c=\emptyset$.
+\end{proof}
+\begin{property}
+Prawo de Morgana dla dopełnień zbiorów.
+Dopełnienie sumy zbiorów jest iloczynem ich dopełnień, czyli dla dowolnych zbiorów $A,B\subseteq X$ zachodzi $(A\cup B)^c=A^c\cap B^c$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $X$ i $A,B\subseteq X$ oraz dowolny element $x$. Niech $x\in A^c\cap B^c$. Wówczas z definicji iloczynu zbiorów wynika, że $x\in A^c$ i $x\in B^c$. Z definicji $A^c=X\setminus A$ oraz $B^c=X\setminus B$. Zatem $x\in X\setminus A$ $\\$ i $x\in X\setminus B$. Co z definicji różnicy zbiorów daje nam $(x\in X$ i $x\notin A)$ $\\$ i $(x\in X$ i $x\notin B)$. Korzystając z łączności koniunkcji dostajemy $x\in X$ $\\$ i $(x\notin A$ i $x\notin B)$, a następnie z równoważności koniunkcji zaprzeczeń dwóch zdań i negacji alternatywy tych zdań mamy $x\in X$ i $\sim(x\in A$ lub $x\in B)$. Wówczas z definicji sumy zbiorów jest $x\notin A\cup B$. Ale $x\in X$. Zatem z definicji różnicy zbiorów wynika, że skoro $x\in X$ i $x\notin A\cup B$ to $x\in X\setminus(A\cup B)$. A ponieważ $(A\cup B)\subseteq X$, bo z założenia $A,B\subseteq X$ to z definicji dopełnienia jest $X\setminus(A\cup B)=(A\cup B)^c$. Zatem skoro $x$ został wybrany dowolnie to otrzymujemy, że $x\in (A\cup B)^c$. Stąd $A^c\cap B^c\subseteq (A\cup B)^c$. $\\$ $\\$
+Ustalmy dowolne zbiory $X$ i $A,B\subseteq X$ oraz dowolny element $x$. Niech $x\in(A\cup B)^c$. Zauważmy, że z założenia mamy $(A\cup B)\subseteq X$, bo $A,B\subseteq X$. Wówczas z definicji dopełnienia wynika, że $(A\cup B)^c=X\setminus(A\cup B)$. Zatem $x\in X\setminus(A\cup B)$. Z definicji różnicy zbiorów dostajemy, że $x\in X$ i $x\notin A\cup B$ co z definicji sumy zbiorów daje nam $x\notin A$ i $x\notin B$. Ale ponieważ $x\in X$ to korzystając z łączności koniunkcji otrzymujemy $(x\in X$ i $x\notin A)$ i $(x\in X$ i $x\notin B)$. Wówczas z definicji różnicy zbiorów jest $x\in X\setminus A$ i $x\in X\setminus B$. Zaś z założenia i z definicji dopełnienia mamy $x\in A^c$ i $x\in B^c$ co z definicji iloczynu zbiorów daje $x\in A^c\cap B^c$. Stąd $(A\cup B)^c\subseteq A^c\cap B^c$. Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{property}
+Prawo de Morgana dla dopełnień zbiorów.
+Dopełnienie iloczynu zbiorów jest sumą ich dopełnień, czyli dla dowolnych zbiorów $A,B\subseteq X$ zachodzi $(A\cap B)^c=A^c\cup B^c$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $X$ i $A,B\subseteq X$ oraz dowolny element $x$. Niech $x\in A^c\cup B^c$. Wówczas z definicji sumy zbiorów wynika, że $x\in A^c$ lub $x\in B^c$. Z definicji dopełnienia mamy $A^c=X\setminus A$ oraz $B^c=X\setminus B$. Co daje nam $x\in X\setminus A$ lub $x\in X\setminus B$. Wówczas z definicji różnicy zbiorów jest $(x\in X$ i $x\notin A)$ lub $(x\in X$ i $x\notin B)$. Korzystając z rozdzielności koniunkcji względem alternatywy dostajemy $x\in X$ i $(x\notin A$ lub $x\notin B)$. Zatem $x\notin A\cap B$. Ale $x\in X$ czyli z definicji różnicy zbiorów dostajemy $x\in X\setminus(A\cap B)$. Ponieważ z założenia $(A\cap B)\subseteq X$ to z definicji dopełnienia wynika, że $X\setminus(A\cap B)=(A\cap B)^c$. Zatem $x\in(A\cap B)^c$. Wobec tego, że $x$ został wybrany jako dowolny element to $A^c\cup B^c\subseteq(A\cap B)^c$. $\\$ $\\$
+Ustalmy dowolne zbiory $X$ i $A,B\subseteq X$ oraz dowolny element $x$. Niech $x\in(A\cap B)^c$. Z założenia wynika, że $(A\cap B)\subseteq X$. Wówczas z definicji dopełnienia mamy $(A\cap B)^c=X\setminus(A\cap B)$. Zatem $x\in X\setminus(A\cap B)$ co z definicji różnicy zbiorów daje nam $x\in X$ i $x\notin A\cap B$. Stąd $x\notin A$ lub $x\notin B$. Ale $x\in X$ więc korzystając z rozdzielności koniunkcji względem alternatywy dostajemy $x\in X$ i $(x\notin A$ lub $x\notin B)$ czyli $(x\in X$ i $x\notin A)$ lub $(x\in X$ i $x\notin B)$. Wówczas z definicji różnicy zbiorów wynika $x\in X\setminus A$ lub $x\in X\setminus B$. Ale z definicji dopełnienia jest $X\setminus A=A^c$ i $X\setminus B=B^c$. Zatem $x\in A^c$ lub $x\in B^c$. Stąd z definicji sumy zbiorów otrzymujemy, że $x\in A^c\cup B^c$. Ponieważ $x$ został wybrany dowolnie to $(A\cap B)^c\subseteq A^c\cup B^c$. $\\$
+Skoro zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}

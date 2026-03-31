@@ -1,0 +1,44 @@
+LICENCJA – Notatki z Matematyki
+Autor: DominikSmo (https://github.com/DominikSmo)
+Rok: 2026
+
+─────────────────────────────────────────────────────────────
+
+1. POSTANOWIENIA OGÓLNE
+
+Niniejsze materiały edukacyjne ("Dzieło") obejmują notatki z matematyki
+na poziomie pierwszych lat studiów, udostępnione w formie plików źródłowych
+LaTeX (.tex) oraz skompilowanych dokumentów PDF.
+
+2. DOZWOLONE KORZYSTANIE
+
+Każda osoba może:
+  • pobierać, przeglądać i drukować Dzieło na własny użytek edukacyjny,
+  • wykorzystywać treści w nauce indywidualnej lub w ramach zajęć dydaktycznych,
+  • cytować fragmenty w pracach naukowych z podaniem źródła,
+  • udostępniać link do oryginalnego repozytorium GitHub.
+
+3. ZAKAZANE DZIAŁANIA
+
+Zabrania się:
+  • wykorzystywania Dzieła w celach komercyjnych (sprzedaż, płatne kursy,
+    monetyzacja treści) bez pisemnej zgody Autora,
+  • publikowania zmodyfikowanych wersji jako własnego dzieła,
+  • usuwania informacji o autorstwie lub licencji,
+  • rozpowszechniania Dzieła na platformach, które narzucają opłaty za dostęp.
+
+4. KONTAKT I ZGODA
+
+Jeśli chcesz wykorzystać materiał w celach komercyjnych lub opublikować
+zmodyfikowaną wersję, skontaktuj się z Autorem:
+  • GitHub: https://github.com/DominikSmo
+  • Issues: https://github.com/DominikSmo/Mathematics/issues
+
+5. ZRZECZENIE ODPOWIEDZIALNOŚCI
+
+Dzieło udostępniane jest "takie, jakie jest" (as-is). Autor nie ponosi
+odpowiedzialności za ewentualne błędy, nieścisłości ani szkody wynikłe
+z korzystania z materiałów.
+
+─────────────────────────────────────────────────────────────
+© 2026 DominikSmo. Wszelkie prawa zastrzeżone.

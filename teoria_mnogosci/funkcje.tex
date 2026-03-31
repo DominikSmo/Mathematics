@@ -1,0 +1,21 @@
+\begin{definition}
+Funkcją nazywamy każdą relację $R\subseteq X\times Y$, gdy spełniony jest warunek $(x,y)\in R\wedge(x,y')\in R\Rightarrow y=y'$.
+\end{definition}
+\begin{remark}
+Jak już wiemy, każda relacja typu $\emptyset\times A$, $A\times\emptyset$ czy $\emptyset\times \emptyset$, gdzie $A\ne\emptyset$ jest relacją pustą ale nie każda z tych relacji jest funkcją. Z definicji funkcji wynika, że funkcją nie jest relacja $A\times\emptyset$. Dlaczego? Ponieważ funkcja jest odwzorowaniem, które przyporządkowuje każdemu elementowi z jej dziedziny dokładnie jeden element z jej przeciwdziedziny. W przypadku relacji odwzorowującej zbiór niepusty w zbiór pusty nie możemy przyporządkować elementom z dziedziny tej relacji żadnego elementu z jej przeciwdziedziny, bo ta jest pusta. Wynika to z prawdziwości lub nieprawdziwości implikacji. Skoro $A\ne\emptyset$ to istnieje pewien element $x\in A$. Wówczas zdanie "$x$ należy do $A$" jest zdaniem prawdziwym. Ale jeżeli relacja $A\times\emptyset$ byłaby funkcją to musiałby istnieć dokładnie jeden element $y\in\emptyset$, który byłby wartością dla argumentu $x$. Wiadomo, że zdanie "$y$ należy do zbioru pustego" jest zdaniem fałszywym a zatem mamy implikację w której ze zdania prawdziwego wynika zdanie fałszywe co jest nieprawdą. Stąd odwzorowanie niepustego zbioru w zbiór pusty nie może być funkcją.$\\$
+Z kolei relacja odwrotna do relacji $A\times\emptyset$ jest funkcją ponieważ z fałszu może wynikać prawda. W przypadku relacji $\emptyset\times A$ zdaniem fałszywym jest zdanie "$x\in\emptyset$". Zdaniem prawdziwym jest natomiast zdanie "$y\in A$" bo $A\ne\emptyset$. I wówczas mimo, że nie ma elementu w dziedzinie relacji $\emptyset\times A$, któremu można by przyporządkować dokładnie jeden element ze zbioru $A$ to implikacja "jeżeli istnieje element $x$ ze zbioru $\emptyset$ to istnieje taki element $y$ ze zbioru $A$, że para uporządkowana $(x,y)$ należy do funkcji odwzorowującej zbiór pusty w zbiór niepusty $A$" jest prawdziwa. Ale skoro każda implikacja, której następnik jest prawdziwy jest prawdziwa to w takiej implikacji nieistotna jest wartość logiczna jej poprzednika i wówczas wynika z tego, że każda relacja, której dziedzina jest pusta jest funkcją. Stąd relacja $\emptyset\times\emptyset$ także jest funkcją. Zatem podajmy definicję funkcji pustej.
+\end{remark}
+\begin{definition}
+Funkcja pusta to funkcja odwzorowująca zbiór pusty w dowolny zbiór co można zapisać jako $f:\emptyset\rightarrow Y$.
+\end{definition}
+\begin{remark}
+Fakt, że funkcja $f$ odwzorowuje zbiór $X$ w zbiór $Y$ zapisujemy jako $f:X\rightarrow Y$. Ten zapis informuje nas o tym, że $X=dom(f)$ oraz $rng(f)\subseteq Y$.
+Zatem z definicji dziedziną funkcji $f$ jest zbiór $dom(f)=X$, zaś zbiorem wartości funkcji $f$: $rng(f)=\{y\in Y:\exists x\in X:y=f(x)\}$.
+\end{remark}
+\begin{definition}
+Zbiorem, który zawiera wszystkie funkcje $f:X\rightarrow Y$ nazywamy zbiór $X_{Y}=\{f\in\mathcal{P}(X\times Y): Fnc(f)\wedge dom(f)=X\}$, gdzie zapis $Fnc(f)$ oznacza, że relacja $f$ jest funkcją. Bo $Fnc(f)=\forall x\in X\exists!y\in Y:(x,y)\in f$.
+\end{definition}
+\begin{remark}
+Definicja ta wynika z tego, że skoro $f:X\rightarrow Y$ to $f\subseteq X\times Y$, a wówczas $f\in\mathcal{P}(X\times Y)$. Bowiem skoro $f$ jest podzbiorem relacji pełnej $X\times Y$ to z definicji zbioru potęgowego funkcja $f$ musi należeć do zbioru, który zawiera wszystkie podzbiory relacji pełnej $X\times Y$, a tym zbiorem(rodziną zbiorów) jest zbiór potęgowy relacji pełnej $X\times Y$,
+czyli zbiór $\mathcal{P}(X\times Y)$.
+\end{remark}

@@ -1,0 +1,227 @@
+\begin{definition}
+Definicja rodziny zbiorów: $\\$
+Rodziną zbiorów $\mathcal{F}$ nazywamy taki zbiór, że dla każdego $X\in\mathcal{F}$, $X$ jest zbiorem. 
+\end{definition}
+\begin{definition}
+Definicja sumy ogólnej rodziny zbiorów:$\\$
+Niech $\mathcal{A}$ będzie rodziną zbiorów. Wówczas zbiór
+$\bigcup\mathcal{A}=\{x: \exists A\in\mathcal{A},x\in A\}$ jest sumą ogólną rodziny $\mathcal{A}$.
+\end{definition}
+\begin{remark}
+Zaprzeczenie definicji przynależności elementu do sumy rodziny zbiorów:
+$\neg(x\in\bigcup\mathcal{A})\Leftrightarrow \neg(\exists A\in\mathcal{A},x\in A)\Leftrightarrow \forall A\in\mathcal{A}:x\notin A$.
+\end{remark}
+\begin{definition}
+Definicja sumy rodzin zbiorów: $\\$
+Niech $\mathcal{A}$ i $\mathcal{B}$ będą dowolnymi rodzinami zbiorów. Wówczas rodzina 
+$\mathcal{A}\cup\mathcal{B}=\\=\{X:X\in\mathcal{A}\vee X\in\mathcal{B}\}$ jest sumą rodzin zbiorów
+$\mathcal{A}$ i $\mathcal{B}$.
+Warunkiem przynależności zbioru do sumy rodzin zbiorów jest $X\in\mathcal{A}\cup\mathcal{B}\Leftrightarrow X\in\mathcal{A}\vee X\in\mathcal{B}$
+\end{definition}
+\begin{remark}
+Zaprzeczenie definicji przynależności zbioru do sumy rodzin zbiorów:
+$\neg(X\in\mathcal{A}\cup\mathcal{B})\Leftrightarrow \neg(X\in\mathcal{A}\vee X\in\mathcal{B})\Leftrightarrow \neg(X\in\mathcal{A})\wedge\neg(X\in\mathcal{B})\Leftrightarrow X\notin\mathcal{A}\wedge X\notin\mathcal{B}$
+\end{remark}
+\begin{definition}
+Definicja iloczynu ogólnego rodziny zbiorów: $\\$
+Niech $\mathcal{A}$ będzie rodziną zbiorów. Wówczas zbiór
+$\bigcap\mathcal{A}=\{x:\forall A\in\mathcal{A},x\in A\}$ nazywamy iloczynem ogólnym rodziny $\mathcal{A}$.
+\end{definition}
+\begin{remark}
+Zaprzeczenie definicji przynależności elementu do iloczynu rodziny zbiorów: $\\$
+$\neg(x\in\bigcap\mathcal{A})\Leftrightarrow \neg(\forall A\in\mathcal{A}:x\in A)\Leftrightarrow \exists A\in\mathcal{A}:x\notin A$.
+\end{remark}
+\begin{definition}
+Definicja iloczynu rodzin zbiorów: $\\$
+Niech $\mathcal{A}$ i $\mathcal{B}$ będą dowolnymi rodzinami zbiorów. Wówczas rodzina
+$\mathcal{A}\cap\mathcal{B}=\\=\{X:X\in\mathcal{A}\wedge X\in\mathcal{B}\}$ jest iloczynem rodzin zbiorów $\mathcal{A}$ i $\mathcal{B}$.
+Warunkiem przynależności zbioru do iloczynu rodzin zbiorów jest $X\in\mathcal{A}\cap\mathcal{B}\Leftrightarrow X\in\mathcal{A}\wedge X\in\mathcal{B}$
+\end{definition}
+\begin{remark}
+Zaprzeczenie definicji przynależności zbioru do iloczynu rodzin zbiorów:
+$\neg(X\in\mathcal{A}\cap\mathcal{B})\Leftrightarrow \neg(X\in\mathcal{A}\wedge X\in\mathcal{B})\Leftrightarrow \neg(X\in\mathcal{A})\vee \neg(X\in\mathcal{B})\Leftrightarrow X\notin\mathcal{A}\vee X\notin\mathcal{B}$.
+\end{remark}
+\begin{definition}
+Definicja zawierania rodzin zbiorów:
+dla dowolnych rodzin $\mathcal{A}$ i $\mathcal{B}$:
+$\mathcal{A}\subseteq\mathcal{B}\Leftrightarrow \forall A\in\mathcal{A}:A\in\mathcal{B}$
+\end{definition}
+\begin{remark}
+Relacja zawierania się zbiorów a relacja należenia zbioru do rodziny zbiorów. $\\$
+Zbiór $A$ zawiera się w zbiorze $B$ wtedy i tylko wtedy, gdy każdy element zbioru $A$ należy do zbioru $B$. Czyli $A\subseteq B\Leftrightarrow \forall x\in A: x\in B$. Wówczas jeżeli zbiór $B$ nie posiada żadnych innych elementów poza tymi, które należą do zbioru $A$ to zbiór $B$ także zawiera się w zbiorze $A$ a zatem zbiory $A$ i $B$ są równe, bowiem zawierają te same elementy. $\\$
+Zbiór $X$ zawiera się w sumie rodziny zbiorów $\bigcup\mathcal{A}$ wtedy i tylko wtedy, gdy każdy element zbioru $X$ należy do zbioru $\bigcup\mathcal{A}$. Zatem $X\subseteq\bigcup\mathcal{A}\Leftrightarrow\forall x\in X: x\in\bigcup\mathcal{A}$. O ile $\bigcup\mathcal{A}$ jest zbiorem, to $\mathcal{A}$ jest rodziną zbiorów. Wówczas $\bigcup\mathcal{A}$ jest sumą wszystkich zbiorów należących do rodziny $\mathcal{A}$. Należy zwrócić uwagę na to, że $\bigcup\mathcal{A}$ nie jest rodziną zbiorów do której należy jeden zbiór, zawierający elementy wszystkich zbiorów z rodziny zbiorów $\mathcal{A}$. $\bigcup\mathcal{A}$ jest zbiorem do którego należą elementy ze wszystkich zbiorów z rodziny $\mathcal{A}$. I wówczas zbiór $\bigcup\mathcal{A}$ nie może zawierać się w rodzinie $\mathcal{A}$. Ponieważ zbiór może być tylko elementem rodziny zbiorów. W rodzinie zbiorów może zawierać się tylko rodzina zbiorów. Przyjrzyjmy się teraz zdaniu: $X\subseteq\bigcup\mathcal{A}\Leftrightarrow\forall x\in X: x\in\bigcup\mathcal{A}$. Zauważmy, że $\bigcup\mathcal{A}$ jest zbiorem takich elementów, które należą do pewnego istniejącego zbioru, który należy do rodziny zbiorów $\mathcal{A}$. Czyli $x\in\bigcup\mathcal{A}\Leftrightarrow \exists A\in\mathcal{A}:x\in A$. Wówczas skoro $X\subseteq\bigcup\mathcal{A}$ to każdy element zbioru $X$ musi należeć do co najmniej jednego zbioru $A$ z rodziny $\mathcal{A}$. Zatem $\forall x\in X\ \exists A\in\mathcal{A}:x\in A$. Człon: $\exists A\in\mathcal{A}:x\in A$ jest częścią definicji sumy rodziny zbiorów. Bo $x\in\bigcup\mathcal{A}\Leftrightarrow \exists A\in\mathcal{A}:x\in A$. Zatem można zapisać $X\subseteq\bigcup\mathcal{A}\Leftrightarrow \forall x\in X\ \exists A\in\mathcal{A}:x\in A$. Ale czy to oznacza, że zbiór $X$ należy do rodziny zbiorów $\mathcal{A}$ ? Zbiór $A$ należy do rodziny $\mathcal{A}$ wtedy i tylko wtedy, gdy zbiór $A$ "wraz ze wszystkimi jego elementami" jest elementem rodziny $\mathcal{A}$. Zatem żaden podzbiór zbioru $A$ nie musi należeć do rodziny zbiorów $\mathcal{A}$. Każdy podzbiór zbioru należącego do pewnej rodziny zbiorów jedynie(zwykle) zawiera się w sumie tej rodziny. Ale nie musi do niej należeć. Zatem zbiór $X$ może należeć do rodziny zbiorów $\mathcal{A}$ wtedy i tylko wtedy, gdy do rodziny $\mathcal{A}$ należy przynajmniej jeden zbiór $A$ do którego należą wszystkie elementy ze zbioru $X$ i żadne inne. Wówczas rzecz jasna $X=A$. Innymi słowy $X\in\mathcal{A}\Leftrightarrow \exists A\in\mathcal{A}: A=X$. Jeszcze inaczej:
+$X\in\mathcal{A}\Leftrightarrow \exists A\in\mathcal{A}\ (\forall x(x\in X\Leftrightarrow x\in A))$. Rzecz jasna oba zapisy są równoważne. $\\$
+Porównajmy jeszcze dwa następujące zdania:
+$X\subseteq\bigcup\mathcal{A}\Leftrightarrow\forall x\in X\ \exists A\in\mathcal{A}:x\in A$ i $X\subseteq\bigcup\mathcal{A}\Leftrightarrow\exists A\in\mathcal{A}\ \forall x\in X: x\in A$. Pierwsze zdanie jak już wiemy oznacza, że każdy element zbioru $X$ należy do jakiegoś zbioru $A$ z rodziny $\mathcal{A}$. Może być tak, że jeden element zbioru $X$ należy do jednego ze zbiorów $A$ a do innego nie, może być też tak, że nie każdy zbiór $A$ zawiera jakikolwiek element ze zbioru $X$, itd. Ważne jest aby każdy element ze zbioru X należał do jakiegokolwiek zbioru $A$. Drugie zdanie oznacza natomiast, że jest taki zbiór $A$ z rodziny zbiorów $\mathcal{A}$ do którego należą wszystkie elementy zbioru $X$. Nie wiemy czy jest jeden taki zbiór czy jest ich więcej. Wiadomo jedynie, że z pewnością jest przynajmniej jeden taki zbiór $A$. Wówczas drugie zdanie oznacza, że $X$ zawiera się w $\bigcup\mathcal{A}$ ale dodatkowo istnieje taki zbiór $A$ z rodziny zbiorów $\mathcal{A}$, który zawiera wszystkie elementy zbioru $X$. A zatem $X$ zawiera się w tym zbiorze $A$. Nie wiemy czy do zbioru $A$ należą jeszcze jakiekolwiek inne elementy ale wiemy, że zbiór $A$ zawiera wszystkie elementy ze zbioru $X$. Innymi słowy: jeżeli istnieje taki zbiór $A$ z rodziny zbiorów $\mathcal{A}$ do którego należą wszystkie elementy ze zbioru $X$ to wiadomo wówczas, że zbiór $X$ zawiera się w zbiorze $\bigcup\mathcal{A}$. Oczywiście implikacja przeciwna w ogólności nie zachodzi jak już wcześniej pośrednio pokazaliśmy. Zatem implikacja $\exists A\in\mathcal{A}\ \forall x\in X:x\in A\Rightarrow X\subseteq\bigcup\mathcal{A}$ w ogólności zachodzi dla dowolnych zbiorów $A$ i $X$ oraz dowolnej rodziny $\mathcal{A}$. $\\$
+Co należy jeszcze zauważyć to to, że w ogólności nie zachodzi $\bigcup\mathcal{A}\in\mathcal{A}$. Powyższa relacja może zachodzić tylko wtedy, gdy do rodziny zbiorów $\mathcal{A}$ oprócz zbiorów $A$ należy także ich suma. Rzecz jasna jeżeli jedynym elementem rodziny jest zbiór pusty to wówczas suma takiej rodziny należy do niej. Czyli $\bigcup\{\emptyset\}\in\{\emptyset\}$. Powyższe rozważania dotyczą także zbioru pustego ale z pewnymi zastrzeżeniami. Mianowicie skoro zbiór pusty zawiera się w każdym zbiorze to zawiera się także w zbiorze $\bigcup\mathcal{A}$. Ale zbiór pusty nie jest elementem każdej rodziny zbiorów. Inaczej wygląda to w przypadku zbiorów potęgowych, które oczywiście są rodzinami zbiorów. Otóż zbiór pusty jest elementem zbioru potęgowego każdego zbioru. Nie istnieje zbiór, którego zbiór potęgowy nie zawierałby zbioru pustego. Zatem zbiór potęgowy każdego zbioru jest rodziną zbiorów, której elementem zawsze jest zbiór pusty. Zastrzeżeniem jest to, że gdzieś powyżej stwierdziłem, iż zbiór $A$ należy do rodziny $\mathcal{A}$ wtedy i tylko wtedy, gdy zbiór $A$ jest elementem rodziny $\mathcal{A}$ oraz że podzbiór zbioru $A$ nie musi należeć do rodziny $\mathcal{A}$. Ale oczywistym jest, że jeśli $A$ jest zbiorem pustym lub niepustym(nie ma to znaczenia) a $\mathcal{A}$ jest rodziną zbiorów, której elementem jest zbiór pusty to wówczas zbiór pusty należy do rodziny $\mathcal{A}$. Przykładowo jeżeli mamy rodzinę, która zawiera jako swój element zbiór pusty oraz dodatkowo jakiekolwiek zbiory(zbiór) niepuste(niepusty) to wówczas zbiór pusty jako podzbiór zbioru pustego a także każdego istniejącego zbioru-w tym każdego niepustego zbioru rodziny $\mathcal{A}$-należy do rodziny $\mathcal{A}$.  Uściślając-powodem dla którego $\emptyset\in\mathcal{A}$ jest $\emptyset\in\mathcal{A}$. Z faktu, że zbiór pusty jest podzbiorem każdego zbioru nie wynika, że zbiór pusty należy do danej rodziny zbiorów. Zatem jeśli mamy rodzinę zbiorów, której elementem jest zbiór pusty to wówczas zachodzi sytuacja, że podzbiór pewnego niepustego zbioru A z tej rodziny-jeśli taki istnieje- należy do rodziny $\mathcal{A}$, a jest to zbiór pusty. Rzecz jasna, tak jak wspomniałem wcześniej rodzina, której jedynym elementem jest zbiór pusty jest rodziną do której zbiór pusty należy. Oczywiście może istnieć rodzina zbiorów, której elementem jest zbiór pusty ale należą do niej także niepuste zbiory. Podsumowując-warunkiem koniecznym i wystarczającym należenia pewnego podzbioru zbioru $A$ do rodziny $\mathcal{A}$ jest należenie tego podzbioru do rodziny $\mathcal{A}$. Należy też pamiętać, że zawsze zachodzi relacja należenia zbioru pustego do zbioru potęgowego każdego zbioru, ponieważ zbiór pusty jest jest podzbiorem każdego zbioru.
+\end{remark}
+\begin{remark}
+Zaprzeczenie definicji zawierania rodzin zbiorów: $\\$
+dla dowolnych rodzin $\mathcal{A}$ i $\mathcal{B}$:
+$\neg(\mathcal{A}\subseteq\mathcal{B})\Leftrightarrow \neg(\forall A\in\mathcal{A}:A\in\mathcal{B})\Leftrightarrow \exists A\in\mathcal{A}:A\notin\mathcal{B}$
+\end{remark}
+\begin{definition}
+Definicja zbioru potęgowego: $\\$
+Zbiór $\mathcal{P}(X)$ złożony ze wszystkich podzbiorów zbioru $X$ nazywamy zbiorem potęgowym zbioru $X$.
+\end{definition}
+\begin{remark}
+Z definicji rodziny zbiorów i zbioru potęgowego wynika, że zbiór potęgowy zbioru $X$ jest rodziną zbiorów 
+ale z uściśleniem, że taką rodziną zbiorów, do której należą wszystkie podzbiory zbioru $X$, a zatem także zbiór pusty, który jest podzbiorem każdego zbioru. Tak więc można stwierdzić, że
+zbiór potęgowy jest szczególnym przypadkiem rodziny zbiorów, ponieważ nie każda rodzina zbiorów zawiera zbiór pusty jako swój element.
+\end{remark}
+\begin{remark}
+Z definicji rodziny zbiorów wynika, że zbiór $\{\emptyset\}$ jest rodziną zbiorów, której elementem jest zbiór pusty.
+Zatem $\emptyset\in\{\emptyset\}$ oraz skoro $\emptyset\subseteq\emptyset$ to $\emptyset\in\mathcal{P}(\emptyset)$.
+Wówczas $\{\emptyset\}\subseteq\mathcal{P}(\emptyset)$. $\\$ 
+Należy rozrózniać relacje $\{\emptyset\}\subseteq\mathcal{P}(\emptyset)$ i $\emptyset\in\mathcal{P}(\emptyset)$.
+Pierwsza oznacza, że rodzina zbiorów, której jedynym elementem jest zbiór pusty zawiera się w zbiorze potęgowym zbioru pustego. Druga relacja oznacza, ze zbiór pusty należy
+do zbioru potęgowego zbioru pustego. Bo zbiór pusty jest podzbiorem zbioru pustego. Na poziomie rodzin zbiorów jest tak, że rodzina zbiorów nie należy do drugiej rodziny zbiorów ale zawiera się w niej.
+Czyli tak jak na poziomie zbiór-zbiór. Pewien zbiór nie należy do innego zbioru lecz się w nim zawiera.
+Inaczej jest gdy operujemy na poziomie zbiór-rodzina zbiorów. Zbiór nie może zawierać się w rodzinie zbiorów, ponieważ jest jej elementem. Zatem zbiór należy do rodziny zbiorów. To jak jak w przypadku poziomu zbiór-element zbioru. 
+Element zbioru nie zawiera się w zbiorze. Element zbioru do niego należy. $\\$
+Zauważmy też, że skoro zbiór pusty jest podzbiorem każdego zbioru to  $\forall X:\emptyset\in\mathcal{P}(X)$.
+Zatem nie istnieje zbiór potęgowy, którego elementem nie byłby zbiór pusty. Co jest równoważne temu, że nie istnieje zbiór $X$, którego zbiór potęgowy nie zawiera zbioru
+pustego jako swojego elementu. Wówczas zachodzi równoważność: $\forall X (\emptyset\in\mathcal{P}(X))\Leftrightarrow \neg\exists X (\emptyset\notin\mathcal{P}(X))$.
+\end{remark}
+\begin{property}
+I prawo de Morgana dla rodziny zbiorów:
+dla dowolnej rodziny zbiorów $\mathcal{A}$ zachodzi równość:
+$X\setminus \bigcup \mathcal{A}=\bigcap \{X\setminus A: A\in \mathcal{A}\}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$, dowolny zbiór $X$ i dowolną rodzinę zbiorów $\mathcal{A}$. Niech $x\in \bigcap \{X\setminus A: A\in \mathcal{A}\}$. Wówczas z definicji iloczynu zbiorów wynika, że dla każdego $A\in \mathcal{A}$  jest $x\in X\setminus A$. Następnie z definicji różnicy zbiorów wynika, że dla każdego $A\in \mathcal{A}$ jest $x\in X$ i $x\notin A$. Zatem nie istnieje taki zbiór $A\in \mathcal{A}$, że $x\in A$. Wówczas z definicji sumy zbiorów wynika, że $x\notin \bigcup \mathcal{A}$. Ale skoro jednocześnie $x\in X$ to z definicji różnicy zbiorów otrzymujemy, że $x\in X$ i $x\notin\bigcup \mathcal{A}$, czyli $x\in X\setminus\bigcup\mathcal{A}$. Wobec dowolności wyboru elementu $x$ udowodniliśmy prawdziwość implikacji: $x\in \bigcap\{X\setminus A: A\in \mathcal{A}\}\Rightarrow x\in X\setminus \bigcup \mathcal{A}$. Zatem $\bigcap\{X\setminus A: A\in \mathcal{A}\}\subseteq X\setminus \bigcup \mathcal{A}$ $\\$
+Ustalmy dowolny element $x$, dowolny zbiór $X$ i dowolną rodzinę zbiorów $\mathcal{A}$. Niech $x\in X\setminus \bigcup \mathcal{A}$. Z definicji różnicy zbiorów wynika, że $x\in X$ i $x\notin \bigcup \mathcal{A}$. Ponieważ $x\notin \bigcup \mathcal{A}$ to z kolei z definicji sumy zbiorów wynika, że nie istnieje taki zbiór $A\in \mathcal{A}$, że $x\in A$. Wówczas z definicji różnicy zbiorów dostajemy, że dla każdego $A\in \mathcal{A}$ jest $x\in X\setminus A$, a z definicji iloczynu zbiorów wynika następnie, że $x\in \bigcap \{X\setminus A: A\in \mathcal{A}\}$. Wobec dowolności wyboru elementu $x$ otrzymujemy $x\in X\setminus \bigcup \mathcal{A}\Rightarrow x\in \bigcap \{X\setminus A: A\in \mathcal{A}\}$
+Stąd $X\setminus \bigcup \mathcal{A}\subseteq\bigcap \{X\setminus A: A\in \mathcal{A}\}$. Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+II prawo de Morgana dla rodziny zbiorów:
+dla dowolnej rodziny zbiorów $\mathcal{A}$ zachodzi równość:
+$X\setminus \bigcap\mathcal{A}=\bigcup\{X\setminus A: A\in \mathcal{A}\}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$, dowolny zbiór $X$ oraz dowolną rodzinę zbiorów $\mathcal{A}$. Niech $x\in \bigcup \{X\setminus A: A\in \mathcal{A}\}$. Wówczas z definicji sumy zbiorów wynika, że istnieje co najmniej jeden taki zbiór $A\in \mathcal{A}$, że $x\in X\setminus A$, a z definicji różnicy zbiorów dostajemy, że dla co najmniej jednego zbioru $A\in \mathcal{A}$ jest $x\notin A$. Wówczas z definicji iloczynu zbiorów wynika, że $x\notin \bigcap\mathcal{A}$. Ale ponieważ $x\in X\setminus A$ to jednocześnie mamy $x\in X$, czyli $x\in X$ i $x\notin \bigcap\mathcal{A}$ co z definicji różnicy zbiorów daje nam $x\in X\setminus \bigcap\mathcal{A}$. Wobec dowolności wyboru elementu $x$ otrzymujemy ostatecznie, że $x\in \bigcup\{X\setminus A: A\in \mathcal{A}\}\Rightarrow x\in X\setminus \bigcap\mathcal{A}$. Stąd $\bigcup\{X\setminus A: A\in \mathcal{A}\}\subseteq X\setminus \bigcap\mathcal{A}$ $\\$
+Ustalmy dowolny element $x$, dowolny zbiór $X$ oraz dowolną rodzinę zbiorów $\mathcal{A}$. Niech $x\in X\setminus \bigcap\mathcal{A}$. Wówczas z definicji różnicy zbiorów wynika, że $x\in X$ i $x\notin \bigcap\mathcal{A}$. Z definicji iloczynu zbiorów wynika, że istnieje taki zbiór $A\in \mathcal{A}$ dla którego $x\notin A$. Zatem istnieje $A\in \mathcal{A}$ dla którego $x\in X\setminus A$, bo jednocześnie $x\in X$, a wówczas z definicji sumy zbiorów mamy $x\in \bigcup \{X\setminus A: A\in \mathcal{A}\}$. Wobec dowolności wyboru elementu $x$ otrzymujemy, że $x\in X\setminus \bigcap\mathcal{A}\Rightarrow x\in \bigcup\{X\setminus A: A\in \mathcal{A}\}$. Stąd $X\setminus \bigcap\mathcal{A}\subseteq \bigcup\{X\setminus A: A\in \mathcal{A}\}$. Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Prawo dystrybutywności dla rodzin zbiorów:
+dla dowolnych rodzin zbiorów $\mathcal{A}$ i $\mathcal{B}$ zachodzi równość:
+$\bigcup\mathcal{A}\cap\bigcup\mathcal{B}=\bigcup\{A\cap B: A\in\mathcal{A}\ i \ B\in\mathcal{B}\}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in \bigcup\{A\cap B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$. Wówczas z definicji sumy zbiorów wynika, że istnieje co najmniej jeden zbiór $A\in \mathcal{A}$ i co najmniej jeden zbiór $B\in \mathcal{B}$, dla których $x\in A\cap B$, czyli z definicji iloczynu zbiorów mamy  $x\in A$ i $x\in B$. Ale z definicji sumy zbiorów wynika, że skoro istnieją $A\in \mathcal{A}$ i $B\in \mathcal{B}$ dla których $x\in A$ i $x\in B$ to $x\in \bigcup\mathcal{A}$ i $x\in \bigcup\mathcal{B}$ a wówczas z definicji iloczynu zbiorów dostajemy, że $x\in \bigcup\mathcal{A}\cap \bigcup\mathcal{B}$. Wobec dowolności wyboru elementu $x$ otrzymujemy, że $x\in \bigcup\{A\cap B: A\in \mathcal{A}\ i \ B\in \mathcal{B} \}\Rightarrow x\in \bigcup\mathcal{A}\cap \bigcup\mathcal{B}$. Stąd $\bigcup\{A\cap B: A\in \mathcal{A}\ i \ B\in \mathcal{B} \}\subseteq \bigcup\mathcal{A}\cap \bigcup\mathcal{B}$  $\\$
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in \bigcup\mathcal{A}\cap \bigcup\mathcal{B}$. Wówczas z definicji iloczynu zbiorów wynika, że $x\in \bigcup\mathcal{A}$ i $x\in \bigcup\mathcal{B}$. Ale z definicji sumy zbiorów wynika, że $x\in \bigcup\mathcal{A}$ wtedy i tylko wtedy, gdy istnieje co najmniej jeden taki zbiór $A\in\mathcal{A}$ dla którego $x\in A$ i podobnie: $x\in \bigcup\mathcal{B}$ wtedy i tylko wtedy, gdy istnieje co najmniej jeden taki zbiór $B\in\mathcal{B}$ dla którego $x\in B$. Wówczas z definicji iloczynu zbiorów dostajemy, że istnieją takie zbiory $A\in\mathcal{A}$ i $B\in\mathcal{B}$ dla których $x\in A\cap B$, a następnie z definicji sumy zbiorów mamy  $x\in\bigcup\{A\cap B: A\in \mathcal{A}\ i \ B\in\mathcal{B}\}$. Wobec dowolności wyboru elementu $x$ otrzymujemy $x\in \bigcup\mathcal{A}\cap\bigcup\mathcal{B}\Rightarrow x\in \bigcup\{A\cap B: A\in\mathcal{A}\ i \ B\in\mathcal{B}\}$. Stąd $\bigcup\mathcal{A}\cap\bigcup\mathcal{B}\subseteq \bigcup\{A\cap B: A\in\mathcal{A}\ i \ B\in\mathcal{B}\}$.
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Prawo rozdzielności iloczynu zbiorów względem sumy rodzin zbiorów:
+dla dowolnych rodzin zbiorów $\mathcal{A}$ i $\mathcal{B}$ zachodzi równość:
+$\bigcap\mathcal{A}\cup\bigcap\mathcal{B}=\\=\bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in \bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$. Wówczas z definicji iloczynu zbiorów wynika, że dla każdego $A\in \mathcal{A}$ i dla każdego $B\in \mathcal{B}$ jest $x\in A\cup B$. Zatem suma każdej pary zbiorów $A\in \mathcal{A}$ i $B\in \mathcal{B}$ musi zawierać element $x$. A wówczas oznacza to, że nie może być jednocześnie takich dwóch zbiorów $A\in \mathcal{A}$ i $B\in \mathcal{B}$ dla których $x\notin A$ i $x\notin B$, czyli z definicji sumy zbiorów nie istnieją takie dwa zbiory $A\in \mathcal{A}$ i $B\in \mathcal{B}$ dla których $x\notin A\cup B$. Zatem jeżeli istnieje $A\in \mathcal{A}$ dla którego $x\notin A$ to musi być $x\in B$ dla każdego $B\in \mathcal{B}$ czyli $x\in \bigcap\mathcal{B}$. Jeżeli natomiast istnieje $B\in \mathcal{B}$ dla którego $x\notin B$ to musi być $x\in A$ dla każdego $A\in \mathcal{A}$, czyli $x\in \bigcap\mathcal{A}$. Wówczas $x\in \bigcap\mathcal{A}$ lub $x\in \bigcap\mathcal{B}$ co z definicji sumy zbiorów daje nam $x\in \bigcap\mathcal{A}\cup\bigcap\mathcal{B}$. Wobec dowolności wyboru elementu $x$ otrzymujemy zatem, że $x\in \bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}\Rightarrow x\in \bigcap\mathcal{A}\cup\bigcap\mathcal{B}$. Stąd $\bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}\subseteq \bigcap\mathcal{A}\cup\bigcap\mathcal{B}$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in \bigcap\mathcal{A}\cup\bigcap\mathcal{B}$. Wówczas z definicji sumy zbiorów wynika, że $x\in \bigcap\mathcal{A}$ lub $x\in \bigcap\mathcal{B}$. Następnie z definicji iloczynu zbiorów wynika, że $x\in \bigcap\mathcal{A}$ wtedy i tylko wtedy, gdy dla każdego $A\in \mathcal{A}$ jest $x\in A$ lub $x\in \bigcap\mathcal{B}$ wtedy i tylko wtedy, gdy dla każdego $B\in \mathcal{B}$ jest $x\in B$. Wówczas nie istnieje taka para zbiorów $A\in \mathcal{A}$ i $B\in \mathcal{B}$ dla której $x\notin A$ i $x\notin B$. Dla każdej pary zbiorów $A\in \mathcal{A}$ i $B\in \mathcal{B}$ jest natomiast  $x\in A$ lub $x\in B$ co z definicji sumy zbiorów daje nam, że $x\in A\cup B$. Wówczas z definicji iloczynu zbiorów dostajemy $x\in \bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$. Wobec dowolności wyboru elementu $x$ otrzymujemy zatem $x\in \bigcap\mathcal{A}\cup\bigcap\mathcal{B}\Rightarrow x\in \bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$. Stąd $\bigcap\mathcal{A}\cup\bigcap\mathcal{B}\subseteq \bigcap\{A\cup B: A\in \mathcal{A}\ i \ B\in \mathcal{B}\}$.
+Ponieważ zachodzą obie inkluzje to zadana równość jest prawdziwa.
+\end{proof}
+\begin{property}
+Suma ogólna sumy rodzin zbiorów jest sumą sum ogólnych tych rodzin, czyli $\bigcup(\mathcal{A}\cup\mathcal{B})=\bigcup\mathcal{A}\cup\bigcup\mathcal{B}$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$.  Niech $x\in\bigcup\mathcal{A}\cup\bigcup\mathcal{B}$. Wówczas z definicji $x\in\bigcup\mathcal{A}$ lub $x\in\bigcup\mathcal{B}$. Zatem z definicji istnieje zbiór $A\in\mathcal{A}$ dla którego $x\in A$ lub istnieje zbiór $B\in\mathcal{B}$ dla którego $x\in B$. Ale wówczas i tak $A\in\mathcal{A}\cup\mathcal{B}$ i $B\in\mathcal{A}\cup\mathcal{B}$ bo każdy zbiór z rodziny A należy do sumy $\mathcal{A}\cup\mathcal{B}$ i podobnie każdy zbiór $B$ z rodziny $\mathcal{B}$. Ponadto może być też tak, że jakiś zbiór z rodziny $\mathcal{A}$ należy do rodziny $\mathcal{B}$ i na odwrót-jakiś zbiór $B$ z rodziny $\mathcal{B}$ może należeć do rodziny $\mathcal{A}$. Ale nam wystarczy jeden zbiór $A\in\mathcal{A}\cup\mathcal{B}$ lub $B\in\mathcal{A}\cup\mathcal{B}$, zawierający element $x$. Wówczas $x\in\bigcup(\mathcal{A}\cup\mathcal{B})$ bez względu czy $x\in A$ czy $x\in B$. Stąd prawdziwa jest inkluzja $\bigcup\mathcal{A}\cup\bigcup\mathcal{B}\subseteq\bigcup(\mathcal{A}\cup\mathcal{B})$. $\\$
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in\bigcup(\mathcal{A}\cup\mathcal{B})$. Wówczas z definicji istnieje zbiór $X\in\mathcal{A}\cup\mathcal{B}$ dla którego $x\in X$. Zatem $X\in\mathcal{A}$ lub $X\in\mathcal{B}$. Wówczas z definicji istnieje zbiór $X\in\mathcal{A}$ lub $X\in\mathcal{B}$ dla którego $x\in X$. Stąd $x\in\bigcup\mathcal{A}$ lub $x\in\bigcup\mathcal{B}$. Zatem $x\in\bigcup\mathcal{A}\cup\bigcup\mathcal{B}$. Czyli zachodzi inkluzja $\bigcup(\mathcal{A}\cup\mathcal{B})\subseteq\bigcup\mathcal{A}\cup\bigcup\mathcal{B}$. $\\$
+Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{remark}
+W powyższym dowodzie zadanej równości zauważmy, że operujemy na poziomie równości zbiorów.
+Zauważmy, że o ile suma $\mathcal{A}\cup\mathcal{B}$ jest sumą rodzin zbiorów, czyli suma $\mathcal{A}\cup\mathcal{B}$ jest rodziną zbiorów to suma $\bigcup(\mathcal{A}\cup\mathcal{B})$ jest zbiorem.
+Jest to po prostu suma ogólna rodziny $\mathcal{A}\cup\mathcal{B}$. Po drugiej stronie zadanej równości mamy sumę dwóch sum ogólnych $\bigcup\mathcal{A}$ i $\bigcup\mathcal{B}$.
+Obie te sumy są zbiorami, a więc ich suma także jest zbiorem, bo suma zbiorów jest zbiorem.
+\end{remark}
+\begin{property}
+Czy równość $\bigcap(\mathcal{A}\cap\mathcal{B})=\bigcap\mathcal{A}\cap\bigcap\mathcal{B}$ zachodzi dla dowolnych rodzin $\mathcal{A}$ i $\mathcal{B}$?
+\end{property}
+\begin{proof}[\text{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in\bigcap\mathcal{A}\cap\bigcap\mathcal{B}$. Wówczas $x\in\bigcap\mathcal{A}$ i $x\in\bigcap\mathcal{B}$. Zatem dla każdego zbioru $A\in\mathcal{A}$ i dla każdego zbioru $B\in\mathcal{B}$ jest $x\in A$ i $x\in B$. Ale to nie oznacza, że jakikolwiek zbiór $A$ z rodziny $\mathcal{A}$ należy do rodziny $\mathcal{B}$ lub jakikolwiek zbiór $B$ z rodziny $\mathcal{B}$ należy do rodziny $\mathcal{A}$.$\\$
+Niech zatem $\mathcal{A}=\{\{x_{1}\},\{x_{1},x_{2},x_{3}\}\}$ oraz $\mathcal{B}=\{\{x_{1},x_{2}\},\{x_{1},x_{3}\}\}$. Wówczas $\bigcap\mathcal{A}=\{x_{1}\}$ i $\bigcap\mathcal{B}=\{x_{1}\}$. Zatem $\bigcap\mathcal{A}\cap\bigcap\mathcal{B}=\{x_{1}\}$. Ale zauważmy, że rodzina $\mathcal{A}\cap\mathcal{B}$ nie zawiera żadnego zbioru bo rodziny $\mathcal{A}$ i $\mathcal{B}$ nie zawierają zbioru wspólnego. Jedynie $\{x_{1}\}\subseteq\{x_{1},x_{2}\}$ i $\{x_{1}\}\subseteq\{x_{1},x_{3}\}$ oraz $\{x_{1},x_{2}\}\subseteq\{x_{1},x_{2},x_{3}\}$ i $\{x_{1},x_{3}\}\subseteq\{x_{1},x_{2},x_{3}\}$. Stąd inkluzja $\bigcap\mathcal{A}\cap\bigcap\mathcal{B}\subseteq\bigcap(\mathcal{A}\cap\mathcal{B})$ w ogólności nie zachodzi. $\\$
+Ustalmy dowolny element $x$ oraz dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in\bigcap(\mathcal{A}\cap\mathcal{B})$. Wówczas z definicji dla każdego zbioru $X\in\mathcal{A}\cap\mathcal{B}$ jest $x\in X$. Ale $X\in\mathcal{A}$ i $X\in\mathcal{B}$. Nie oznacza to jednak, że dla każdego zbioru $A\in\mathcal{A}$ mamy $x\in A$ ani, że dla każdego zbioru $B\in\mathcal{B}$ mamy $x\in B$.$\\$
+Niech $\mathcal{A}=\{\{x_{1}\},\{x_{1},x_{2},x_{3}\}\}$ oraz $\mathcal{B}=\{\{x_{1}\},\{x_{2},x_{3}\}\}$. Wówczas $\mathcal{A}\cap\mathcal{B}=\\=\{\{x_{1}\}\}$. Zatem $\bigcap(\mathcal{A}\cap\mathcal{B})=x_{1}$. Wówczas o ile $\bigcap\mathcal{A}=\{x_{1}\}$ to $\bigcap\mathcal{B}=\emptyset$. Czyli prawa strona zadanej równości jest zbiorem pustym zaś lewa nie. Stąd inkluzja $\bigcap(\mathcal{A}\cap\mathcal{B})\subseteq\bigcap\mathcal{A}\cap\bigcap\mathcal{B}$ w ogólności nie zachodzi. Wobec tego, że nie zachodzą obie inkluzje to zadana równość w ogólności nie jest prawdziwa. $\\$
+Można to sformułować w następujący sposób: iloczyn ogólny iloczynu rodzin zbiorów nie jest iloczynem iloczynów ogólnych tych rodzin.
+\end{proof}
+\begin{property}
+Czy dla dowolnych rodzin zbiorów $\mathcal{A}$ i $\mathcal{B}$ prawdziwa jest implikacja:
+$\mathcal{A}\subseteq\mathcal{B}\Rightarrow \bigcup\mathcal{A}\subseteq \bigcup\mathcal{B}$ ?
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ i dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$. Niech $x\in \bigcup\mathcal{A}$. Wówczas istnieje taki zbiór $A\in \mathcal{A}$, dla którego $x\in A$. Z założenia wynika, że $A\in \mathcal{B}$. Zatem $x\in \bigcup\mathcal{B}$. Co daje nam, że każdy element zbioru $\bigcup\mathcal{A}$ należy do zbioru $\bigcup\mathcal{B}$ stąd $\bigcup\mathcal{A}\subseteq\bigcup\mathcal{B}$.
+Czyli zadana implikacja jest prawdziwa w ogólności.
+\end{proof}
+\begin{remark}
+Inna wersja dowodu powyższej implikacji.$\\$
+Ustalmy dowolne rodziny zbiorów $\mathcal{A}$ i $\mathcal{B}$, gdzie $\mathcal{A}\subseteq\mathcal{B}$ oraz dowolny zbiór $A\in\mathcal{A}$. Ponieważ $\mathcal{A}\subseteq\mathcal{B}$ to z definicji zawierania się rodzin zbiorów wynika, że $A\in\mathcal{B}$. Wówczas każdy zbiór $A$ z rodziny $\mathcal{A}$ należy do rodziny $\mathcal{B}$. Weźmy dowolny element $x\in A$. Ponieważ każdy zbiór $A$ należy do rodziny $\mathcal{B}$ to wówczas dla każdego elementu $x$ z każdego zbioru $A$ z rodziny $\mathcal{A}$ mamy $x\in\bigcup\mathcal{B}$. Ale z definicji sumy ogólnej rodziny zbiorów wynika, że dla każdego $x\in A$ jest $x\in\bigcup\mathcal{A}$. Stąd $x\in\bigcup\mathcal{A}\Rightarrow x\in\bigcup\mathcal{B}$. Co z definicji zawierania się zbiorów daje $\bigcup\mathcal{A}\subseteq\bigcup\mathcal{B}$.
+\end{remark}
+\begin{property}
+Czy dla dowolnych rodzin zbiorów $\mathcal{A}$ i $\mathcal{B}$ prawdziwa jest implikacja:
+$\bigcup\mathcal{A}\subseteq\bigcup\mathcal{B}\Rightarrow \mathcal{A}\subseteq\mathcal{B}$ ?
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $A=\{x_{1},x_{2}\}$, $\mathcal{A}=\{A\}$ oraz $\mathcal{B}=\{\{x_{1}\},\{x_{2}\}\}$. Zatem $\mathcal{A}=\{\{x_{1},x_{2}\}\}$. Wówczas $\bigcup\mathcal{A}=\{x_{1},x_{2}\}$ oraz $\bigcup\mathcal{B}=\{x_{1},x_{2}\}$. Zatem $\bigcup\mathcal{A}=\bigcup\mathcal{B}$ czyli spełnione jest $\bigcup\mathcal{A}\subseteq\bigcup\mathcal{B}$. Ale $\{x_{1},x_{2}\}\notin\mathcal{B}$. Jedynie $A\supseteq\{x_{1}\}\in\mathcal{B}$ i $A\supseteq\{x_{2}\}\in\mathcal{B}$. A więc tylko podzbiory zbioru $A$ należą do rodziny $\mathcal{B}$ natomiast zbiór $A\notin\mathcal{B}$. Zatem w ogólności zadana implikacja nie zachodzi.
+\end{proof}
+\begin{property}
+Dla dowolnego zbioru $A$ zachodzi równość:
+$\bigcup\mathcal{P}(A)=A$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolny element $x$ oraz dowolny zbiór $A$. Niech $x\in A$. Wówczas z definicji $A\in\mathcal{P}(A)$. Ale skoro $x\in\{x\}\subseteq A$ to $\{x\}\in\mathcal{P}(A)$. Stąd z definicji sumy rodziny zbiorów wynika, że $x\in\bigcup\mathcal{P}(A)$. A zatem wobec dowolności wyboru elementu $x$ mamy $A\subseteq\bigcup\mathcal{P}(A)$. $\\$
+Ustalmy dowolny element $x$ oraz dowolny zbiór $A$. Niech $x\in\bigcup\mathcal{P}(A)$. Wówczas z definicji sumy rodziny zbiorów wynika, że istnieje taki zbiór $X\in\mathcal{P}(A)$ dla którego $x\in X$. Ale skoro $X\in\mathcal{P}(A)$ to z definicji $X\subseteq A$. Stąd $x\in A$. Zatem wobec dowolności wyboru elementu $x$ dostajemy $\bigcup\mathcal{P}(A)\subseteq A$. Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{property}
+Czy równość $\mathcal{P}(A\cup B)=\mathcal{P}(A)\cup\mathcal{P}(B)$ jest prawdziwa dla dowolnych zbiorów $A$ i $B$?
+\end{property}
+\begin{proof}
+Ustalmy dowolne zbiory $A$ i $B$. Weźmy zbiór $X\in \mathcal{P}(A)\cup \mathcal{P}(B)$. Wówczas $X\in \mathcal{P}(A)$ lub $X\in \mathcal{P}(B)$. Zatem $X\subseteq A$ lub $X\subseteq B$. Stąd $X\subseteq A\cup B$. A więc $X\in \mathcal{P}(A\cup B)$. Wówczas dla dowolnych $A$ i $B$ zachodzi $\mathcal{P}(A)\cup\mathcal{P}(B)\subseteq\mathcal{P}(A\cup B)$. $\\$
+Ustalmy dowolne zbiory $A$ i $B$. Weźmy dowolny zbiór $X\in\mathcal{P}(A\cup B)$. Zatem $X\subseteq A\cup B$. Wówczas istnieją dwie możliwości. Jedną z nich jest $X\subseteq A$ lub $X\subseteq B$. Wówczas $X\in \mathcal{P}(A)$ lub $X\in\mathcal{P}(B)$, a zatem w tym przypadku $X\in\mathcal{P}(A)\cup\mathcal{P}(B)$.  Druga możliwość: $X\not\subseteq A$ i $X\not\subseteq B$. Czyli $X\notin\mathcal{P}(A)$ i $X\notin\mathcal{P}(B)$ co daje nam, że $X\notin\mathcal{P}(A)\cup\mathcal{P}(B)$. Wówczas nie zachodzi $\mathcal{P}(A\cup B)\subseteq\mathcal{P}(A)\cup\mathcal{P}(B)$, ponieważ istnieje chociażby taki zbiór $X\subseteq A\cup B$, że $X=\{x_{1},x_{2}\}$ oraz zbiory $A=\{x_{1}\}$ i $B=\{x_{2}\}$. Czyli $\{x_{1},x_{2}\}\subseteq \{x_{1}\}\cup\{x_{2}\}$ ale $\{x_{1},x_{2}\}\not\subseteq A$ i $\{x_{1},x_{2}\}\not\subseteq B$. Zatem dowodzi to tego, iż nie dla każdych zbiorów $A$ i $B$ zadana inkluzja zachodzi, a więc zadana równość nie jest spełniona w ogólności.
+\end{proof}
+\begin{property}
+Dla jakich zbiorów $A$ i $B$ zachodzi równość: $\mathcal{P}(A\cup B)=\\=\mathcal{P}(A)\cup\mathcal{P}(B)$ ?
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ponieważ inkluzja $\mathcal{P}(A)\cup\mathcal{P}(B)\subseteq\mathcal{P}(A\cup B)$ zachodzi w ogólności to rozważymy inkluzję
+przeciwną dla szczególnych warunków. $\\$
+Ustalmy dowolne zbiory $A$ i $B$. Niech $A\subseteq B$ lub $B\subseteq A$. Weźmy dowolny zbiór $X\subseteq A\cup B$. Wówczas $X\in \mathcal{P}(A\cup B)$. Jeżeli $A\subseteq B$ to $A\cup B=B$. Analogicznie: jeżeli $B\subseteq A$ to $A\cup B=A$. Wówczas z założeń wynika, że $X\subseteq A$ lub $X\subseteq B$. Zatem $X\in \mathcal{P}(A)$ lub $X\in\mathcal{P}(B)$ co daje nam, że $X\in \mathcal{P}(A)\cup\mathcal{P}(B)$. Stąd przy dodatkowych założeniach $\mathcal{P}(A\cup B)\subseteq \mathcal{P}(A)\cup\mathcal{P}(B)$.
+Zatem równość $\mathcal{P}(A\cup B)=\mathcal{P}(A)\cup\mathcal{P}(B)$ zachodzi tylko dla zbiorów $A\subseteq B$ lub $B\subseteq A$.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A$ i $B$ zachodzi równość: 
+$\mathcal{P}(A)\cap\mathcal{P}(B)=\mathcal{P}(A\cap B)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $A$ i $B$. Weźmy dowolny zbiór $X\in\mathcal{P}(A\cap B)$. Wówczas $X\subseteq A\cap B$. Zatem $X\subseteq A$ i $X\subseteq B$. Stąd $X\in\mathcal{P}(A)$ i $X\in\mathcal{P}(B)$ co z definicji daje nam $X\in\mathcal{P}(A)\cap\mathcal{P}(B)$. Wówczas $\mathcal{P}(A\cap B)\subseteq\mathcal{P}(A)\cap\mathcal{P}(B)$. $\\$
+Ustalmy dowolne zbiory $A$ i $B$. Weźmy dowolny zbiór $X\in\mathcal{P}(A)\cap\mathcal{P}(B)$. Wówczas $X\in\mathcal{P}(A)$ i $X\in\mathcal{P}(B)$. Zatem $X\subseteq A$ i $X\subseteq B$ co z definicji daje nam $X\subseteq A\cap B$. Stąd $X\in\mathcal{P}(A\cap B)$. Wówczas $\mathcal{P}(A)\cap\mathcal{P}(B)\subseteq\mathcal{P}(A\cap B)$. Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A$ i $B$ zachodzi:
+$A\cap B=\emptyset\Leftrightarrow \mathcal{P}(A)\cap\mathcal{P}(B)=\{\emptyset\}$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $A$ i $B$. Niech $A\cap B=\emptyset$. Wówczas $\mathcal{P}(A)\cap\mathcal{P}(B)=\mathcal{P}(A\cap B)=\mathcal{P}(\emptyset)=\{\emptyset\}$. Zatem zachodzi implikacja $A\cap B=\emptyset\Rightarrow \\ \Rightarrow \mathcal{P}(A)\cap\mathcal{P}(B)=\{\emptyset\}$. $\\$
+Ustalmy dowolne zbiory $A$ i $B$. Niech $\mathcal{P}(A)\cap\mathcal{P}(B)=\{\emptyset\}$. Ponieważ dla dowolnych zbiorów $A$ i $B$ zachodzi równość $\mathcal{P}(A)\cap\mathcal{P}(B)=\mathcal{P}(A\cap B)$ to $\mathcal{P}(A\cap B)=\{\emptyset\}$. Wówczas $A\cap B=\emptyset$. Stąd prawdziwa jest implikacja $\mathcal{P}(A)\cap\mathcal{P}(B)=\{\emptyset\}\Rightarrow A\cap B=\emptyset$. $\\$
+Ponieważ zachodzą obie implikacje to zadana równoważność jest w ogólności prawdziwa.
+\end{proof}
+\begin{property}
+Dla dowolnych zbiorów $A$ i $B$ zachodzi: $\\$
+$A\subseteq B\Leftrightarrow \mathcal{P}(A)\subseteq\mathcal{P}(B)$
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Ustalmy dowolne zbiory $A$ i $B$. Weźmy dowolny zbiór $X\subseteq A$. Wówczas z definicji $X\in\mathcal{P}(A)$. Ale ponieważ $X\subseteq A$ i $A\subseteq B$ to $X\subseteq B$ czyli $X\in\mathcal{P}(B)$. Stąd wobec dowolności wyboru zbioru $X$ otrzymujemy, że $\mathcal{P}(A)\subseteq\mathcal{P}(B)$. Zatem implikacja $A\subseteq B\Rightarrow \mathcal{P}(A)\subseteq\mathcal{P}(B)$ jest prawdziwa. $\\$
+Ustalmy dowolne zbiory $A$ i $B$ oraz dowolny element $x$. Niech $x\in A$. Wówczas $\{x\}\subseteq A$. Stąd $\{x\}\in \mathcal{P}(A)$. Ale z założenia $\mathcal{P}(A)\subseteq\mathcal{P}(B)$. Zatem $\{x\}\in \mathcal{P}(B)$. Wówczas $x\in B$. Stąd wobec dowolności wyboru elementu $x$ otrzymujemy, że $A\subseteq B$. Zatem implikacja $\mathcal{P}(A)\subseteq\mathcal{P}(B)\Rightarrow A\subseteq B$ jest prawdziwa. $\\$
+Ponieważ zachodzą obie implikacje to zadana równoważność jest w ogólności prawdziwa.
+\end{proof}
+\begin{remark}
+W powyższym dowodzie pierwszej implikacji zaczęliśmy od wyboru dowolnego zbioru $X$. Wychodząc z założenia o zawieraniu się zbiorów
+mieliśmy udowodnić, że wówczas zawierają się zbiory potęgowe tych zbiorów. A więc z obiektów mniej złożonych-jak pojedyncze zbiory-przeszliśmy
+do obiektów bardziej złożonych czyli do rodzin zbiorów. Zaś w dowodzie drugiej implikacji zaczęliśmy od wybrania dowolnego elementu $x$.
+Wówczas mogliśmy tak zrobić, ponieważ w drugiej implikacji przechodziliśmy od zawierania się obiektów bardziej złożonych(zbiory potęgowe) do obiektów mniej 
+złożonych(zbiory). Zatem w dowodzie pierwszej implikacji nie wystarczyłoby odnieść się do pojedynczego elementu, ponieważ dowodząc zawierania się
+rodzin zbiorów należy użyć obiektów, które już zawierają elementy czyli do zbiorów. Zbiory potęgowe są obiektami zawierającymi zbiory a nie pojedyncze elementy.
+Czyli dowodząc relacji między nimi należy operować ich elementami czyli zbiorami. Natomiast w dowodzie drugiej implikacji należało odnieść się do pojedynczego elementu, ponieważ
+naszym celem było udowodnienie zawierania się zbiorów a te zawierają pojedyncze elementy.
+\end{remark}

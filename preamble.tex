@@ -1,0 +1,29 @@
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\frenchspacing
+\usepackage{amsthm, amsmath, amssymb}
+\renewcommand{\proofname}{\textbf{Dowód}}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicja}[chapter]
+\newtheorem{property}{Własność}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}{Uwaga}[chapter]
+\newtheorem{exercise}{Ćwiczenie}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Twierdzenie}[chapter]
+\renewcommand{\mathbf}[1]{#1}
+\renewcommand{\boldsymbol}[1]{#1}
+\usepackage{etoolbox}
+\makeatletter
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{%
+  \ifmmode
+    \text{#1}%
+  \else
+    \oldtextbf{#1}%
+  \fi
+}
+\makeatother
+\renewcommand{\bf}{\normalfont}

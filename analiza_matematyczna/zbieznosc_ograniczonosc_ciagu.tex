@@ -1,0 +1,33 @@
+\begin{theorem}
+    Każdy ciąg zbieżny jest ograniczony.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Z definicji jeżeli $\boldsymbol{\lim\limits_{n\to \infty }a_{n}=g}$ to dla 
+dowolnie małej liczby dodatniej $\boldsymbol{\epsilon}$ istnieje taka 
+liczba naturalna $\boldsymbol{N}$, że dla każdej liczby $\boldsymbol{n > N}$ 
+spełniona jest nierówność $\boldsymbol{\left |a_{n}-g\right| < \epsilon}$. 
+Niech $\boldsymbol{\epsilon=1}$. Wówczas prawie wszystkie wyrazy 
+ciągu $\boldsymbol{\left (a_{n}\right)}$ należą do zbioru 
+$\boldsymbol{\mathbb{U}\left (g;1\right)}$ dla każdego $\boldsymbol{n > N}$. 
+Zatem prawie wszystkie wyrazy ciągu $\boldsymbol{\left (a_{n}\right)}$ 
+należą do zbioru ograniczonego od dołu przez liczbę $\boldsymbol{g-1}$ 
+i od góry przez liczbę $\boldsymbol{g+1}$. Niech $\boldsymbol{g-1=m_{0}}$ 
+oraz $\boldsymbol{g+1=M_{0}}$. Musimy następnie znaleźć ograniczenie dolne i
+ górne dla zbioru początkowych wyrazów ciągu $\boldsymbol{\left (a_{n}\right)}$. 
+ Ponieważ liczba tych wyrazów jest skończona to musi istnieć dla nich 
+ ograniczenie dolne i górne. Wybierzmy zatem spośród wszystkich tych wyrazów 
+ wyraz najmniejszy i wyraz największy. Oznaczmy wyraz najmniejszy 
+ jako $\boldsymbol{m_{1}}$ oraz wyraz największy jako $\boldsymbol{M_{1}}$. 
+ Wówczas  $\boldsymbol{m_{1}}$ jest ograniczeniem dolnym zbioru początkowych 
+ wyrazów ciągu  $\boldsymbol{\left (a_{1},...,a_{N}\right)}$ zaś 
+ $\boldsymbol{M_{1}}$ jest ograniczeniem górnym tego zbioru. Mamy teraz dwa
+ ograniczenia dolne: $\boldsymbol{m_{0}}$ i $\boldsymbol{m_{1}}$ oraz dwa 
+ ograniczenia górne: $\boldsymbol{M_{0}}$ i $\boldsymbol{M_{1}}$. Należy zatem 
+ wybrać najmniejszą spośród liczb $\boldsymbol{\left (m_{0};m_{1}\right)}$: 
+ oznaczmy ją jako $\boldsymbol{m}$ oraz największą spośród 
+ $\boldsymbol{\left (M_{0};M_{1}\right)}$: oznaczmy ją jako $\boldsymbol{M}$. 
+ Wówczas dla każdego $\boldsymbol{n}$ otrzymujemy $\boldsymbol{a_{n} \geqslant m}$ 
+ i $\boldsymbol{a_{n} \leqslant M}$. Czyli dla każdego $\boldsymbol{n}$ 
+ jest $\boldsymbol{m \leqslant a_{n} \leqslant M}$. 
+ Zatem ciąg $\boldsymbol{\left (a_{n}\right)}$ jest ograniczony.
+ \end{proof}

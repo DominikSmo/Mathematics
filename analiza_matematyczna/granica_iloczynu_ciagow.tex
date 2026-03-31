@@ -1,0 +1,59 @@
+\begin{theorem}
+Granica iloczynu dwóch ciągów zbieżnych jest równa iloczynowi granic tych ciągów, 
+tzn.: jeżeli
+$\boldsymbol{\lim\limits_{n\to \infty }a_{n}=a}$  
+i $\boldsymbol{\lim\limits_{n\to \infty }b_{n}=b}$ to 
+\[
+\boldsymbol{\lim\limits_{n\to \infty }\left (a_{n}b_{n}\right) = \lim\limits_{n\to \infty }a_{n}\cdot \lim\limits_{n\to \infty }b_{n}=ab}
+\]
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Zauważmy, że 
+\[
+\boldsymbol{\left |a_{n}b_{n}-ab\right|=\left |a_{n}b_{n}-a_{n}b + a_{n}b-ab\right|=\left |a_{n}\left (b_{n}-b\right)+b\left (a_{n}-a\right)\right|}
+\] 
+Następnie z własności wartości bezwzględnej otrzymujemy: 
+\[
+\boldsymbol{\left |a_{n}\left (b_{n}-b\right)+b\left (a_{n}-a\right )\right |\leqslant \left |a_{n}\left(b_{n}-b\right)\right|+\left |b\left( a_{n}-a\right)\right|}
+\] 
+czyli 
+\[
+\boldsymbol{\left |a_{n}\left(b_{n}-b\right)+b\left( a_{n}-a\right)\right|\leqslant \left |a_{n}\right|\left |b_{n}-b\right|+\left |b\right|\left |a_{n}-a\right|},
+\] 
+a zatem \[
+\boldsymbol{\left |a_{n}b_{n}-ab\right|\leqslant \left |a_{n}\right|\left |b_{n}-b\right|+\left |b\right|\left |a_{n}-a\right|}.
+\]
+Ponieważ ciągi $\boldsymbol{\left (a_{n}\right)}$ i $\boldsymbol{\left (b_{n} \right)}$ 
+są zbieżne to dla dowolnie małej dodatniej liczby $\boldsymbol{\epsilon}$ 
+istnieją takie liczby naturalne $\boldsymbol{N_{1}}$ i $\boldsymbol{N_{2}}$, 
+że dla każdej liczby naturalnej $\boldsymbol{n>N_{1}}$ spełniona jest nierówność 
+$\boldsymbol{\left |b\right|\left |a_{n}-a\right|<\frac{\epsilon}{2}}$ 
+i dla każdej liczby naturalnej $\boldsymbol{n>N_{2}}$ spełniona jest nierówność
+ $\boldsymbol{\left |a_{n} \right|\left |b_{n}-b \right|<\frac{\epsilon}{2}}$.
+Wówczas $\boldsymbol{\left |a_{n}-a\right|<\frac{\epsilon}{2\left |b\right|}}$ 
+oraz $\boldsymbol{\left |b_{n}-b\right|<\frac{\epsilon}{2\left |a_{n}\right|}}$.
+Zważywszy jednak na to, że może być $\boldsymbol{b=0}$, pierwszą z powyższych 
+nierówności możemy zapisać jako \[
+\boldsymbol{\left |a_{n}-a\right|<\frac{\epsilon}{2\left (\left |b\right|+1\right)}}.
+\] 
+Druga z tych nierówności również może przybrać inną postać. Mianowicie, skoro 
+ciąg $\boldsymbol{\left (a_{n}\right)}$ jest zbieżny to jest ograniczony, 
+a zatem istnieje taka liczba dodatnia $\boldsymbol{M}$, że dla każdej liczby 
+naturalnej $\boldsymbol{n}$ jest $\boldsymbol{\left |a_{n}\right|\leqslant M}$. 
+Zatem wspomnianą nierówność można zapisać jako $\boldsymbol{\left |b_{n}-b\right|<\frac{\epsilon}{2M}}$. 
+Wówczas dla każdej liczby naturalnej $\boldsymbol{n>N}$, gdzie $\boldsymbol{N}$ to 
+największa spośród liczb $\boldsymbol{N_{1}}$ i $\boldsymbol{N_{2}}$ jest: 
+\[
+\boldsymbol{\left |a_{n}\right|\left |b_{n}-b\right|+\left |b\right|\left |a_{n}-a\right|< M\left |b_{n}-b\right|+\left |b\right|\left |a_{n}-a\right|}.
+\] 
+Ale \[\boldsymbol{M\left |b_{n}-b\right|+\left |b\right|\left |a_{n}-a\right|< M\frac{\epsilon}{2M}+\frac{\epsilon\left |b \right|}{2\left (\left |b \right|+1 \right)}}.
+\] 
+Otrzymujemy wówczas: \[\boldsymbol{M\left |b_{n}-b \right|+ \left |b \right|\left |a_{n}-a \right|<\frac{\epsilon}{2}+\frac{\epsilon\left |b \right|}{2\left (\left |b \right|+1 \right)}}.
+\] 
+Zauważmy jednak, że $\boldsymbol{\frac{\epsilon\left |b \right|}{2\left (\left |b \right|+1 \right)}<\frac{\epsilon}{2}}$. 
+Wówczas prawdziwa jest nierówność: $\boldsymbol{M\left |b_{n}-b \right|+\left |b \right|\left |a_{n}-a \right|<\epsilon}$. 
+Ale wobec tego, że jednocześnie jest \[
+\boldsymbol{\left |a_{n}b_{n}-ab \right|<\left |a_{n} \right|\left | b_{n}-b\right|+\left |b \right|\left |a_{n}-a \right|< M\left |b_{n}-b \right|+\left |b \right|\left |a_{n}-a \right|} 
+\] 
+to $\boldsymbol{\left |a_{n}b_{n}-ab \right|<\epsilon}$.
+\end{proof}
