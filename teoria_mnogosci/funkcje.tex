@@ -2,6 +2,12 @@
 Funkcją nazywamy każdą relację $R\subseteq X\times Y$, gdy spełniony jest warunek $(x,y)\in R\wedge(x,y')\in R\Rightarrow y=y'$.
 \end{definition}
 \begin{remark}
+Mówi się, że funkcja jest relacją prawostronnie jednoznaczną(bo z definicji chodzi o element $y=y'$ z pary uporządkowanej $(x,y)=(x,y')$). I jednocześnie lewostronnie pełną, bo każdemu elementowi z dziedziny przyporządkowana jest wartość funkcji.
+Zatem, gdy dana relacja jest prawostronnie jednoznaczna i lewostronnie pełna mówimy o funkcji(pełnej). 
+Istnieje także pojęcie funkcji częściowej. Jest to każda funkcja, wykorzystująca tylko część dziedziny funkcji pełnej. Zatem każdy podzbiór funkcji pełnej jest funkcją częściową. Stąd funkcja
+częściowa jest relacją prawostronnie jednoznaczną ale nie jest lewostronnie pełna.
+\end{remark}
+\begin{remark}
 Jak już wiemy, każda relacja typu $\emptyset\times A$, $A\times\emptyset$ czy $\emptyset\times \emptyset$, gdzie $A\ne\emptyset$ jest relacją pustą ale nie każda z tych relacji jest funkcją. Z definicji funkcji wynika, że funkcją nie jest relacja $A\times\emptyset$. Dlaczego? Ponieważ funkcja jest odwzorowaniem, które przyporządkowuje każdemu elementowi z jej dziedziny dokładnie jeden element z jej przeciwdziedziny. W przypadku relacji odwzorowującej zbiór niepusty w zbiór pusty nie możemy przyporządkować elementom z dziedziny tej relacji żadnego elementu z jej przeciwdziedziny, bo ta jest pusta. Wynika to z prawdziwości lub nieprawdziwości implikacji. Skoro $A\ne\emptyset$ to istnieje pewien element $x\in A$. Wówczas zdanie "$x$ należy do $A$" jest zdaniem prawdziwym. Ale jeżeli relacja $A\times\emptyset$ byłaby funkcją to musiałby istnieć dokładnie jeden element $y\in\emptyset$, który byłby wartością dla argumentu $x$. Wiadomo, że zdanie "$y$ należy do zbioru pustego" jest zdaniem fałszywym a zatem mamy implikację w której ze zdania prawdziwego wynika zdanie fałszywe co jest nieprawdą. Stąd odwzorowanie niepustego zbioru w zbiór pusty nie może być funkcją.$\\$
 Z kolei relacja odwrotna do relacji $A\times\emptyset$ jest funkcją ponieważ z fałszu może wynikać prawda. W przypadku relacji $\emptyset\times A$ zdaniem fałszywym jest zdanie "$x\in\emptyset$". Zdaniem prawdziwym jest natomiast zdanie "$y\in A$" bo $A\ne\emptyset$. I wówczas mimo, że nie ma elementu w dziedzinie relacji $\emptyset\times A$, któremu można by przyporządkować dokładnie jeden element ze zbioru $A$ to implikacja "jeżeli istnieje element $x$ ze zbioru $\emptyset$ to istnieje taki element $y$ ze zbioru $A$, że para uporządkowana $(x,y)$ należy do funkcji odwzorowującej zbiór pusty w zbiór niepusty $A$" jest prawdziwa. Ale skoro każda implikacja, której następnik jest prawdziwy jest prawdziwa to w takiej implikacji nieistotna jest wartość logiczna jej poprzednika i wówczas wynika z tego, że każda relacja, której dziedzina jest pusta jest funkcją. Stąd relacja $\emptyset\times\emptyset$ także jest funkcją. Zatem podajmy definicję funkcji pustej.
 \end{remark}
@@ -18,4 +24,682 @@ Zbiorem, który zawiera wszystkie funkcje $f:X\rightarrow Y$ nazywamy zbiór $X_
 \begin{remark}
 Definicja ta wynika z tego, że skoro $f:X\rightarrow Y$ to $f\subseteq X\times Y$, a wówczas $f\in\mathcal{P}(X\times Y)$. Bowiem skoro $f$ jest podzbiorem relacji pełnej $X\times Y$ to z definicji zbioru potęgowego funkcja $f$ musi należeć do zbioru, który zawiera wszystkie podzbiory relacji pełnej $X\times Y$, a tym zbiorem(rodziną zbiorów) jest zbiór potęgowy relacji pełnej $X\times Y$,
 czyli zbiór $\mathcal{P}(X\times Y)$.
+\end{remark}
+\begin{definition}
+Niech $f:X\rightarrow Y$ oraz $x_{1},x_{2}$ będą dowolnymi elementami. Funkcję $f$ nazywamy injekcją (funkcją różnowartościową), gdy spełniony jest warunek $x_{1}\ne x_{2}\Rightarrow f(x_{1})\ne f(x_{2})$.$\\$
+Korzystając z prawa kontrapozycji otrzymujemy definicję równoważną powyższej: funkcja $f$ jest injekcją $\iff (f(x_{1})=f(x_{2})\Rightarrow x_{1}=x_{2})$.
+\end{definition}
+\begin{remark}
+Funkcję różnowartościową(injekcję) określa się również jako funkcję lewostronnie jednoznaczną, a to ze względu na równość wartości funkcji $f(x_{1})=f(x_{2})$ z której wynika równość $x_{1}=x_{2}$.
+Zatem injekcja jest relacją prawostronnie jednoznaczną (czyli funkcją) i lewostronnie pełną(funkcja pełna) i lewostronnie jednoznaczną.
+\end{remark}
+\begin{remark}
+Na podstawie definicji injekcji możemy sformułować warunek nieinjektywności. Mianowicie funkcja $f:X\rightarrow Y$ nie jest injekcją $\iff\exists x_{1},x_{2}\in X:(x_{1}\ne x_{2}\wedge f(x_{1})=f(x_{2}))$. Równoważnie: funkcja $f:X\rightarrow Y$ nie jest injekcją $\iff\exists x_{1},x_{2}\in X:(f(x_{1})=f(x_{2})\wedge x_{1}\ne x_{2})$.
+\end{remark}
+\begin{property}
+Każda funkcja pusta jest injekcją.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $f_{\emptyset}:\emptyset\rightarrow Y$. Przy czym $Y$ jest dowolnym zbiorem. Weźmy dowolne elementy $x_{1}$ i $x_{2}$. Zauważmy, że zdania $x_{1}\in\emptyset$ i $x_{2}\in\emptyset$ są zdaniami fałszywymi z definicji. Ale implikacja $x_{1}\ne x_{2}\Rightarrow f(x_{1})\ne f(x_{2})$ jest prawdziwa. Wówczas chodzi o implikację $\forall x_{1},x_{2}:x_{1},x_{2}\in\emptyset(x_{1}\ne x_{2})\Rightarrow f(x_{1})\ne f(x_{2})$, która jest zawsze prawdziwa czyli również dla funkcji ze zbioru pustego w zbiór pusty. Ponieważ nie ma elementów zbioru pustego to wówczas nie ma elementów dla których powyższa implikacja byłaby fałszywa, bo jej poprzednik jest zawsze fałszywy. A zatem z definicji injekcji otrzymujemy, że funkcja pusta ze zbioru pustego w dowolny zbiór jest injekcją.
+\end{proof}
+\begin{definition}
+Niech $f:X\rightarrow Y$. Funkcję $f$ nazywamy surjekcją (funkcją $\textit{na zbiór}$ $Y$), gdy spełniony jest warunek $rng(f)=Y$.$\\$
+Wówczas możemy zapisać, że funkcja $f$ jest surjekcją $\iff\forall y\in Y\exists x\in X:f(x)=y$. Zatem wystarczy, że zachodzi $Y\subseteq rng(f)$, bo inkluzja $rng(f)\subseteq Y$ jest zawsze prawdziwa.
+\end{definition}
+\begin{remark}
+Surjekcję określa się także jako funkcję prawostronnie pełną, ponieważ każdy element z przeciwdziedziny surjekcji należy do zbioru jej wartości. Ale surjekcja jest w szczególności lewostronnie pełna. Zatem surjekcja jest lewo- i prawostronnie pełna.
+\end{remark}
+\begin{remark}
+Wprost z definicji surjekcji można wyprowadzić warunek niesurjektywności funkcji. Mianowicie
+funkcja $f:X\rightarrow Y$ nie jest surjekcją $\iff\exists y\in Y\forall x\in X: y\ne f(x)$. Równoważnie:
+funkcja $f:X\rightarrow Y$ nie jest surjekcją $\iff\exists y\in Y:y\notin rng(f)$.
+\end{remark}
+\begin{property}
+Funkcja ze zbioru pustego w zbiór pusty jest surjekcją.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $f_{\emptyset}:\emptyset\rightarrow Y$. Przy czym $Y=\emptyset$. Wówczas $rng(f_{\emptyset})=\emptyset$. Ale z założenia $Y=\emptyset$. Stąd $rng(f_{\emptyset})=Y$. Zatem z definicji surjekcji funkcja $f_{\emptyset}$ jest surjekcją.
+\end{proof}
+\begin{property}
+Funkcja ze zbioru pustego w niepusty zbiór nie jest surjekcją.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $f_{\emptyset}:\emptyset\rightarrow Y$. Przy czym $Y\ne\emptyset$. Wówczas $rng(f_{\emptyset})=\emptyset$. Ale z założenia $Y\ne\emptyset$. Stąd $rng(f_{\emptyset})\ne Y$ co z definicji surjekcji daje nam, że $f_{\emptyset}$ nie jest surjekcją.
+\end{proof}
+Z powyższych wynika, że funkcja pusta jest surjekcją, gdy jej przeciwdziedzina jest pusta, zaś funkcja pusta nie jest surjekcją, gdy jej przeciwdziedzina jest niepusta.
+\begin{definition}
+Funkcję $f:X\rightarrow Y$ nazywamy bijekcją, gdy funkcja ta jest jednocześnie injekcją i surjekcją.
+Wówczas możemy zapisać, że funkcja $f:X\rightarrow Y$ jest bijekcją $\iff[(\forall x_{1},x_{2}\in X:x_{1}\ne x_{2}\Rightarrow f(x_{1})\ne f(x_{2}))\wedge(\forall y\in Y\exists x\in X:f(x)=y)]$.
+\end{definition}
+\begin{remark}
+Ponieważ bijekcja jest zarazem injekcją i surjekcją to można określić ją jako surjektywną injekcję i równoważnie jako injektywną surjekcję. Zatem bijekcja jest w szczególności funkcją pełną, bo injekcja i surjekcja są funkcjami pełnymi.
+\end{remark}
+\begin{remark}
+Z definicji bijekcji możemy wprost wyprowadzić warunek niebijektywności funkcji. Opiera się to na zaprzeczeniu koniunkcji dwóch zdań. Funkcja $f:X\rightarrow Y$ nie jest bijekcją $\iff$ funkcja $f:X\rightarrow Y$ nie jest injekcją lub nie jest surjekcją. Zatem funkcja $f:X\rightarrow Y$ nie jest bijekcją $\iff[(\exists x_{1},x_{2}\in X: x_{1}\ne x_{2}\wedge f(x_{1})=f(x_{2}))\vee\exists y\in Y\forall x\in X:y\ne f(x)]$.
+\end{remark}
+\begin{theorem}
+Jeżeli $f\subseteq X\times Y$ jest funkcją i $X_{2}\subseteq X$ to obcięcie $f\upharpoonright X_{2}$ jest funkcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f\subseteq X\times Y$ będzie dowolną funkcją i $X_{2}\subseteq X$ dowolnym zbiorem. Weźmy $(x,y),(x,y')\in f\upharpoonright X_{2}$. Wówczas z definicji obcięcia relacji wynika, że $(x,y),(x,y')\in f\cap(X_{2}\times Y)$. Stąd z definicji przekroju relacji $(x,y),(x,y')\in f$ i $(x,y),(x,y')\in X_{2}\times Y$. Ale z definicji funkcji wynika, że skoro $(x,y)\in f$ i $(x,y')\in f$ to $y=y'$, a wówczas $(x,y)=(x,y')$. Zatem prawdziwa jest implikacja $[(x,y)\in f\cap(X_{2}\times Y)$ i $(x,y')\in f\cap(X_{2}\times Y)]\Rightarrow y=y'$. Stąd obcięcie $f\upharpoonright X_{2}$ jest funkcją.
+\end{proof}
+\begin{remark}
+Obcięcie $f\upharpoonright X_{2}$ jest przykładem funkcji częściowej, bowiem obcięcie to wykorzystuje tylko te elemnety z dziedziny funkcji $f$,
+które należą do zbioru $X_{2}$. A zbiór $X_{2}$ jest dowolnym podzbiorem dziedziny funkcji $f$. Zatem $f\upharpoonright X_{2}\subseteq f$.
+\end{remark}
+\begin{theorem}
+Niech $f\subseteq X\times Y$ i $X_{2}\subseteq X$. W ogólności nie zachodzi implikacja $f\upharpoonright X_{2}$ jest funkcją $\Rightarrow f\subseteq X\times Y$ jest funkcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Weźmy $f\subseteq X\times Y$  i $X_{2}\subseteq X$. Niech $(x,y),(x,y')\in f\upharpoonright X_{2}$. Przy czym $f\upharpoonright X_{2}$ jest funkcją Wówczas z definicji obcięcia relacji wynika, że $(x,y),(x,y')\in f\cap(X_{2}\times Y)$. Stąd z definicji przekroju relacji $(x,y),(x,y')\in f$ i $(x,y),(x,y')\in X_{2}\times Y$. Ale z założenia $f\upharpoonright X_{2}$ jest funkcją. Zatem $y=y'$. Jednakże nie jesteśmy w stanie stwierdzić czy $f$ jest funkcją, bo relacja $f$ może zawierać parę uporządkowaną w której dla tego samego argumentu $x$ przyjmuje wartość inną od $y=y'$. W takim razie musimy odnieść się do kontrprzykładu.$\\$
+Niech $f=\{(x_{0},y_{0}),(x_{0},y_{1}),(x_{1},y_{2})\}$ i $(x_{0},y_{0}),(x_{1},y_{2})\in X_{2}\times Y$. Przy czym rozważane elementy są parami różne. Wówczas z definicji przekroju relacji wynika, że $(x_{0},y_{0}),(x_{1},y_{2})\in f\cap(X_{2}\times Y)$. Zatem z definicji obcięcia relacji $(x_{0},y_{0}),(x_{1},y_{2})\in f\upharpoonright X_{2}$. Czyli $f\upharpoonright X_{2}=\{(x_{0},y_{0}),(x_{1},y_{2})\}$ spełnia warunek funkcji. Ale zauważmy, że relacja $f$ nie jest funkcją bo dla argumentu $x_{0}$ przyjmuje dwie różne wartości $y_{0}$ i $y_{1}$. Stąd zadana implikacja w ogólności nie zachodzi.
+\end{proof}
+\begin{remark}
+Powyższy przykład pokazuje, że obcięcie $f\upharpoonright X_{2}$ może być funkcją mimo, że relacja $f$ funkcją nie jest.
+\end{remark}
+\begin{theorem}
+Jeżeli $f\subseteq X\times Y$ i $g\subseteq Y\times W$ są funkcjami to ich złożenie $g\circ f$ także jest funkcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f\subseteq X\times Y$ i $g\subseteq Y\times W$ będą funkcjami. Weźmy $(x,w),(x,w')\in g\circ f$. Wówczas skoro $(x,w)\in g\circ f$ to z definicji złożenia relacji wynika, że istnieje $y\in Y$ dla którego $(x,y)\in f$ i $(y,w)\in g$ i ponieważ $(x,w')\in g\circ f$ to z definicji istnieje $y'\in Y$ dla którego $(x,y')\in f$ i $(y',w')\in g$. Ale $f$ jest z założenia funkcją. Zatem z tego, że $(x,y)\in f$ i $(x,y')\in f$ wynika, że $y=y'$. Czyli $(x,y)=(x,y')$. Jednocześnie $(y,w)\in g$ i $(y',w')\in g$. Ponieważ $y=y'$ to $(y,w)\in g$ i $(y,w')\in g$. Ale $g$ także jest funkcją. Zatem $w=w'$. Stąd $(x,w)=(x,w')$ co z definicji funkcji daje nam, że $g\circ f$ jest funkcją bo wzięliśmy dowolną parę $(x,w)$ ze złożenia $g\circ f$.
+\end{proof}
+\begin{remark}
+Powyższy dowód pokazuje, że nie tyle składanie funkcji jest łączne(bo łączność składania funkcji wynika wprost z łączności składania dowolnych relacji, a funkcje są relacjami) co to, że jeśli $g\circ f\subseteq X\times W$ i $h\subseteq W\times Z$ są funkcjami to $(h\circ g)\circ f=h\circ(g\circ f)$ jest funkcją. Czyli łączność składania funkcji nie zmienia tego, że złożenie złożenia danych funkcji jest funkcją
+\end{remark}
+\begin{exercise}
+Ową łączność możemy opisać w uproszczeniu czysto algebraicznie na funkcjach. Niech $(x,y)\in f$ i $(y,w)\in g$. Wówczas $(x,f(x))\in f$ i $(y,g(y))\in g$. Ale $y=f(x)$ czyli podstawiając otrzymujemy, że $(f(x),g(f(x)))\in g$. Stąd z definicji złożenia relacji $(x,g(f(x)))\in g\circ f$. Weźmy $(w,z)\in h$. Ponieważ $(y,w)\in g$ to $w=g(y)$. Ale $y=f(x)$. Zatem $w=g(f(x))$. Stąd $(w,z)=((g(f(x)),z)$. Wówczas z definicji złożenia relacji $(x,z)\in h\circ(g\circ f)$.$\\$
+Niech $(y,w)\in g$ i $(w,z)\in h$. Wówczas $(y,g(y))\in g$ i $(w,z)\in h$. Ale $w=g(y)$ czyli $(w,z)=(g(y),z)\in h$. Stąd z definicji złożenia relacji wynika, że $(y,z)\in h\circ g$. Weźmy $(x,y)\in f$. Zatem $(x,f(x))\in f$ bo wówczas $y=f(x)$. Stąd $(f(x),z)\in h\circ g$. Czyli z definicji złożenia relacji $(x,z)\in(h\circ g)\circ f$.$\\$
+Otrzymujemy zatem $(x,z)\in h\circ(g\circ f)\iff(x,z)\in(h\circ g)\circ f$ co wobec wzięcia dowolnych par uporządkowanych z danych funkcji daje nam równość $h\circ(g\circ f)=(h\circ g)\circ f$.
+\end{exercise}
+\begin{remark}
+Uzasadnienie implikacji $(f\subseteq X\times Y$, $g\subseteq Y\times W$ i $h\subseteq W\times Z)$ są funkcjami $\Rightarrow h\circ(g\circ f)=(h\circ g)\circ f$ jest funkcją.$\\$
+Zauważmy, że implikację jeśli $f\subseteq X\times Y$ i $g\subseteq Y\times W$ są funkcjami to $g\circ f$ jest funkcją możemy przetransponować na uzasadnienie tego, że złożenie $h\circ(g\circ f)$ także jest funkcją. Bo skoro powyższa implikacja jest prawdziwa to prawdą jest, że jeśli $g\circ f\subseteq X\times W$ i $h\subseteq W\times Z$ są funkcjami to złożenie $h\circ(g\circ f)$ jest funkcją. I analogicznie: ponieważ jeśli $g\subseteq Y\times W$ i $h\subseteq W\times Z$ są funkcjami to $h\circ g$ jest funkcją, to jeśli $f\subseteq X\times Y$ i $h\circ g\subseteq Y\times Z$ są funkcjami to złożenie $(h\circ g)\circ f$ także jest funkcją.
+\end{remark}
+\begin{theorem}
+Niech $f\subseteq X\times Y$ i $g\subseteq Y\times W$. W ogólności nie zachodzi implikacja jeśli złożenie $g\circ f$ jest funkcją to $f$ i $g$ są funkcjami.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f\subseteq X\times Y$ i $g\subseteq Y\times W$. Weźmy $(x,w),(x,w')\in g\circ f$. Przy czym $g\circ f$ jest funkcją. Wówczas z definicji złożenia relacji wynika, że istnieje $y\in Y$ dla którego $(x,y)\in f$ i $(y,w)\in g$ i istnieje $y'\in Y$ dla którego $(x,y')\in f$ i $(y',w')\in g$. Ponieważ z założenia $g\circ f$ jest funkcją to rzecz jasna $w=w'$. Stąd $(y',w')=(y',w)$. Nie jesteśmy jednak w stanie w żaden sposób stwierdzić czy $y=y'$ a wówczas nie możemy powiedzieć, że $f$ i $g$ są funkcjami. Dlatego też musimy odnieść się do kontrprzykładu.$\\$
+Niech $f=\{(x_{0},y_{0}),(x_{0},y_{1}),(x_{1},y_{2})\}$ i $g=\{(y_{1},w_{1}),(y_{2},w_{2})\}$. Wówczas z definicji złożenia relacji wynika, że $g\circ f=\{(x_{0},w_{1}),(x_{1},w_{2})\}$. Przy czym rozważane elementy są parami różne. Zatem złożenie $g\circ f$ spełnia definicję funkcji. Zauważmy jednak, że o ile $g$ także jest funkcją to relacja $f$ nią nie jest, ponieważ dla argumentu $x_{0}$ istnieją dwie różne wartości $y_{0}$ i $y_{1}$. Wobec tego w ogólności nie jest prawdą, że jeśli złożenie $g\circ f$ jest funkcją to $f$ i $g$ są funkcjami.
+\end{proof}
+\begin{theorem}
+Niech $f\subseteq X\times Y$ będzie funkcją. Jeżeli $f\subseteq X\times Y$ jest injekcją to relacja $f^{-1}\subseteq Y\times X$ także jest injekcją, przy czym $f\circ f^{-1}=\\=id_{rng(f)}$ i $f^{-1}\circ f=id_{dom(f)}$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f\subseteq X\times Y$ będzie injekcją. Weźmy $(y,x_{1}),(y,x_{2})\in f^{-1}$. Wówczas z definicji relacji odwrotnej wynika, że $(x_{1},y),(x_{2},y)\in f$. Ponieważ z założenia $f$ jest injekcją to $x_{1}=x_{2}$, a wówczas z definicji $f^{-1}$ jest funkcją. Niech $(y_{1},x),(y_{2},x)\in f^{-1}$. Zatem z definicji relacji odwrotnej mamy $(x,y_{1}),(x,y_{2})\in f$. Ale $f$ jest funkcją czyli $y_{1}=y_{2}$. Wówczas skoro $(y_{1},x)=(y_{2},x)\in f^{-1}$ zostały wybrane dowolnie to z definicji $f^{-1}$ jest injekcją.$\\$
+Niech $(y_{1},y_{2})\in id_{rng(f)}$. Wówczas z definicji relacji identycznościowej wynika, że $y_{1}=y_{2}$. Niech $y_{1}=y_{2}=y$. Zatem $(y,y)\in id_{rng(f)}$. Czyli $y\in rng(f)$. Stąd z definicji zbioru wartości funkcji wynika, że istnieje $x\in X$ dla którego $y=f(x)\iff x=f^{-1}(y)$. Czyli $(x,y)\in f\iff(y,x)\in f^{-1}$. Wówczas skoro istnieje $x\in X$ dla którego $(x,y)\in f$ to z definicji złożenia relacji $(y,y)\in f\circ f^{-1}$. Zatem zachodzi inkluzja $id_{rng(f)}\subseteq f\circ f^{-1}$.$\\$
+Niech $(y_{1},y_{2})\in f\circ f^{-1}$. Wówczas z definicji złożenia relacji wynika, że istnieje $x\in X$ dla którego $(y_{1},x)\in f^{-1}$ i $(x,y_{2})\in f$. Zatem $(x,y_{1}),(x,y_{2})\in f$. A ponieważ $f$ jest funkcją to $y_{1}=y_{2}=y$. Stąd $(y,y)\in f\circ f^{-1}$. Wówczas z definicji złożenia relacji dla tego samego $x\in X$ mamy zatem $(x,y)\in f$. Ale z tego wynika, że $y\in rng(f)$. Czyli z definicji relacji identycznościowej $(y_{1},y_{2})=(y,y)\in id_{rng(f)}$. Wobec tego $f\circ f^{-1}\subseteq id_{rng(f)}$. Ponieważ zachodzą obie inkluzje to zachodzi równość $f\circ f^{-1}=id_{rng(f)}$.$\\$
+Niech $(x_{1},x_{2})\in id_{dom(f)}$. Wówczas z definicji relacji identycznościowej wynika, że $x_{1}=x_{2}$. Niech $x_{1}=x_{2}=x$. Zatem $(x,x)\in id_{dom(f)}$. Stąd $x\in dom(f)$. Zatem istnieje $y\in Y$, takie że dla $x\in dom(f)$ jest $y=f(x)$. Czyli $(x,y)\in f$. Wówczas z definicji złożenia relacji dla tego samego $y\in Y$ jest $(x,x)\in f^{-1}\circ f$, bo skoro $(x,y)\in f$ to $(y,x)\in f^{-1}$. Stąd $id_{dom(f)}\subseteq f^{-1}\circ f$.$\\$
+Niech $(x_{1},x_{2})\in f^{-1}\circ f$. Wówczas z definicji złożenia relacji wynika, że istnieje $y\in Y$ dla którego $(x_{1},y)\in f$ i $(y,x_{2})\in f^{-1}$. Ale z definicji relacji odwrotnej skoro $(y,x_{2})\in f^{-1}$ to $(x_{2},y)\in f$, a ponieważ $f$ jest injekcją to $x_{1}=x_{2}$. Niech $x_{1}=x_{2}=x$. Zatem $(x,y)\in f$ czyli $x\in dom(f)$. Wówczas z definicji złożenia relacji dla tego samego $y\in Y$ jest $(x,x)\in f^{-1}\circ f$. Ale z definicji relacji identycznościowej $(x_{1},x_{2})=(x,x)\in id_{dom(f)}$. Stąd $f^{-1}\circ f\subseteq id_{dom(f)}$. Wobec tego, że zachodzą obie inkluzje to zachodzi równość $f^{-1}\circ f=id_{dom(f)}$.
+\end{proof}
+\begin{theorem}
+Niech $f^{-1}\subseteq Y\times X$ będzie funkcją. Jeżeli $f^{-1}$ jest injekcją to $f\subseteq X\times Y$ także jest injekcją. Przy czym równości $f\circ f^{-1}=id_{rng(f)}$ i $f^{-1}\circ f=id_{dom(f)}$ zachodzą symetrycznie względem implikacji przeciwnej.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f^{-1}\subseteq Y\times X$ będzie injekcją. Weźmy $(x_{1},y),(x_{2},y)\in f$. Wówczas z definicji relacji odwrotnej wynika, że $(y,x_{1}),(y,x_{2})\in f^{-1}$. Ponieważ z założenia $f^{-1}$ jest injekcją to $x_{1}=x_{2}$, a wówczas z definicji $f$ jest funkcją. Niech $(x,y_{1}),(x,y_{2})\in f$. Wówczas z definicji relacji odwrotnej $(y_{1},x),(y_{2},x)\in f^{-1}$. Ale z założenia $f^{-1}$ jest injekcją. Stąd $y_{1}=y_{2}$. Wobec tego, że pary uporządkowane $(x,y_{1})=(x,y_{2})\in f$ zostały wybrane jako dowolne to $f$ jest injekcją.
+\end{proof}
+\begin{theorem}
+Niech $X_{2}\subseteq X$ będzie dowolnym zbiorem. Relacja identycznościowa na zbiorze $X_{2}$ jest funkcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $X_{2}\subseteq X$ będzie dowolnym podzbiorem zbioru $X$. Weźmy $(x,y_{1}),(x,y_{2})\in id_{X_{2}}$. Wówczas z definicji relacji identycznościowej wynika, że $y_{1}=x$ i $y_{2}=x$. Czyli $y_{1}=y_{2}$. Stąd $id_{X_{2}}$ jest prawostronnie jednoznaczna. Zatem $id_{X_{2}}$ jest funkcją.
+\end{proof}
+\begin{theorem}
+Niech $X_{2}\subseteq X$ będzie dowolnym zbiorem. Relacja identycznościowa na zbiorze $X_{2}$ jest injekcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $X_{2}\subseteq X$ będzie dowolnym podzbiorem zbioru $X$. Weźmy $(x_{1},y),(x_{2},y)\in id_{X_{2}}$. Wówczas z definicji relacji identycznościowej wynika, że $x_{1}=y$ i $x_{2}=y$. Czyli $x_{1}=x_{2}$. Zatem $id_{X_{2}}$ jest lewostronnie jednoznaczna. Stąd $id_{X_{2}}$ jest injekcją.
+\end{proof}
+\begin{theorem}
+Niech $X_{2}\subseteq X$ będzie dowolnym zbiorem. Relacja identycznościowa na zbiorze $X_{2}$ jest surjekcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $X_{2}\subseteq X$ będzie dowolnym podzbiorem zbioru $X$. Z definicji relacji identycznościowej wynika, że skoro $id_{X_{2}}\subseteq X_{2}\times X_{2}$ to $rng(id_{X_{2}})\subseteq X_{2}$. Weźmy dowolny $y\in X_{2}$. Wówczas z definicji $(y,y)\in id_{X_{2}}$, a zatem $y\in rng(id_{X_{2}})$. Stąd $X_{2}\subseteq rng(id_{X_{2}})$. Zatem $rng(id_{X_{2}})\subseteq X_{2}$ i $X_{2}\subseteq rng(id_{X_{2}})$ co daje nam $rng(id_{X_{2}})=X_{2}$. Czyli z definicji $id_{X_{2}}$ jest surjekcją.
+\end{proof}
+\begin{theorem}
+Niech $X_{2}\subseteq X$ będzie dowolnym zbiorem. Relacja identycznościowa na zbiorze $X_{2}$ jest bijekcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Ponieważ $id_{X_{2}}$ jest injekcją i surjekcją to z definicji jest bijekcją.
+\end{proof}
+\begin{definition}
+Niech $\mathcal{F}$ będzie rodziną funkcji.
+Wówczas relacja $\bigcup\mathcal{F}=\{(x,y): \exists f\in\mathcal{F}:(x,y)\in f\}$ jest sumą rodziny funkcji $\mathcal{F}$.
+\end{definition}
+\begin{theorem}
+Jeśli $\mathcal{F}$ jest zbiorem funkcji i $f\upharpoonright[dom(f)\cap dom(g)]=\\=g\upharpoonright[dom(f)\cap dom(g)]$ dla dowolnych $f,g\in\mathcal{F}$, to $\bigcup\mathcal{F}$ jest funkcją.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $\mathcal{F}$ bedzie zbiorem funkcji i niech zachodzi równość $f\upharpoonright[dom(f)\cap dom(g)]=g\upharpoonright[dom(f)\cap dom(g)]$ dla dowolnych $f,g\in\mathcal{F}$. Weźmy $(x,y_{1}),(x,y_{2})\in\bigcup\mathcal{F}$. Wówczas z definicji sumy ogólnej rodziny zbiorów wynika, że istnieje funkcja $f$ taka, że $(x,y_{1})\in f$ i istnieje taka funkcja $g$, że $(x,y_{2})\in g$. Stąd $x\in dom(f)$ i $x\in dom(g)$ co z definicji przekroju zbiorów daje nam, że $x\in dom(f)\cap dom(g)$. Ponieważ $(x,y_{1})\in f$ i $x\in dom(f)\cap dom(g)$ to z definicji obcięcia relacji otrzymujemy, że $(x,y_{1})\in f\upharpoonright[dom(f)\cap dom(g)]$. Ale z założenia $f\upharpoonright[dom(f)\cap dom(g)]=g\upharpoonright[dom(f)\cap dom(g)]$. Zatem z definicji obcięcia relacji $(x,y_{1})\in g$. Stąd $(x,y_{1}),(x,y_{2})\in g$. Ale z założenia $g$ jest funkcją. Czyli z definicji funkcji $y_{1}=y_{2}$. Wówczas $\bigcup\mathcal{F}$ jest prawostronnie jednoznaczna, a zatem $\bigcup\mathcal{F}$ jest funkcją.
+\end{proof}
+\begin{theorem}
+Jeżeli $\mathcal{F}$ jest rodziną funkcji i $\bigcup\mathcal{F}$ jest funkcją to dla dowolnych funkcji $f,g\in\mathcal{F}$ zachodzi równość $f\upharpoonright[dom(f)\cap dom(g)]=g\upharpoonright[dom(f)\cap dom(g)]$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $\mathcal{F}$ będzie rodziną funkcji, zaś $\bigcup\mathcal{F}$ funkcją. Weźmy $(x,y_{1})\in f$ i $(x,y_{2})\in g$. Przy czym $f\in\mathcal{F}$ i $g\in\mathcal{F}$ są funkcjami. Wówczas $x\in dom(f)$ i $x\in dom(g)$ co z definicji przekroju zbiorów daje nam $x\in dom(f)\cap dom(g)$. Zatem skoro $(x,y_{1})\in f$ i $x\in dom(f)\cap dom(g)$ to z definicji obcięcia relacji $(x,y_{1})\in f\upharpoonright[dom(f)\cap dom(g)]$. Ponieważ $f,g\in\mathcal{F}$ to $f,g\subseteq\bigcup\mathcal{F}$. Wówczas skoro $(x,y_{1})\in f$ i $(x,y_{2})\in g$ to $(x,y_{1}),(x,y_{2})\in\bigcup\mathcal{F}$. Ale z założenia $\bigcup\mathcal{F}$ jest funkcją. Stąd z definicji $(x,y_{1})=(x,y_{2})$, a zatem $y_{1}=y_{2}$. Wówczas z przynależności $(x,y_{1})\in f\upharpoonright[dom(f)\cap dom(g)]$ wynika $(x,y_{1})\in g$. Ale $x\in dom(f)\cap dom(g)$ co z definicji obcięcia relacji daje nam $(x,y_{1})\in g\upharpoonright[dom(f)\cap dom(g)]$. Stąd wobec dowolności wyboru pary uporządkowanej $(x,y_{1})\in f$ otrzymujemy $f\upharpoonright[dom(f)\cap dom(g)]\subseteq g\upharpoonright[dom(f)\cap dom(g)]$.$\\$
+Ale ponieważ $(x,y_{2})\in g$ i $x\in dom(f)\cap dom(g)$ to z definicji obcięcia relacji $(x,y_{2})\in g\upharpoonright[dom(f)\cap dom(g)]$. Wówczas skoro $y_{1}=y_{2}$ to $(x,y_{1})\in g\upharpoonright[dom(f)\cap dom(g)]$. Ale $(x,y_{1})\in f\upharpoonright[dom(f)\cap dom(g)]$. Zatem wobec dowolności wyboru $(x,y_{1})=(x,y_{2})\in f,g$ dostajemy $g\upharpoonright[dom(f)\cap dom(g)]\subseteq f\upharpoonright[dom(f)\cap dom(g)]$. Ponieważ zachodzą obie inkluzje to $f\upharpoonright[dom(f)\cap dom(g)]=g\upharpoonright[dom(f)\cap dom(g)]$. Stąd twierdzenie jest w ogólności prawdziwe.
+\end{proof}
+\begin{remark}
+Z ostatnich dwóch twierdzeń wynika, że relacja $\bigcup\mathcal{F}$ jest funkcją wtedy i tylko wtedy,  gdy dla dowolnych funkcji $f,g\in\mathcal{F}$ zachodzi równość $f\upharpoonright[dom(f)\cap dom(g)]=g\upharpoonright[dom(f)\cap dom(g)]$.
+\end{remark}
+\begin{definition}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq X$ dowolnym podzbiorem dziedziny funkcji $f$. Wówczas zbiór $f[A]=\{f(x): x\in A\}$ nazywamy obrazem zbioru $A$ poprzez funkcję $f$.
+\end{definition}
+\begin{remark}
+Zauważmy, że z definicji obrazu zbioru $A$ poprzez funkcję $f$ wynika, że $x\in A\Rightarrow f(x)\in f[A]$. Ale jeśli $f(x)\in f[A]$ to istnieje $a\in A$ dla którego $f(x)=f(a)\in f[A]$. Jeżeli funkcja $f$ nie jest injekcją to wówczas może zachodzić $x\ne a$, a zatem $x\notin A$. Czyli mimo, że $f(x)\in f[A]$ to $x$ może nie należeć do $A$.
+\end{remark}
+\begin{definition}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $B\subseteq Y$ dowolnym podzbiorem przeciwdziedziny funkcji $f$. Wówczas zbiór $f^{-1}[B]=\{x\in dom(f): f(x)\in B\}$ nazywamy przeciwobrazem zbioru $B$ poprzez funkcję $f$.
+\end{definition}
+\begin{remark}
+Z definicji przeciwobrazu zbioru $B$ poprzez funkcję $f$ wynika, że $x\in f^{-1}[B]\iff f(x)\in B$. Bo jeśli $x\in f^{-1}[B]$ to istnieje $y\in B$ takie, że $y=f(x)$. Stąd $f(x)\in B$. A jeśli $f(x)\in B$ to $x\in f^{-1}[B]$. Stąd zachodzi zadana równoważność.
+\end{remark}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq X$ dowolnym podzbiorem dziedziny funkcji $f$. W ogólności zachodzi $A\subseteq f^{-1}[f[A]]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolny zbiór $A\subseteq X$. Niech $x\in A$. Wówczas skoro $A\subseteq X$ to $x\in X=dom(f)$. Zatem istnieje $y\in Y$ takie, że $y=f(x)$. Stąd z definicji obrazu zbioru $A$ poprzez funkcję $f$ wynika, że $y=f(x)\in f[A]$. Ale z definicji przeciwobrazu zbioru $f[A]$ poprzez funkcję $f$ otrzymujemy, że $x\in f^{-1}[f[A]]$. Stąd wobec dowolności wyboru elementu $x\in A$ dostajemy zadaną inkluzję.
+\end{proof}
+\begin{remark}
+Rzecz godna uwagi, że jeśli $f(x)\in f[A]$ to co prawda może zachodzić $x\notin A$ ale z definicji przeciwobrazu $x\in f^{-1}[f[A]]$. A wówczas z definicji przeciwobrazu $f(x)\in f[A]\iff x\in f^{-1}[f[A]]$. Zauważmy zatem, że wartości funkcji dla argumentów ze zbioru $A\subseteq dom(f)$ należą do obrazu tego zbioru, czyli do zbioru $f[A]$ ale istnieją argumenty z innego zbioru dla których funkcja $f$ przyjmuje wartości ze zbioru $f[A]$. Tym zbiorem jest $f^{-1}[f[A]]$. Mówiąc skrótowo można określić, że zbiór $f^{-1}[f[A]]$ zawiera w ogólności więcej elementów $x$ którym odpowiadają wartości funkcji należące do $f[A]$ niż zbiór $A$. Bowiem jeśli $f(x)\in f[A]$ i $x\notin A$ to $x\in f^{-1}[f[A]]$. Stąd w ogólności $A\subseteq f^{-1}[f[A]]$, a nie $A=f^{-1}[f[A]]$.
+\end{remark}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $B\subseteq Y$ dowolnym podzbiorem przeciwdziedziny funkcji $f$. W ogólności zachodzi równość $f[f^{-1}[B]]=B\cap rng(f)$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolny zbiór $B\subseteq Y$. Niech $y\in f[f^{-1}[B]]$. Wówczas z definicji obrazu zbioru przez funkcję wynika, że istnieje $x\in f^{-1}[B]$ takie, że $y=f(x)\in f[f^{-1}[B]]$. Zatem z definicji przeciwobrazu $f(x)\in B$. Ale skoro $f^{-1}[B]\subseteq X=dom(f)$ to $x\in dom(f)$, a wówczas $f(x)\in rng(f)$. Stąd $y=f(x)\in B$ i $y=f(x)\in rng(f)$ co z definicji przekroju zbiorów daje $y=f(x)\in B\cap rng(f)$. Wobec tego $f[f^{-1}[B]]\subseteq B\cap rng(f)$.$\\$
+Niech $y\in B\cap rng(f)$. Wówczas z definicji przekroju zbiorów $y\in B$ i $y\in rng(f)$. Zatem z definicji zbioru wartości funkcji wynika, że istnieje $x\in dom(f)$ dla którego $y=f(x)$. Ale ponieważ $y\in B$ to $f(x)\in B$. Wówczas z definicji przeciwobrazu otrzymujemy, że $x\in f^{-1}[B]$. Stąd z definicji obrazu mamy $y=f(x)\in f[f^{-1}[B]]$. Wobec tego $B\cap rng(f)\subseteq f[f^{-1}[B]]$. Ponieważ zachodzą obie inkluzje to zadana równość zachodzi w ogólności.
+\end{proof}
+Z powyższej własności możemy wyprowadzić kolejną. Mianowicie:
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $B\subseteq Y$ dowolnym podzbiorem przeciwdziedziny funkcji $f$. W ogólności zachodzi $f[f^{-1}[B]]\subseteq B$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolny zbiór $B\subseteq Y$. Niech $y\in f[f^{-1}[B]]$. Wówczas z udowodnionej własności wynika, że $y\in B\cap rng(f)$. Zatem z definicji przekroju zbiorów mamy $y\in B$ i $y\in rng(f)$. Stąd zadana inkluzja zachodzi, ponieważ z tego, że dowolny $y\in f[f^{-1}[B]]$ wynika, że $y\in B$.
+\end{proof}
+\begin{remark}
+Inkluzję $f[f^{-1}[B]]\subseteq B$ można także udowodnić nie odwołując się do pojedynczych elementów, korzystając z równości $f[f^{-1}[B]]=B\cap rng(f)$. Wówczas z definicji przekroju zbiorów wynika, że $f[f^{-1}[B]]\subseteq B$ i $f[f^{-1}[B]]\subseteq rng(f)$. Zatem inkluzja $f[f^{-1}[B]]\subseteq B$ jest prawdziwa.
+\end{remark}
+\begin{remark}
+Warto dostrzec także to, że jeśli mamy zbiór $f[A]$ to zachodzi $f[A]\subseteq rng(f)$. Natomiast jeśli mamy $B\subseteq Y$ to nie wiadomo czy $B\cap rng(f)\ne\emptyset$, tym bardziej czy $B\subseteq rng(f)$. Wówczas mamy trzy możliwości: $B\cap rng(f)=\emptyset$. Czyli zbiór $B$ nie zawiera żadnych wartości funkcji $f$. Wówczas jego przeciwobraz jest pusty, a zatem obraz jego przeciwobrazu także jest pusty. Czyli $f[f^{-1}[B]]=\emptyset$. Kolejna możliwość to $B\cap rng(f)\ne\emptyset$ i $B\not\subseteq rng(f)$. Wówczas $f[f^{-1}[B]]\ne\emptyset$. Ostatnia możliwość to taka, że $B\cap rng(f)\ne\emptyset$ i $B\subseteq rng(f)$. Zatem $f[f^{-1}[B]]\ne\emptyset$. W skrócie te wszystkie trzy przypadku pokazują dlaczego w ogólności zachodzi równość $f[f^{-1}[B]]=\\=B\cap rng(f)$, a nie równość $f[f^{-1}[B]]=B$.
+\end{remark}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Funkcja $f$ jest injekcją wtedy i tylko wtedy, gdy dla każdego zbioru $A\subseteq X$ zachodzi równość $A=f^{-1}[f[A]]$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Niech funkcja $f:X\rightarrow Y$ będzie injekcją, zaś $A\subseteq X$ dowolnym podzbiorem dziedziny funkcji $f$. Weźmy $x\in f^{-1}[f[A]]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in f[A]$. Zatem istnieje $t\in A$ dla którego $f(t)=f(x)\in f[A]$. Ale z założenia $f$ jest injekcją. Stąd $t=x$, a wówczas $x\in A$. Wobec tego, że $x\in f^{-1}[f[A]]$ został wybrany dowolnie to zachodzi $f^{-1}[f[A]]\subseteq A$. A ponieważ inkluzja przeciwna zachodzi w ogólności to wówczas zachodzi równość $A=f^{-1}[f[A]]$.$\\$
+Załóżmy, że $f$ nie jest injekcją. Wówczas istnieją $x_{1}\ne x_{2}\in dom(f)$ dla których $f(x_{1})=f(x_{2})$. Zatem jeżeli $A=\{x_{1}\}$ to $f(x_{2})\in f[A]$ ale z definicji przeciwobrazu $x_{2}\in f^{-1}[f[A]]$. A ponieważ $x_{2}\notin A$ to z definicji różnicy zbiorów wynika, że $x_{2}\in f^{-1}[f[A]]\setminus A$. Wówczas nie zachodzi równość $A=f^{-1}[f[A]]$. Korzystając z prawa kontrapozycji widzimy, że implikacja jeżeli funkcja $f$ nie jest injekcją to istnieje zbiór $A\subseteq X$ dla którego nie zachodzi równość $A=f^{-1}[f[A]]$ jest tożsama implikacji jeżeli dla każdego zbioru $A\subseteq X$ zachodzi równość $A=f^{-1}[f[A]]$ to $f$ jest injekcją. Stąd twierdzenie jest prawdziwe.
+\end{proof}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Funkcja $f$ jest surjekcją wtedy i tylko wtedy, gdy dla każdego zbioru $B\subseteq Y$ zachodzi równość $f[f^{-1}[B]]= B$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie surjekcją, zaś $B\subseteq Y$ dowolnym podzbiorem przeciwdziedziny funkcji $f$. Weźmy $y\in B$. Wówczas z definicji surjekcji wynika, że istnieje $x\in dom(f)$ dla którego $y=f(x)$. Stąd z definicji zbioru wartości funkcji wynika, że $y=f(x)\in rng(f)$. Zatem z definicji przekroju zbiorów otrzymujemy $y\in B\cap rng(f)$, a ponieważ w ogólności $B\cap rng(f)=f[f^{-1}[B]]$ to $y\in f[f^{-1}[B]]$. Wobec dowolności wyboru $y\in B$ dostajemy $B\subseteq f[f^{-1}[B]]$, a ponieważ inkluzja przeciwna zachodzi w ogólności to $f[f^{-1}[B]]= B$.$\\$
+Załóżmy, że $f$ nie jest surjekcją. Wówczas z zaprzeczenia definicji surjekcji wynika, że istnieje $y\in Y$ takie, że dla każdego $x\in dom(f)$ jest $y\ne f(x)$. Zatem $y\notin rng(f)$. Stąd $Y\not\subseteq rng(f)$ i wynika z tego, że istnieje taki zbiór $B\subseteq Y$, że $B\cap rng(f)=\emptyset$, a wówczas $y\in B$. A ponieważ $f[f^{-1}[B]]=B\cap rng(f)$ to skoro dla tego samego $B$  jest $f[f^{-1}[B]]=\emptyset$ to $f[f^{-1}[B]]\ne B$, bo jeśli $y\in B$ to $B\ne\emptyset$. Zauważmy, że skorzystaliśmy tutaj z implikacji jeżeli $f$ nie jest surjekcją to istnieje taki zbiór $B\subseteq Y$ dla którego nie zachodzi równość $f[f^{-1}[B]]= B$. Ale z prawa kontrapozycji wiemy, że ta implikacja jest równoważna implikacji jeżeli dla każdego $B\subseteq Y$ zachodzi równość $f[f^{-1}[B]]= B$ to $f$ jest surjekcją. Stąd korzystając z prawa kontrapozycji dowiedliśmy prawdziwości implikacji jeżeli dla każdego $B\subseteq Y$ zachodzi równość $f[f^{-1}[B]]=B$ to $f$ jest surjekcją.
+Zatem skoro zachodzą obie implikacje to zadana równoważność jest prawdziwa.
+\end{proof}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Wówczas jeśli $A\subseteq B\subseteq X$ to $f[A]\subseteq f[B]$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne podzbiory dziedziny funkcji $f$: $A$ i $B$. Przy czym $A\subseteq B$. Niech $y\in f[A]$. Wówczas z definicji obrazu wynika, że istnieje $x\in A$ dla którego $y=f(x)$. Ale z założenia $A\subseteq B$ czyli $x\in B$. Wówczas z definicji obrazu wynika, że $y=f(x)\in f[B]$. Stąd wobec dowolności wyboru $y\in f[A]$ mamy $f[A]\subseteq f[B]$.
+\end{proof}
+\begin{remark}
+Niech $f:X\rightarrow Y$ będzie funkcją. W ogólności nie zachodzi 
+$f[A]\subseteq f[B]\Rightarrow A\subseteq B\subseteq X$.
+Weźmy dowolną funkcję $f:X\rightarrow Y$, przy czym $f[A]\subseteq f[B]$. Wówczas $f^{-1}[f[A]]\subseteq f^{-1}[f[B]]$. Ale jeśli $f$ nie jest injekcją to wówczas nie możemy twierdzić, że $A\subseteq B$. Odnieśmy się zatem do kontrprzykładu. Niech $A=\{x_{0}\}$ i $B=\{x_{1},x_{2}\}$ i $(x_{0},y_{0}),(x_{1},y_{0}),(x_{2},y_{2})\in f$. Przy czym rozważane elementy są parami różne. Wówczas $f[A]=\{y_{0}\}$ i $f[B]=\{y_{0},y_{2}\}$. Zatem $f[A]\subseteq f[B]$. Ale zauważmy, że $A\cap B=\emptyset$ czyli $A\not\subseteq B$.
+\end{remark}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq X$ dowolnym podzbiorem dziedziny funkcji $f$. W ogólności zachodzi $f[A]\subseteq f[f^{-1}[f[A]]]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f: X\rightarrow Y$ oraz dowolny zbiór $A\subseteq X$. Ponieważ $A\subseteq f^{-1}[f[A]]\subseteq X$ to korzystając z powyższej własności obrazów otrzymujemy, że $f[A]\subseteq f[f^{-1}[f[A]]]$.
+\end{proof}
+\begin{property}
+Dla dowolnej funkcji $f:X\rightarrow Y$ zachodzi równość $f[A]=$ $=f[f^{-1}[f[A]]]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolny zbiór $A\subseteq X$. Niech $y\in f[f^{-1}[f[A]]]$. Wówczas z definicji obrazu wynika, że istnieje $x\in f^{-1}[f[A]]$ dla którego $y=f(x)$. Stąd z definicji przeciwobrazu $y=f(x)\in f[A]$. Zatem $f[f^{-1}[f[A]]]\subseteq f[A]$. Ale wyżej pokazaliśmy, że zachodzi inkluzja przeciwna. Wobec tego, że zachodzą obie inkluzje to zadana równość zachodzi w ogólności.
+\end{proof}
+\begin{remark}
+Równość $f[A]=f[f^{-1}[f[A]]]$ można pokazać w dużo prostszy sposób. Ponieważ w ogólności zachodzi $f[f^{-1}[B]]\subseteq B$, gdzie $B\subseteq Y$ to w szczególności $f[f^{-1}[f[A]]]\subseteq f[A]$. A ponieważ $f[f^{-1}[B]]=B\cap rng(f)$ to gdy za $B$ podstawimy $f[A]$, to otrzymujemy $f[f^{-1}[f[A]]]=f[A]\cap rng(f)$, a ponieważ $f[A]\subseteq rng(f)$ to $f[f^{-1}[f[A]]]=f[A]$.
+\end{remark}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq Y$ dowolnym podzbiorem przeciwdziedziny funkcji $f$.$\\$
+W ogólności zachodzi $f^{-1}[f[f^{-1}[A]]]=f^{-1}[A]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie dowolną funkcją, zaś $A\subseteq Y$ dowolnym podzbiorem jej przeciwdziedziny. Weźmy $x\in f^{-1}[A]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A$. Jednocześnie z definicji zbioru wartości funkcji $f(x)\in rng(f)$. Zatem $f(x)\in A$ i $f(x)\in rng(f)$ co z definicji przekroju zbiorów daje nam $f(x)\in A\cap rng(f)$. Stąd z ogólnej własności $A\cap rng(f)=f[f^{-1}[A]]$ otrzymujemy $f(x)\in f[f^{-1}[A]]$. Wówczas z definicji przeciwobrazu wynika, że $x\in f^{-1}[f[f^{-1}[A]]]$. Wobec dowolności wyboru $x\in f^{-1}[A]$ dostajemy $f^{-1}[A]\subseteq f^{-1}[f[f^{-1}[A]]]$.$\\$
+Weźmy $x\in f^{-1}[f[f^{-1}[A]]]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in f[f^{-1}[A]]$. Z ogólnej własności $f[f^{-1}[A]]\subseteq A$ otrzymujemy zatem $f(x)\in A$ co z definicji przeciwobrazu daje nam, że $x\in f^{-1}[A]$. Stąd wobec dowolności wyboru $x\in f^{-1}[f[f^{-1}[A]]]$ dostajemy $f^{-1}[f[f^{-1}[A]]]\subseteq f^{-1}[A]$. Ponieważ zachodzą obie inkluzje to zadana równość jest w ogólności prawdziwa.
+\end{proof}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Wówczas jeśli $A\subseteq B\subseteq Y$ to $f^{-1}[A]\subseteq f^{-1}[B]$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A$ i $B$, przy czym $A\subseteq B\subseteq Y$. Niech $x\in f^{-1}[A]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A$. Ponieważ z założenia $A\subseteq B$ to $f(x)\in B$. Stąd z definicji przeciwobrazu $x\in f^{-1}[B]$. Zatem wobec dowolności wyboru $x\in f^{-1}[A]$ zachodzi $f^{-1}[A]\subseteq f^{-1}[B]$.
+\end{proof}
+\begin{remark}
+Niech $f:X\rightarrow Y$ będzie funkcją. W ogólności nie zachodzi $f^{-1}[A]\subseteq f^{-1}[B]\Rightarrow A\subseteq B\subseteq Y$.$\\$
+Weźmy dowolną funkcję $f:X\rightarrow Y$, przy czym $f^{-1}[A]\subseteq f^{-1}[B]$. Wówczas $f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$. Ale $f[f^{-1}[A]]=A\cap rng(f)$ i $f[f^{-1}[B]]=B\cap rng(f)$. Zatem $A\cap rng(f)\subseteq B\cap rng(f)$. Ale jeśli $f$ nie jest surjekcją to nie możemy twierdzić, że $A\subseteq B$. Dlatego też skorzystajmy z kontrprzykładu. Niech $A=$ $=\{y_{0}\}$, $B=\{y_{1},y_{2}\}$ i $(x_{1},y_{1}),(x_{2},y_{2})\in f$. Przy czym rozważane elementy są parami różne. Ponieważ $y_{0}\notin rng(f)$, bo nie ma pary $(x,y_{0})\in f$ to wówczas $f^{-1}[A]=\emptyset$ i $f^{-1}[A]\subseteq f^{-1}[B]$ ale $A\not\subseteq B$.
+\end{remark}
+\begin{property}
+Jeśli $f:X\rightarrow Y$ jest funkcją, zaś $A,B\subseteq Y$ to w ogólności zachodzi $f^{-1}[A]\subseteq f^{-1}[B]\iff f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie dowolną funkcją, przy czym $f^{-1}[A]\subseteq f^{-1}[B]$, gdzie $A,B$ są dowolnymi podzbiorami przeciwdziedziny funkcji $f$. Weźmy $y\in f[f^{-1}[A]]$. Wówczas z definicji obrazu wynika, że istnieje $x\in f^{-1}[A]$ dla którego $y=f(x)\in f[f^{-1}[A]]$. Ale z założenia $f^{-1}[A]\subseteq f^{-1}[B]$. Zatem $x\in f^{-1}[B]$ co z definicji przeciwobrazu daje $y=f(x)\in B$. Z definicji zbioru wartości funkcji $y=f(x)\in rng(f)$. Stąd z definicji przekroju zbiorów $y=f(x)\in B\cap rng(f)$. Korzystając z równości $f[f^{-1}[B]]=B\cap rng(f)$, zachodzącej dla dowolnej funkcji otrzymujemy zatem $y=f(x)\in f[f^{-1}[B]]$. Wówczas wobec dowolności wyboru $y\in f[f^{-1}[A]]$ dostajemy $f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$.$\\$
+Niech $x\in f^{-1}[A]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A$. Z definicji zbioru wartości funkcji $f(x)\in rng(f)$. Stąd z definicji przekroju zbiorów $f(x)\in A\cap rng(f)$. Ale dla dowolnej funkcji $A\cap rng(f)=f[f^{-1}[A]]$. Zatem $f(x)\in f[f^{-1}[A]]$. Z założenia $f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$ wynika, że $f(x)\in f[f^{-1}[B]]$. Wówczas korzystając z równości $f[f^{-1}[B]]=B\cap rng(f)$ dostajemy $f(x)\in B$ co z definicji przeciwobrazu daje nam $x\in f^{-1}[B]$. Zatem wobec dowolności wyboru $x\in f^{-1}[A]$ otrzymujemy, że $f^{-1}[A]\subseteq f^{-1}[B]$.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq Y$ dowolnymi podzbiorami przeciwdziedziny funkcji $f$. W ogólności zachodzi $f[f^{-1}[A]]=$ $=f[f^{-1}[B]]\iff f^{-1}[A]=f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq Y$. Niech $f[f^{-1}[A]]=f[f^{-1}[B]]$. Załóżmy, że istnieje $x\in f^{-1}[A]$ i $x\notin f^{-1}[B]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A$. Z definicji zbioru wartości funkcji mamy zatem $f(x)\in rng(f)$. Stąd $f(x)\in A$ i $f(x)\in rng(f)$ co z definicji przekroju zbiorów daje nam $f(x)\in A\cap rng(f)$. Ponieważ w ogólności $A\cap rng(f)=f[f^{-1}[A]]$ to $f(x)\in f[f^{-1}[A]]$. Ale z założenia $f[f^{-1}[A]]=f[f^{-1}[B]]$. Zatem $f(x)\in f[f^{-1}[B]]$. Wówczas z ogólnej własności $f[f^{-1}[B]]\subseteq B$ otrzymujemy $f(x)\in B$. Stąd z definicji przeciwobrazu $x\in f^{-1}[B]$. Doszliśmy do sprzeczności, a zatem dostajemy $f^{-1}[A]=f^{-1}[B]$.$\\$
+Niech $f^{-1}[A]=f^{-1}[B]$. Załóżmy, że istnieje $y\in f[f^{-1}[A]]$ i $y\notin f[f^{-1}[B]]$. Wówczas z definicji obrazu wynika, że istnieje $x\in f^{-1}[A]$ dla którego $y=f(x)\in f[f^{-1}[A]]$. Ale z założenia $f^{-1}[A]=f^{-1}[B]$. Zatem $x\in f^{-1}[B]$ co z definicji przeciwobrazu daje $f(x)\in B$. Z definicji $f(x)\in rng(f)$. Wówczas $f(x)\in B$ i $f(x)\in rng(f)$. Czyli z definicji przekroju zbiorów $f(x)\in B\cap rng(f)$. Z ogólnej własności $B\cap rng(f)=f[f^{-1}[B]]$ dostajemy $f(x)\in f[f^{-1}[B]]$. Ale $f(x)=y$. Stąd dochodzimy do sprzeczności i wówczas $f[f^{-1}[A]]=f[f^{-1}[B]]$. Wobec tego, że zachodzą obie implikacje to w ogólności zachodzi zadana równoważność.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie dowolną funkcją, zaś $A,B\subseteq X$. W szczególności $f[A]\subseteq f[B]\iff f^{-1}[f[A]]\subseteq f^{-1}[f[B]]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne podzbiory dziedziny funkcji $f$: $A$ i $B$. Korzystając z odpowiednich lematów, skoro $f[A]\subseteq f[B]\subseteq rng(f)\subseteq Y$ to $f^{-1}[f[A]]\subseteq f^{-1}[f[B]]$. Ale ponieważ $f^{-1}[f[A]]\subseteq f^{-1}[f[B]]\subseteq X$ to $f[f^{-1}[f[A]]]\subseteq f[f^{-1}[f[B]]]$. Wcześniej jednak udowodniliśmy równość $f[f^{-1}[f[A]]]=f[A]$, zachodzącą dla dowolnej funkcji. Analogicznie więc $f[f^{-1}[f[B]]]=f[B]$. Stąd $f[f^{-1}[f[A]]]\subseteq f[f^{-1}[f[B]]]\iff f[A]\subseteq f[B]$. Wówczas zachodzą obie implikacje, a zatem zadana równoważność zachodzi w ogólności.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq Y$ dowolnymi podzbiorami przeciwdziedziny funkcji $f$. Wówczas $f:X\rightarrow Y$ jest surjekcją wtedy i tylko wtedy, gdy zachodzi $A\subseteq B\subseteq Y\iff f^{-1}[A]\subseteq f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Jeżeli $f:X\rightarrow Y$ jest surjekcją to (jeżeli $f^{-1}[A]\subseteq f^{-1}[B]$ to $A\subseteq B\subseteq Y$).$\\$
+Załóżmy, że $f^{-1}[A]\subseteq f^{-1}[B]$ i $A\not\subseteq B$. Z wcześniej udowodnionej własności wynika, że $f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$. Weźmy $y\in f[f^{-1}[A]]$. Wówczas $y\in f[f^{-1}[B]]$. Stąd z definicji obrazu wynika, że istnieje $x\in f^{-1}[B]$ dla którego $y=f(x)\in f[f^{-1}[B]]$. Ale z definicji przeciwobrazu mamy $y=f(x)\in B$. A ponieważ $y\in f[f^{-1}[A]]$ to z definicji obrazu wynika, że istnieje $x'\in f^{-1}[A]$ dla którego $y=f(x')\in f[f^{-1}[A]]$. Stąd z definicji przeciwobrazu otrzymujemy $y=f(x')\in A$. Wówczas $y=f(x)=f(x')\in f[f^{-1}[A]]\Rightarrow y=f(x)=f(x')\in B$ i wobec dowolności wyboru $y\in f[f^{-1}[A]]$ daje nam to, że $f[f^{-1}[A]]\subseteq B$. Założyliśmy jednocześnie, że $A\not\subseteq B$. Stąd istnieje $y'\in A\setminus B$ czyli z definicji różnicy zbiorów $y'\in A$ i $y'\notin B$. Ponieważ dla każdego $A\subseteq Y$ zachodzi $f[f^{-1}[A]]=A\cap rng(f)$ to jeśli $y'\in f[f^{-1}[A]]$ to $y'\in rng(f)$. A ponieważ $f[f^{-1}[A]]\subseteq B$ to wówczas $y'\in B$. Stąd dochodzimy do sprzeczności z założeniem, bo $y'\notin B$. Korzystając z prawa kontrapozycji dostajemy, że jeżeli $y'\notin B$ to $y'\notin f[f^{-1}[A]]$. Wówczas $y'\notin rng(f)$ czyli $rng(f)\ne Y$ co z definicji daje nam, że $f$ nie jest surjekcją.$\\$ Zatem zadaną implikację udowodniliśmy korzystając z prawa kontrapozycji. Zaprzeczyliśmy tezie implikacji wyjściowej (jeżeli $f^{-1}[A]\subseteq f^{-1}[B]\Rightarrow A\subseteq B\subseteq Y)$ czyli otrzymaliśmy zdanie $f^{-1}[A]\subseteq f^{-1}[B]\wedge\neg(A\subseteq B\subseteq Y)$, które jest zaprzeczeniem implikacji. A ponieważ $\neg(A\subseteq B\subseteq Y)$ jest równoważne zdaniu $\neg(A\subseteq B\wedge B\subseteq Y)$ czyli zdaniu $A\not\subseteq B\vee B\not\subseteq Y$ to z definicji koniunkcji wystarczyło wybrać zdanie $A\not\subseteq B$ aby zaprzeczenie koniunkcji $\neg(A\subseteq B\subseteq Y)$ było prawdziwe. Zatem z prawa kontrapozycji zaprzeczenie założenia implikacji wyjściowej stało się tezą implikacji jej równoważnej czyli zdaniem "$f:X\rightarrow Y$ nie jest surjekcją". W ten sposób doszliśmy do prawdziwości implikacji wyjściowej.$\\$
+(Jeżeli $f^{-1}[A]\subseteq f^{-1}[B]$ to $A\subseteq B\subseteq Y$) to $f:X\rightarrow Y$ jest surjekcją.$\\$
+Załóżmy, że $f:X\rightarrow Y$ nie jest surjekcją. Weźmy $A=\{y_{0},y_{1}\}$. Przy czym $y_{0}\ne y_{1}$ i $y_{0}\in rng(f)$, zaś $y_{1}\notin rng(f)$. Ponieważ $y_{0}\in A$ i $y_{0}\in rng(f)$ to $y_{0}\in A\cap rng(f)$. Stąd $y_{0}\in f[f^{-1}[A]]$. Zatem z definicji obrazu istnieje $x_{0}\in f^{-1}[A]$ dla którego $y_{0}=f(x_{0})$. Niech $f^{-1}[A]\subseteq f^{-1}[B]$. Wówczas $f[f^{-1}[A]]\subseteq f[f^{-1}[B]]$. Stąd $y_{0}=f(x_{0})\in f[f^{-1}[B]]$, a ponieważ w ogólności $f[f^{-1}[B]]\subseteq B$ to $y_{0}=f(x_{0})\in B$. Niech zatem $B=\{y_{0}\}$. Ale $A\not\subseteq B$. Bowiem do $A$ należy element $y_{1}$, który nie jest elementem zbioru $B$. Zauważmy również, że $f$ nie jest surjekcją, bo do zbioru $A\subseteq Y$ należy $y_{1}$, który nie jest elementem zbioru wartości funkcji $f$. Stąd zaprzeczając tezie implikacji wyjściowej otrzymaliśmy zaprzeczenie założenia tej implikacji w wyniku czego otrzymaliśmy wedle prawa kontrapozycji implikację równoważną do wyjściowej. Stąd zadana implikacja jest prawdziwa, a ponieważ zachodzą obie implikacje to zachodzi równoważność $f:X\rightarrow Y$ jest surjekcją $\iff(f^{-1}[A]\subseteq f^{-1}[B]\Rightarrow A\subseteq B\subseteq Y)$ dla dowolnej funkcji $f$ i dowolnych $A\subseteq B\subseteq Y$.
+\end{proof}
+\begin{exercise}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq X$ i $B\subseteq Y$. Czym jest wyrażenie $f[A\cap f^{-1}[B]]$?$\\$
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i niech $A\subseteq X$ oraz $B\subseteq Y$. Weźmy $y\in f[A\cap f^{-1}[B]]$. Wówczas z definicji obrazu wynika, że istnieje $x\in A\cap f^{-1}[B]$ dla którego $y=f(x)\in f[A\cap f^{-1}[B]]$. Ale z definicji przekroju zbiorów $x\in A$ i $x\in f^{-1}[B]$. Zatem z definicji obrazu $y=f(x)\in f[A]$ i z definicji przeciwobrazu $y=f(x)\in B$. Stąd z definicji przekroju zbiorów $y=f(x)\in f[A]\cap B$. Wówczas $f[A\cap f^{-1}[B]]\subseteq f[A]\cap B$.$\\$
+Weźmy $y\in f[A]\cap B$. Wówczas z definicji przekroju zbiorów wynika, że $y\in f[A]$ i $y\in B$. Ponieważ $y\in f[A]$ to z definicji obrazu istnieje $x\in A$ dla którego $y=f(x)\in f[A]$. Ale ponieważ $y\in B$ to $y=f(x)\in B$. Zatem z definicji przeciwobrazu $x\in f^{-1}[B]$. Wówczas skoro $x\in A$ i $x\in f^{-1}[B]$ to z definicji przekroju zbiorów $x\in A\cap f^{-1}[B]$. Zatem z definicji obrazu $y=f(x)\in f[A\cap f^{-1}[B]]$. Stąd $f[A]\cap B\subseteq f[A\cap f^{-1}[B]]$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi równość $f[A\cap f^{-1}[B]]=f[A]\cap B$.
+\end{exercise}
+\begin{exercise}
+Niech $f:X\rightarrow Y$ będzie dowolną funkcją, zaś $A\subseteq X$ i $B\subseteq Y$. W ogólności zachodzi $f^{-1}[f[A\cap f^{-1}[B]]]=f^{-1}[f[A]\cap B]$.$\\$
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A\subseteq X$, $B\subseteq Y$. Niech $x\in f^{-1}[f[A\cap f^{-1}[B]]] $. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in f[A\cap f^{-1}[B]]$. Zatem z definicji obrazu istnieje $x_{0}\in A\cap f^{-1}[B]$ takie, że $f(x)=f(x_{0})\in f[A\cap f^{-1}[B]]$. Stąd z definicji przekroju zbiorów mamy $x_{0}\in A$ i $x_{0}\in f^{-1}[B]$. Zatem z definicji obrazu $f(x_{0})\in f[A]$. Ale jednocześnie $x_{0}\in f^{-1}[B]$ co z definicji przeciwobrazu daje nam $f(x_{0})\in B$. Czyli $f(x_{0})\in f[A]$ i $f(x_{0})\in B$. Stąd z definicji przekroju zbiorów $f(x_{0})\in f[A]\cap B$. Wówczas z definicji przeciwobrazu $x_{0}\in f^{-1}[f[A]\cap B]$. Ale $f(x_{0})=f(x)$. Zatem skoro $f(x_{0})\in f[A]\cap B$ to $f(x)\in f[A]\cap B$ i z definicji przeciwobrazu wynika, że $x\in f^{-1}[f[A]\cap B]$. Stąd wobec dowolności wyboru $x\in f^{-1}[f[A\cap f^{-1}[B]]]$ otrzymujemy $f^{-1}[f[A\cap f^{-1}[B]]]\subseteq f^{-1}[f[A]\cap B]$.$\\$
+Niech $x\in f^{-1}[f[A]\cap B]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in f[A]\cap B$. Stąd z definicji przekroju zbiorów $f(x)\in f[A]$ i $f(x)\in B$. Zatem z definicji obrazu wynika, że istnieje $x_{0}\in A$ dla którego $f(x)=f(x_{0})\in f[A]$. Ale $f(x)\in B$. Czyli $f(x_{0})\in B$. Wówczas z definicji przeciwobrazu $x_{0}\in f^{-1}[B]$. Ponieważ $x_{0}\in A$ i $x_{0}\in f^{-1}[B]$ to z definicji przekroju zbiorów mamy $x_{0}\in A\cap f^{-1}[B]$ co z definicji obrazu daje nam $f(x_{0})\in f[A\cap f^{-1}[B]]$, a wówczas z definicji przeciwobrazu dostajemy $x_{0}\in f^{-1}[f[A\cap f^{-1}[B]]]$. Ale skoro $f(x_{0})=f(x)$ to $f(x)\in f[A\cap f^{-1}[B]]$ i z definicji przeciwobrazu jest $x\in f^{-1}[f[A\cap f^{-1}[B]]]$. Stąd wobec dowolności wyboru $x\in f^{-1}[f[A]\cap B]$ zachodzi $f^{-1}[f[A]\cap B]\subseteq f^{-1}[f[A\cap f^{-1}[B]]]$, a ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{exercise}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. W ogólności zachodzi równość $f[A\cup B]=f[A]\cup f[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq X$. Niech $y\in f[A\cup B]$. Wówczas z definicji obrazu wynika, że istnieje $x\in A\cup B$ dla którego $y=f(x)\in f[A\cup B]$. Stąd z definicji sumy zbiorów mamy $x\in A$ lub $x\in B$. Zatem z definicji obrazu $y=f(x)\in f[A$] lub $y=f(x)\in f[B]$ co z definicji sumy zbiorów daje nam $y=f(x)\in f[A]\cup f[B]$. Wobec dowolności wyboru elementu $y\in f[A\cup B]$ dostajemy, że $f[A\cup B]\subseteq f[A]\cup f[B]$.$\\$
+Niech $y\in f[A]\cup f[B]$. Wówczas z definicji sumy zbiorów wynika, że $y\in f[A]$ lub $y\in f[B]$. Jeśli $y\in f[A]$ to z definicji obrazu istnieje $x\in A$ dla którego $y=f(x)\in f[A]$. Jeśli zaś $y\in f[B]$ to z definicji obrazu istnieje $x\in B$ dla którego $y=f(x)\in f[B]$. Zatem istnieje $x\in A\cup B$ dla którego $y=f(x)$ co z definicji obrazu daje nam $y=f(x)\in f[A\cup B]$. Wobec dowolności wyboru elementu $y\in f[A]\cup f[B]$ otrzymujemy $f[A]\cup f[B]\subseteq f[A\cup B]$, a ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. W ogólności zachodzi $f[A\cap B]\subseteq f[A]\cap f[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq X$. Niech $y\in f[A\cap B]$. Wówczas z definicji obrazu wynika, że istnieje $x\in A\cap B$ dla którego $y=f(x)\in f[A\cap B]$. Stąd z definicji przekroju zbiorów $x\in A$ i $x\in B$. Zatem z definicji obrazu $y=f(x)\in f[A]$ i $y=f(x)\in f[B]$ co z definicji przekroju zbiorów daje nam $y=f(x)\in f[A]\cap f[B]$. Wobec dowolności wyboru elementu $y\in f[A\cap B]$ otrzymujemy zatem $f[A\cap B]\subseteq f[A]\cap f[B]$.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. W ogólności zachodzi $f[A]\setminus f[B]\subseteq f[A\setminus B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq X$. Niech $y\in f[A]\setminus f[B]$. Wówczas z definicji różnicy zbiorów wynika, że $y\in f[A]$ i $y\notin f[B]$. Ponieważ $y\in f[A]$ to z definicji obrazu istnieje $x\in A$ dla którego $y=f(x)\in f[A]$. Gdyby $x\in B$ to z definicji obrazu byłoby $y=f(x)\in f[B]$. Ale z założenia $y=f(x)\notin f[B]$. Wówczas $x\notin B$. Zatem $x\in A$ i $x\notin B$ co z definicji różnicy zbiorów daje nam $x\in A\setminus B$. Stąd z definicji obrazu wynika, że $y=f(x)\in f[A\setminus B]$, a ponieważ $y\in f[A]\setminus f[B]$ zostało wybrane dowolnie to zachodzi $f[A]\setminus f[B]\subseteq f[A\setminus B]$.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq Y$. Wówczas $f^{-1}[A\cup B]=f^{-1}[A]\cup f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq Y$. Niech $x\in f^{-1}[A\cup B]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A\cup B$. Stąd z definicji sumy zbiorów $f(x)\in A$ lub $f(x)\in B$. Zatem z definicji przeciwobrazu mamy, że jeśli $f(x)\in A$ to $x\in f^{-1}[A]$ lub jeżeli $f(x)\in B$ to $x\in f^{-1}[B]$. Wówczas z definicji sumy zbiorów dostajemy $x\in f^{-1}[A]\cup f^{-1}[B]$. Ponieważ $x\in f^{-1}[A\cup B]$ został wybrany w sposób dowolny to $f^{-1}[A\cup B]\subseteq f^{-1}[A]\cup f^{-1}[B]$.$\\$
+Weźmy $x\in f^{-1}[A]\cup f^{-1}[B]$. Wówczas z definicji sumy zbiorów wynika, że $x\in f^{-1}[A]$ lub $x\in f^{-1}[B]$. Stąd z definicji przeciwobrazu dostajemy $f(x)\in A$ lub $f(x)\in B$. Zatem z definicji sumy zbiorów mamy $f(x)\in A\cup B$ co z definicji przeciwobrazu daje nam, że $x\in f^{-1}[A\cup B]$. Wobec tego, że $x\in f^{-1}[A]\cup f^{-1}[B]$ został wybrany dowolnie to $f^{-1}[A]\cup f^{-1}[B]\subseteq f^{-1}[A\cup B]$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq Y$. Wówczas $f^{-1}[A\cap B]=f^{-1}[A]\cap f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq Y$. Niech $x\in f^{-1}[A\cap B]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A\cap B$. Stąd z definicji iloczynu zbiorów mamy $f(x)\in A$ i $f(x)\in B$. Zatem z definicji przeciwobrazu $x\in f^{-1}[A]$ i $x\in f^{-1}[B]$ co z definicji iloczynu zbiorów daje nam $x\in f^{-1}[A]\cap f^{-1}[B]$. Wobec dowolności wyboru $x\in f^{-1}[A\cap B]$ otrzymujemy wówczas $f^{-1}[A\cap B]\subseteq f^{-1}[A]\cap f^{-1}[B]$.$\\$
+Weźmy $x\in f^{-1}[A]\cap f^{-1}[B]$. Wówczas z definicji iloczynu zbiorów wynika, że $x\in f^{-1}[A]$ i $x\in f^{-1}[B]$. Stąd z definicji przeciwobrazu jest $f(x)\in A$ i $f(x)\in B$. Zatem z definicji iloczynu zbiorów mamy $f(x)\in A\cap B$ co z definicji przeciwobrazu daje nam $x\in f^{-1}[A\cap B]$. Wobec dowolności wyboru $x\in f^{-1}[A]\cap f^{-1}[B]$ otrzymujemy, że $f^{-1}[A]\cap f^{-1}[B]\subseteq f^{-1}[A\cap B]$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq Y$. Wówczas $f^{-1}[A\setminus B]=f^{-1}[A]\setminus f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolne zbiory $A,B\subseteq Y$. Niech $x\in f^{-1}[A\setminus B]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in A\setminus B$. Stąd z definicji 
+różnicy zbiorów otrzymujemy $f(x)\in A$ i $f(x)\notin B$. Zatem z definicji przeciwobrazu mamy $x\in f^{-1}[A]$ i $x\notin f^{-1}[B]$ co z definicji różnicy zbiorów daje nam $x\in f^{-1}[A]\setminus f^{-1}[B]$. Wobec dowolności wyboru $x\in f^{-1}[A\setminus B]$ dostajemy, że $f^{-1}[A\setminus B]\subseteq f^{-1}[A]\setminus f^{-1}[B]$.$\\$
+Niech $x\in f^{-1}[A]\setminus f^{-1}[B]$. Wówczas z definicji różnicy zbiorów wynika, że $x\in f^{-1}[A]$ i $x\notin f^{-1}[B]$. Stąd z definicji przeciwobrazu otrzymujemy $f(x)\in A$ i $f(x)\notin B$. Zatem z definicji różnicy zbiorów mamy $f(x)\in A\setminus B$ co z definicji przeciwobrazu daje nam $x\in f^{-1}[A\setminus B]$. Wobec dowolności wyboru $x\in f^{-1}[A]\setminus f^{-1}[B]$ dostajemy, że $f^{-1}[A]\setminus f^{-1}[B]\subseteq f^{-1}[A\setminus B]$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $B\subseteq Y$. Wówczas $f^{-1}[Y\setminus B]=X\setminus f^{-1}[B]$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolny zbiór $B\subseteq Y$. Z własności przeciwobrazu różnicy wynika wprost, że $f^{-1}[Y\setminus B]=f^{-1}[Y]\setminus f^{-1}[B]$. Z definicji przeciwobrazu zaś otrzymujemy $f^{-1}[Y]=X$. Stąd $f^{-1}[Y\setminus B]=X\setminus f^{-1}[B]$.
+\end{proof}
+\begin{remark}
+Zauważmy, że własności przeciwobrazu iloczynu i różnicy zbiorów są równościami niezależnymi od injektywności bądź surjektywności funkcji. Nie tak jak w przypadku analogicznych własności obrazów. Przy czym własności obrazu i przeciwobrazu sumy zbiorów są obie niezależne od injektywności i surjektywności funkcji.
+\end{remark}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami funkcji $f$. $f:X\rightarrow Y$ jest injekcją wtedy i tylko wtedy, gdy zachodzi równość $f[A\cap B]=f[A]\cap f[B]$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. Załóżmy, że $f$ nie jest injekcją. Wówczas z definicji wynika, że istnieją $x_{1}\ne x_{2}\in X$ dla których $y=f(x_{1})=f(x_{2})$. Niech $A=\{x_{1}\}$, zaś $B=\{x_{2}\}$. Stąd $A\cap B=\emptyset$. Zatem $f[A\cap B]=f[\emptyset]=\emptyset$. Ale z definicji obrazu wynika, że $y=f(x_{1})\in f[A]$ i $y=f(x_{2})\in f[B]$. Czyli $f[A]=\{y\}$ i $f[B]=\{y\}$. Stąd $f[A]=f[B]=\{y\}$. Wówczas $f[A]\cap f[B]=\{y\}$, a ponieważ $f[A\cap B]=\emptyset$ to $f[A\cap B]\ne f[A]\cap f[B]$. Zatem przez kontrapozycję udowodniliśmy, że jeśli dla dowolnych podzbiorów dziedziny funkcji $f$ zachodzi zadana równość to $f$ jest injekcją.$\\$
+Niech $f:X\rightarrow Y$ będzie injekcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. Weźmy $y\in f[A]\cap f[B]$. Wówczas z definicji iloczynu zbiorów wynika, że $y\in f[A]$ i $y\in f[B]$. Ponieważ $y\in f[A]$ to z definicji obrazu istnieje $x_{1}\in A$ dla którego $y=f(x_{1})\in f[A]$ i ponieważ $y\in f[B]$ to z definicji obrazu istnieje $x_{2}\in B$ dla którego $y=f(x_{2})\in f[B]$. Stąd $y=f(x_{1})=f(x_{2})$. Ale z założenia $f$ jest injekcją czyli $x_{1}=x_{2}$. Zatem $x_{1}=x_{2}\in A$ i $x_{1}=x_{2}\in B$ co z definicji iloczynu zbiorów daje nam $x_{1}=x_{2}\in A\cap B$. Wówczas z definicji obrazu wynika, że $y=f(x_{1})=f(x_{2})\in f[A\cap B]$. Wobec dowolności wyboru $y\in f[A]\cap f[B]$ otrzymujemy zatem, że $f[A]\cap f[B]\subseteq f[A\cap B]$. A ponieważ inkluzja przeciwna zachodzi w ogólności (czyli również dla injekcji) to jeśli $f$ jest injekcją to dla dowolnych podzbiorów dziedziny funkcji $f$ zachodzi zadana równość. Wobec tego, że zachodzą obie implikacje to zachodzi zadana równoważność.
+\end{proof}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Dla dowolnej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $f[\bigcup\mathcal{A}]=\bigcup\{f[A]:A\in\mathcal{A}\}$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolną rodzinę zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$. Niech $A\in\mathcal{A}$ będzie dowolnym zbiorem. Z definicji sumy zbiorów wynika, że $A\subseteq\bigcup\mathcal{A}$. Wówczas skoro $A\subseteq\bigcup\mathcal{A}\subseteq X$ to na mocy odpowiedniego lematu otrzymujemy, że $f[A]\subseteq f[\bigcup\mathcal{A}]$ dla każdego zbioru $A\in\mathcal{A}$, bo $A$ był wybrany dowolnie. Zatem z definicji sumy zbiorów wynika, że $\bigcup\{f[A]:A\in\mathcal{A}\}\subseteq f[\bigcup\mathcal{A}]$.$\\$
+Weźmy $y\in f[\bigcup\mathcal{A}]$. Wówczas z definicji obrazu wynika, że istnieje $x\in\bigcup\mathcal{A}$ dla którego $y=f(x)\in f[\bigcup\mathcal{A}]$. Zatem z definicji sumy ogólnej zbiorów mamy, że istnieje $A\in\mathcal{A}$ taki, że $x\in A$. Stąd z definicji obrazu $y=f(x)\in f[A]$. Wówczas z definicji sumy zbiorów otrzymujemy, że $y=f(x)\in\bigcup \{f[A]:A\in\mathcal{A}\}$. Wobec dowolności wyboru $y\in f[\bigcup\mathcal{A}]$ dostajemy $f[\bigcup\mathcal{A}]\subseteq\bigcup\{f[A]:A\in\mathcal{A}\}$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{lemma}
+Niech $f:X\rightarrow Y$ będzie funkcją. Dla niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi $f[\bigcap\mathcal{A}]\subseteq\bigcap\{f[A]:A\in\mathcal{A}\}$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ oraz dowolną, niepustą rodzinę zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$. Niech $A\in\mathcal{A}$. Z definicji przekroju zbiorów wynika, że $\bigcap\mathcal{A}\subseteq A$. Wówczas skoro $\bigcap\mathcal{A}\subseteq A\subseteq X$ to korzystając z wcześniej udowodnionego lematu otrzymujemy, że $f[\bigcap\mathcal{A}]\subseteq f[A]$ dla każdego $A\in\mathcal{A}$. Stąd zachodzi $f[\bigcap\mathcal{A}]\subseteq\bigcap\{f[A]:A\in\mathcal{A}\}$.$\\$
+\end{proof}
+\begin{remark}
+Inny sposób udowodnienia powyższego lematu.$\\$
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $\mathcal{A}\subseteq\mathcal{P}(X)$ dowolną, niepustą rodziną zbiorów. Weźmy $y\in f[\bigcap\mathcal{A}]$. Wówczas z definicji obrazu wynika, że istnieje $x\in\bigcap\mathcal{A}$ dla którego $y=f(x)\in f[\bigcap\mathcal{A}]$. Zatem z definicji iloczynu zbiorów $x\in A$ dla każdego $A\in\mathcal{A}$. Stąd z definicji obrazu mamy $y=f(x)\in f[A]$ dla każdego $A\in\mathcal{A}$ co z definicji przekroju zbiorów daje nam $y=f(x)\in\bigcap\{f[A]:A\in\mathcal{A}\}$. Wobec dowolności wyboru elementu $y\in f[\bigcap\mathcal{A}]$ otrzymujemy, że zachodzi $f[\bigcap\mathcal{A}]\subseteq\bigcap\{f[A]:A\in\mathcal{A}\}$.
+\end{remark}
+\begin{theorem}
+$f:X\rightarrow Y$ jest injekcją wtedy i tylko wtedy, gdy dla dowolnej, niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $\bigcap\{f[A]:A\in\mathcal{A}\}=f[\bigcap\mathcal{A}]$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Jeżeli dla dowolnej, niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $\bigcap\{f[A]:A\in\mathcal{A}\}= f[\bigcap\mathcal{A}]$ to $f:X\rightarrow Y$ jest injekcją.$\\$
+Załóżmy, że $f:X\rightarrow Y$ nie jest injekcją. Wówczas z definicji istnieją $x_{1}\ne x_{2}\in X$ dla których $f(x_{1})=f(x_{2})$. Niech $\mathcal{A}=\{\{x_{1}\},\{x_{2}\}\}$. Zatem $\bigcap\mathcal{A}=\emptyset$. Stąd $f[\bigcap\mathcal{A}]=\emptyset$. Ale z definicji obrazu wynika, że skoro $x_{1}\in\{x_{1}\}$ i $x_{2}\in\{x_{2}\}$ to $f(x_{1})\in f[\{x_{1}\}]$ i $f(x_{2})\in f[\{x_{2}\}]$. A ponieważ $f(x_{1})=f(x_{2})$ to $f(x_{1})=f(x_{2})\in\bigcap\{f[A]:A\in\mathcal{A}\}$. Wówczas $\bigcap\{f[A]:A\in\mathcal{A}\}\ne\emptyset$. Stąd $\bigcap\{f[A]:A\in\mathcal{A}\}\ne f[\bigcap\mathcal{A}]$.$\\$
+Zatem przez kontrapozycję uzyskaliśmy implikację jeżeli $f:X\rightarrow Y$ nie jest injekcją to istnieje rodzina zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ dla której nie zachodzi równość $\bigcap\{f[A]:A\in\mathcal{A}\}= f[\bigcap\mathcal{A}]$, która jest równoważna implikacji zadanej w treści twierdzenia. Stąd udowodniliśmy, że jeśli dla dowolnej, niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $\bigcap\{f[A]:A\in\mathcal{A}\}= f[\bigcap\mathcal{A}]$ to $f:X\rightarrow Y$ jest injekcją.$\\$
+Jeżeli $f:X\rightarrow Y$ jest injekcją to dla dowolnej, niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi inkluzja $\bigcap\{f[A]:A\in\mathcal{A}\}\subseteq f[\bigcap\mathcal{A}]$.$\\$
+Niech $f:X\rightarrow Y$ będzie injekcją, zaś $\mathcal{A}\subseteq\mathcal{P}(X)$ dowolną, niepustą rodziną zbiorów. Weźmy $y\in\bigcap\{f[A]:A\in\mathcal{A}\}$. Wówczas $y\in f[A]$ dla każdego $A\in\mathcal{A}$. Zatem z definicji obrazu wynika, że dla każdego $A\in\mathcal{A}$ istnieją takie $x_{A}\in A$, że $y=f(x_{A})$. Ponieważ z założenia $\mathcal{A}\ne\emptyset$ to możemy ustalić dwa dowolne zbiory $A_{1},A_{2}\in\mathcal{A}$. Wówczas $y=f(x_{A_{1}})\in f[A_{1}]$ i $y=f(x_{A_{2}})\in f[A_{2}]$. Stąd $y=f(x_{A_{1}})=f(x_{A_{2}})$. Ale z założenia $f$ jest injekcją czyli $x_{A_{1}}=x_{A_{2}}$. Ponieważ jest tak dla dowolnej pary argumentów $x_{A}$ dla których $y=f(x_{A})\in f[A]$ dla każdego $A\in\mathcal{A}$ to $x_{A}$ jest tym samym elementem. Stąd z definicji przekroju zbiorów $x_{A}\in\bigcap\mathcal{A}$ co z definicji obrazu daje nam $y=f(x_{A})\in f[\bigcap\mathcal{A}]$. A ponieważ $y\in\bigcap\{f[A]:A\in\mathcal{A}\}$ zostało wybrane dowolnie to zachodzi inkluzja $\bigcap\{f[A]:A\in\mathcal{A}\}\subseteq f[\bigcap\mathcal{A}]$. Wobec tego, że inkluzja przeciwna zachodzi w ogólności to zachodzi równość $\bigcap\{f[A]:A\in\mathcal{A}\}=f[\bigcap\mathcal{A}]$.
+\end{proof}
+\begin{remark}
+Warunek niepustości rodziny zbiorów $\mathcal{A}$ w powyższym twierdzeniu ma kluczowe znaczenie. Jeśli $\mathcal{A}=\emptyset$ to wówczas z definicji iloczynu ogólnego rodziny $\mathcal{A}$ wynika wprost, że $\bigcap\mathcal{A}=\bigcap\mathcal{\emptyset}=X$. Bowiem z definicji $\bigcap\mathcal{A}=\{x\in X:\forall A\in\mathcal{A}:x\in A\}$. Oczywiście przy założeniu $\mathcal{A}\subseteq\mathcal{P}(X)$. Podstawiając w definicji iloczynu rodziny zbiorów za $\mathcal{A}$ symbol $\emptyset$ dostajemy $\bigcap\emptyset=\{x\in X:\forall A\in\emptyset: x\in A\}$. Zatem $\bigcap\emptyset\ne\emptyset$. Stąd $x\in\bigcap\emptyset\iff x\in X$ czyli z definicji $\bigcap\emptyset=X$. Wówczas zauważmy, że $\{f[A]:A\in\emptyset\}=\emptyset$. Czyli rodzina wszystkich obrazów pustej rodziny $\mathcal{A}$ jest pusta. Stąd zgodnie z powyższym $\bigcap\{f[A]:A\in\emptyset\}=\bigcap\emptyset$. Korzystając z definicji iloczynu ogólnego rodziny zbiorów mamy $\bigcap\emptyset=\{y\in Y:\forall f[A]:A\in\emptyset:y\in f[A]\}=Y$. Zatem gdyby miała zachodzić równość $f[\bigcap\mathcal{A}]=\bigcap\{f[A]:A\in\mathcal{A}\}$ dla pustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ to wówczas otrzymalibyśmy $f[\bigcap\emptyset]=\bigcap\{f[A]:A\in\emptyset\}$, czyli $f[X]=Y$. Co z definicji daje nam, że $f$ jest surjekcją. Dlatego też założenie o niepustości rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ jest niezbędne w dowodzeniu twierdzenia o injektywności funkcji $f$. Można też sformułować twierdzenie, biorąc pod uwagę dowolną rodzinę zbiorów-w tym także pustą- zawierającą się w zbiorze potęgowym dziedziny funkcji.
+\end{remark}
+\begin{theorem}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $\mathcal{A}\subseteq\mathcal{P}(X)$ dowolną rodziną zbiorów. Funkcja $f:X\rightarrow Y$ jest bijekcją wtedy i tylko wtedy, gdy dla dowolnej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $f[\bigcap\mathcal{A}]=\bigcap\{f[A]:A\in\mathcal{A}\}$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolną rodzinę zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$. Wiemy już, że gdy dla niepustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $f[\bigcap\mathcal{A}]=\bigcap\{f[A]:A\in\mathcal{A}\}$ wtedy i tylko wtedy, gdy funkcja $f$ jest injekcją. Natomiast dla pustej rodziny zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ równość $f[\bigcap\emptyset]=\bigcap\{f[A]:A\in\emptyset\}$ przyjmuje postać równoważną surjektywności. Bo $\bigcap\emptyset=X$ czyli $f[\bigcap\emptyset]=f[X]$, zaś prawa strona zadanej równości przyjmuje postać $\bigcap\{f[A]:A\in\mathcal{A}\}=Y=rng(f)$. Zatem funkcja $f$ jest injekcją, wtedy i tylko wtedy gdy dla każdej niepustej rodziny $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $f[\bigcap\mathcal{A}]=\bigcap\{f[A]:A\in\mathcal{A}\}$, zaś jest surjekcją, wtedy i tylko wtedy, gdy dla pustej rodziny $\mathcal{A}\subseteq\mathcal{P}(X)$ zachodzi równość $f[\bigcap\emptyset]=\bigcap\{f[A]:A\in\emptyset\}$. Wobec tego, że dla dowolnych rodzin zbiorów $\mathcal{A}\subseteq\mathcal{P}(X)$ (pustych i niepustych) zachodzi zadana równość i jest to równoważne koniunkcji warunku injektywności i warunku surjektywności funkcji $f$ to z definicji $f$ jest bijekcją.
+\end{proof}
+\begin{theorem}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A,B\subseteq X$ dowolnymi podzbiorami dziedziny funkcji $f$. $f:X\rightarrow Y$ jest injekcją wtedy i tylko wtedy, gdy zachodzi równość $f[A\setminus B]=f[A]\setminus f[B]$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie injekcją, zaś $A,B\subseteq X$. Wówczas z wcześniej udowodnionych własności wynika, że $A=f^{-1}[f[A]]$ i $B=f^{-1}[f[B]]$. Stąd z innej własności mamy $f[A]=f[f^{-1}[f[A]]]$ i $f[B]=f[f^{-1}[[f[B]]]$. Weźmy $y\in f[A\setminus B]$. Z definicji obrazu istnieje zatem $x\in A\setminus B$ dla którego $y=f(x)\in f[f^{-1}[f[A]]]$. Z definicji różnicy zbiorów otrzymujemy więc $x\in A$ i $x\notin B$. Ale ponieważ $f$ jest z założenia injekcją to $x\in f^{-1}[f[A]]$ co z definicji przeciwobrazu daje nam $y=f(x)\in f[A]$. Jednocześnie skoro $x\notin B$ to z injektywności funkcji $f$ wynika, że $x\notin f^{-1}[f[B]]$. Wówczas z definicji przeciwobrazu dostajemy $y=f(x)\notin f[B]$. A ponieważ $y\in f[A]$ to z definicji różnicy zbiorów mamy $y=f(x)\in f[A]\setminus f[B]$. Wobec tego, że $y\in f[A\setminus B]$ został wybrany jako dowolny element to $f[A\setminus B]\subseteq f[A]\setminus f[B]$, a ponieważ inkluzja przeciwna zachodzi dla każdej funkcji(czyli również dla injekcji) to jeżeli $f$ jest injekcją to zachodzi równość $f[A\setminus B]=f[A]\setminus f[B]$.$\\$
+Implikację przeciwną udowodnimy stosując prawo kontrapozycji. Załóżmy zatem, że $f$ nie jest injekcją oraz $f[A\setminus B]=f[A]\setminus f[B]$. Ponieważ $f$ nie jest injekcją to z definicji istnieją $x_{1}\ne x_{2}\in X$ dla których $y=f(x_{1})=f(x_{2})$. Niech $A=\{x_{1}\}$ i $B=\{x_{2}\}$. Wówczas z definicji różnicy zbiorów wynika, że $A\setminus B=\{x_{1}\}$. Stąd z definicji obrazu $f[A\setminus B]=\{f(x_{1})\}$. Z definicji obrazu mamy także $f[A]=\{f(x_{1})\}$ oraz $f[B]=\{f(x_{2})\}$. A ponieważ $f(x_{1})=f(x_{2})$ to z definicji różnicy zbiorów otrzymujemy $f[A]\setminus f[B]=\emptyset$. Jednak $f[A\setminus B]\ne\emptyset$. Mamy zatem sprzeczność bo dostajemy $f[A\setminus B]\ne f[A]\setminus f[B]$ dla ustalonych zbiorów $A$ i $B$. Stąd z prawa kontrapozycji wynika, że jeśli $f$ nie jest injekcją to istnieją takie zbiory $A,B\subseteq X$ dla których nie zachodzi $f[A\setminus B]=f[A]\setminus f[B]$. Zatem jeśli dla dowolnych $A,B\subseteq X$ zachodzi $f[A\setminus B]=f[A]\setminus f[B]$ to $f$ jest injekcją. Wobec tego, że zachodzą obie implikacje to zadana równoważność jest prawdziwa.
+\end{proof}
+\begin{theorem}
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq B\subseteq X$. Funkcja $f:X\rightarrow Y$ jest injekcją wtedy i tylko wtedy, gdy ($A\subseteq B\subseteq X$ wtedy i tylko wtedy, gdy $f[A]\subseteq f[B]$).
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $f:X\rightarrow Y$ będzie funkcją, zaś $A\subseteq B\subseteq X$. Jeżeli $f:X\rightarrow Y$ jest injekcją to ($A\subseteq B\subseteq X$ wtedy i tylko wtedy, gdy $f[A]\subseteq f[B]$).$\\$
+Załóżmy, że $f:X\rightarrow Y$ jest injekcją oraz $A\subseteq B\subseteq X$. Z założenia, że $f$ jest injekcją wynika wówczas, że dla dowolnych pozbiorów dziedziny funkcji $f$ zachodzą równości $A=f^{-1}[f[A]]$ i $B=f^{-1}[f[B]]$. Stąd skoro $A\subseteq B$ to $f^{-1}[f[A]]\subseteq f^{-1}[f[B]]$. Zatem korzystając z wcześniej udowodnionej własności dostajemy $f[A]\subseteq f[B]$. W ten sposób udowodniliśmy prawdziwość implikacji $f:X\rightarrow Y$ jest injekcją $\Rightarrow(A\subseteq B\subseteq X\Rightarrow f[A]\subseteq f[B]$).$\\$
+Niech $f:X\rightarrow Y$ będzie injekcją oraz $f[A]\subseteq f[B]$ dla dowolnych $A,B\subseteq X$. Korzystając z wcześniej udowodnionej własności wynika, że  $f^{-1}[f[A]]\subseteq f^{-1}[f[B]]$. Z założenia, że $f$ jest injekcją mamy, że dla dowolnych podzbiorów dziedziny funkcji $f$ zachodzi $A=f^{-1}[f[A]]$ i $B=f^{-1}[f[B]]$. Stąd $A\subseteq B$. Udowodniliśmy zatem prawdziwość implikacji $f:X\rightarrow Y$ jest injekcją $\Rightarrow (f[A]\subseteq f[B]\Rightarrow A\subseteq B\subseteq X)$. Wobec tego, że zachodzą obie implikacje to $f:X\rightarrow Y$ jest injekcją $\Rightarrow(A\subseteq B\subseteq X\iff f[A]\subseteq f[B])$.$\\$
+Niech $f:X\rightarrow Y$ będzie funkcją i $A\subseteq B\subseteq X\iff f[A]\subseteq f[B]$. Jeżeli dla dowolnych $(A\subseteq B\subseteq X$ wtedy i tylko wtedy, gdy $f[A]\subseteq f[B])$ to $f:X\rightarrow Y$ jest injekcją.$\\$
+Załóżmy, że $f:X\rightarrow Y$ nie jest injekcją. Wówczas z definicji istnieją $x_{1}\ne x_{2}\in X$ dla których $y=f(x_{1})=f(x_{2})$. Niech $A=\{x_{1}\}$ i $B=\{x_{2}\}$. Stąd z definicji obrazu wynika, że $f[A]=\{f(x_{1})\}$ i $f[B]=\{f(x_{2})\}$. Zatem $f[A]=f[B]$ bo $f(x_{1})=f(x_{2})$. Ale skoro $x_{1}\ne x_{2}$ to $A\not\subseteq B$. Wówczas z prawa kontrapozycji otrzymaliśmy, że jeśli $f$ nie jest injekcją to istnieją takie podzbiory dziedziny funkcji $f$ dla których jeśli $f[A]\subseteq f[B]$ to $A\not\subseteq B$. Zatem jeśli dla dowolnych $A\subseteq B\subseteq X$ i dla dowolnej funkcji $f:X\rightarrow Y$ zachodzi równoważność $A\subseteq B\subseteq X\iff f[A]\subseteq f[B]$ to $f$ jest injekcją. Ponieważ zachodzą obie implikacje to zachodzi zadana równoważność.
+\end{proof}
+\begin{lemma}
+Jeśli $f:X\rightarrow Y$ jest funkcją, zaś $\mathcal{B}\subseteq\mathcal{P}(Y)$ dowolną rodziną zbiorów to zachodzi równość $f^{-1}[\bigcup\mathcal{B}]=\bigcup\{f^{-1}[B]:B\in\mathcal{B}\}$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolną rodzinę zbiorów $\mathcal{B}\subseteq\mathcal{P}(Y)$. Z definicji sumy ogólnej rodziny zbiorów wynika wprost, że dla dowolnego $B\in\mathcal{B}$ jest $B\subseteq\bigcup\mathcal{B}$. Stąd z wcześniej udowodnionego lematu otrzymujemy, że skoro $B\subseteq\bigcup\mathcal{B}\subseteq Y$ to $f^{-1}[B]\subseteq f^{-1}[\bigcup\mathcal{B}]$ dla każdego zbioru $B\in\mathcal{B}$. Zatem $\bigcup\{f^{-1}[B]:B\in\mathcal{B}\}\subseteq f^{-1}[\bigcup\mathcal{B}]$.$\\$
+Niech $x\in f^{-1}[\bigcup\mathcal{B}]$. Wówczas z definicji przeciwobrazu wynika, że $f(x)\in\bigcup\mathcal{B}$. Stąd z definicji sumy ogólnej rodziny zbiorów mamy, że istnieje $B\in\mathcal{B}$ taki, że $f(x)\in B$. Stąd z definicji przeciwobrazu otrzymujemy $x\in f^{-1}[B]$. Zatem z definicji sumy zbiorów dostajemy $x\in\bigcup\{f^{-1}[B]:B\in\mathcal{B}\}$. Wobec dowolności wyboru $x\in f^{-1}[\bigcup\mathcal{B}]$ jest $f^{-1}[\bigcup\mathcal{B}]\subseteq\bigcup\{f^{-1}[B]:B\in\mathcal{B}\}$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{lemma}
+Jeśli $f:X\rightarrow Y$ jest funkcją, zaś $\mathcal{B}\subseteq\mathcal{P}(Y)$ dowolną, niepustą rodziną zbiorów to zachodzi równość $f^{-1}[\bigcap\mathcal{B}]=\bigcap\{f^{-1}[B]:B\in\mathcal{B}\}$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną funkcję $f:X\rightarrow Y$ i dowolną, niepustą rodzinę zbiorów $\mathcal{B}\subseteq\mathcal{P}(Y)$. Z definicji iloczynu ogólnego rodziny zbiorów wynika, że $\bigcap\mathcal{B}\subseteq B$. Wówczas z udowodnionego wcześniej lematu mamy, że skoro $\bigcap\mathcal{B}\subseteq B\subseteq Y$ to $f^{-1}[\bigcap\mathcal{B}]\subseteq f^{-1}[B]$ dla każdego $B\in\mathcal{B}$. Zatem $f^{-1}[\bigcap\mathcal{B}]\subseteq\bigcap\{f^{-1}[B]:B\in\mathcal{B}\}$.$\\$
+Niech $x\in\bigcap\{f^{-1}[B]:B\in\mathcal{B}\}$. Wówczas z definicji przeciwobrazu $f(x)\in B$ dla każdego $B\in\mathcal{B}$ czyli $f(x)\in\bigcap\mathcal{B}$. Stąd z definicji przeciwobrazu wynika, że $x\in f^{-1}[\bigcap\mathcal{B}]$. Wobec dowolności wyboru $x\in\bigcap\{f^{-1}[B]:B\in\mathcal{B}\}$ otrzymujemy zatem $\bigcap\{f^{-1}[B]:B\in\mathcal{B}\}\subseteq f^{-1}[\bigcap\mathcal{B}]$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{remark}
+Zwróćmy uwagę, że powyższa równość dla $\mathcal{B}=\emptyset\subseteq\mathcal{P}(Y)$ także zachodzi i przyjmuje postać $f^{-1}[Y]=X$ co zachodzi dla dowolnej funkcji.
+\end{remark}
+\begin{definition}
+Niech $J$ i $X$ będą zbiorami. Funkcję $\iota:J\rightarrow\mathcal{P}(X)$ nazywamy indeksowaną rodziną zbiorów, gdzie $J$ jest zbiorem indeksów. Indeksowaną rodzinę zbiorów oznaczamy też jako $(X_{j}:j\in J)$, przy czym $X_{j}=\iota(j)$ dla każdego $j\in J$. Wówczas $j\in J$ jest indeksem czyli argumentem funkcji $\iota$.
+\end{definition}
+\begin{remark}
+Zauważmy zatem, że z powyższej definicji wynika wprost, że dla każdego $j\in J$ jest $X_{j}\subseteq X$. Bo indeksowana rodzina zbiorów
+przyporządkowuje każdemu indeksowi ze zbioru $J$ dokładnie jeden podzbiór zbioru $X$. Stąd indeksowana rodzina zbiorów $\iota:J\rightarrow\mathcal{P}(X)$ zawiera pary uporządkowane
+$(j,\iota(j))=(j,X_{j})$.
+\end{remark}
+\begin{definition}
+Niech $J$ i $X$ będą zbiorami, zaś $\iota:J\rightarrow\mathcal{P}(X)$ funkcją. Sumą indeksowanej rodziny zbiorów $\iota$ nazywamy zbiór $\bigcup\{X_{j}:j\in J\}$.$\\$
+Wówczas w naturalny sposób możemy zdefiniować przynależność elementu do sumy indeksowanej rodziny zbiorów. Mianowicie $x\in\bigcup\limits_{j\in J} X_{j}\iff\exists j\in J: x\in X_{j}$.
+\end{definition}
+\begin{definition}
+Niech $J$ i $X$ będą zbiorami, zaś $\iota:J\rightarrow\mathcal{P}(X)$ funkcją. Iloczynem indeksowanej rodziny zbiorów $\iota$ nazywamy zbiór $\bigcap\{X_{j}:j\in J\}$.$\\$
+Wówczas w naturalny sposób możemy zdefiniować przynależność elementu do iloczynu indeksowanej rodziny zbiorów. Mianowicie $x\in\bigcap\limits_{j\in J} X_{j}\iff\forall j\in J: x\in X_{j}$.
+Warto też zaznaczyć, że iloczyn indeksowanej rodziny zbiorów definiujemy dla niepustej indeksowanej rodziny zbiorów, czyli dla takiej, której zbiór indeksów jest niepusty. Zatem $(X_{j}:j\in J)$ jest niepusta $\iff J\ne\emptyset$.
+\end{definition}
+\begin{property}
+Prawo de Morgana dla indeksowanej rodziny zbiorów $(X_{j}:j\in J)$. Niech $\iota: J\rightarrow\mathcal{P}(X)$ będzie indeksowaną rodziną zbiorów. Jeżeli $J\ne\emptyset$ i $X_{j}\subseteq X$ dla każdego $j\in J$ to zachodzi równość $X\setminus\bigcap\limits_{j\in J}X_{j}=\bigcup\limits_{j\in J}(X\setminus X_{j})$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną indeksowaną rodzinę zbiorów $(X_{j}:j\in J)$, przy czym $J\ne\emptyset$ oraz $X_{j}\subseteq X$ dla każdego $j\in J$. Niech $x\in X\setminus\bigcap\limits_{j\in J}X_{j}$. Wówczas z definicji różnicy zbiorów wynika, że $x\in X$ i $x\notin\bigcap\limits_{j\in J}X_{j}$. Stąd istnieje $j_{0}\in J$ dla którego $x\notin X_{j_{0}}$. Czyli z zaprzeczenia przynalezności elementu do iloczynu ogólnego rodziny zbiorów istnieje $X_{j_{0}}\in(X_{j}:j\in J)$, że dla $j_{0}\in J$ mamy $x\notin X_{j_{0}}$. Tak więc z definicji różnicy zbiorów otrzymujemy, że $x\in X\setminus X_{j_{0}}$, zaś z definicji sumy zbiorów dostajemy wówczas $x\in\bigcup\limits_{j\in J}(X\setminus X_{j})$. Wobec dowolności wyboru $x\in X\setminus\bigcap\limits_{j\in J}X_{j}$ otrzymujemy zatem $X\setminus\bigcap\limits_{j\in J}X_{j}\subseteq\bigcup\limits_{j\in J}(X\setminus X_{j})$.$\\$
+Niech $x\in\bigcup\limits_{j\in J}(X\setminus X_{j})$. Wówczas istnieje $j_{0}\in J$ dla którego $x\in X\setminus X_{j}$. Stąd z definicji różnicy zbiorów mamy, że istnieje $X_{j}\in(X_{j}:j\in J)$ taki, że dla $j_{0}\in J$ jest $x\notin X_{j}$. Niech tym zbiorem będzie $X_{j_{0}}$. Zatem $x\notin X_{j_{0}}$. Wówczas z zaprzeczenia przynależności elementu do iloczynu ogólnego rodziny zbiorów wynika, że $x\notin\bigcap\limits_{j\in J}X_{j}$. A ponieważ $x\in X$ to z definicji różnicy zbiorów dostajemy $x\in X\setminus\bigcap\limits_{j\in J}X_{j}$. Wobec tego, że $x\in\bigcup\limits_{j\in J}(X\setminus X_{j})$ został wybrany dowolnie to zachodzi $\bigcup\limits_{j\in J}(X\setminus X_{j})\subseteq X\setminus\bigcap\limits_{j\in J}X_{j}$. Z racji tego, że zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Prawo de Morgana dla indeksowanej rodziny zbiorów $(X_{j}:j\in J)$. Niech $\iota: J\rightarrow\mathcal{P}(X)$ będzie indeksowaną rodziną zbiorów. Jeżeli $J\ne\emptyset$ i $X_{j}\subseteq X$ dla każdego $j\in J$ to zachodzi równość $X\setminus\bigcup\limits_{j\in J}X_{j}=\bigcap\limits_{j\in J}(X\setminus X_{j})$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną indeksowaną rodzinę zbiorów $(X_{j}:j\in J)$, przy czym $J\ne\emptyset$ i dla każdego $j\in J$ jest $X_{j}\subseteq X$. Niech $x\in X\setminus\bigcup\limits_{j\in J}X_{j}$. Wówczas z definicji różnicy zbiorów wynika, że $x\in X$ i $x\notin\bigcup\limits_{j\in J}X_{j}$. Stąd z zaprzeczenia przynależności elementu do sumy ogólnej rodziny zbiorów mamy, że $x\notin X_{j}$ dla każdego $j\in J$. A ponieważ $x\in X$ to z definicji różnicy zbiorów $x$ należy zatem do $X\setminus X_{j}$ dla każdego $j\in J$. Wówczas z definicji iloczynu zbiorów dostajemy, że $x\in\bigcap\limits_{j\in J}(X\setminus X_{j})$. Wobec tego, że $x\in X\setminus\bigcup\limits_{j\in J}X_{j}$ został wybrany dowolnie to $X\setminus\bigcup\limits_{j\in J}X_{j}\subseteq\bigcap\limits_{j\in J}(X\setminus X_{j})$.$\\$
+Niech $x\in\bigcap\limits_{j\in J}(X\setminus X_{j})$. Wówczas z definicji iloczynu zbiorów wynika, że dla każdego $j\in J$ jest $x\in X\setminus X_{j}$. Zatem z definicji różnicy zbiorów mamy $x\in X$ i $x\notin X_{j}$ dla każdego $j\in J$. Stąd ponieważ nie istnieje $j\in J$ dla którego $x\in X_{j}$ to z definicji sumy zbiorów otrzymujemy, że $x\notin \bigcup\limits_{j\in J}X_{j}$. Ale jednocześnie $x\in X$ co z definicji różnicy zbiorów daje nam $x\in X\setminus\bigcup\limits_{j\in J}X_{j}$. Wobec tego, że $x\in\bigcap\limits_{j\in J}(X\setminus X_{j})$ został wybrany dowolnie to wówczas $\bigcap\limits_{j\in J}(X\setminus X_{j})\subseteq X\setminus\bigcup\limits_{j\in J}X_{j}$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{definition}
+Produktem indeksowanej rodziny zbiorów $\iota:J\rightarrow\mathcal{P}(X)$ nazywamy rodzinę funkcji $\prod\limits_{j\in J}X_{j}=\{f\in {}^J X: f\left (j \right)\in X_{j} \forall j\in J\}$, gdzie dla każdego indeksu $j$ ze zbioru indeksów $J$ indeksowanej rodziny zbiorów $\left (X_{j}: j\in J \right)$ zbiór $X_{j}$ jest podzbiorem danego zbioru $X$. ${}^J X=\{f: J\rightarrow X\}$ to zbiór wszystkich funkcji z dziedziną $J$ w zbiór $X$.
+\end{definition}
+\begin{remark}
+Zatem dziedziną indeksowanej rodziny zbiorów i każdej funkcji należącej do produktu tej rodziny jest zbiór indeksów tej rodziny. Czyli jeżeli mamy indeksowaną rodzinę zbiorów $\iota: J\rightarrow \mathcal{P}\left (X \right)$ to pary uporządkowane $(j;\iota\left (j \right))$ należą do zbioru $J\times \mathcal{P}\left (X \right)$, natomiast para każdej funkcji należącej do produktu to $(j;f\left (j \right))$, gdzie $f\left (j \right)\in X_{j}$ dla każdego $j\in J$. Przy czym $\iota\left (j \right)=X_{j}$ zaś $f\left (j \right)$ jest elementem zbioru $X_{j}$ z indeksowanej rodziny zbiorów $\left (X_{j}: j\in J \right)$.
+Jeżeli $\iota\left (j_{0} \right)=X_{j_{0}}$ to wartość funkcji z produktu dla argumentu $j_{_{0}}$ wynosi $f\left (j_{_{0}} \right)\in X_{j_{0}}$. Czyli funkcja produktu "wybiera" element ze zbioru indeksowanej rodziny zbiorów dla tego samego indeksu dla którego funkcja będąca indeksowaną rodziną zbiorów przyporządkowuje dany zbiór ze zbioru $\mathcal{P}\left (X \right)$.
+\end{remark}
+\begin{definition}
+Funkcja określona wzorem: $pr_{j}\left (f \right)=f\left (j \right)$, gdzie $f\in \prod\limits_{j\in J}X_{j}$ jest zwana rzutowaniem na zbiór $X_{j}$.
+\end{definition}
+\begin{exercise}
+Niech $X=\{x_{1};x_{2};x_{3};x_{4};x_{5};x_{6};x_{7}\}$. Wybieramy dowolne podzbiory zbioru $X$: $\{x_{3}\};\{x_{2};x_{5}\};\{x_{1};x_{6}\};\{x_{4}\};\{x_{7}\}$. Zbiór indeksów $J=$ $=\{a;b;c;d;e\}$. Funkcja $\iota: J\rightarrow \mathcal{P}\left (X \right)$ przyporządkowuje każdemu elementowi ze zbioru $J$ jeden z wybranych podzbiorów zbioru $X$. Wówczas otrzymujemy przykładowe pary uporządkowane $(j;\iota\left (j \right))$:$\\$ $(a,\{x_{3}\});(b,\{x_{2},x_{5}\});(c,\{x_{1},x_{6}\});(d,\{x_{4}\});(e,\{x_{7}\})$.$\\$
+Stąd $\iota\left (a \right)=\{x_{3}\};\iota\left (b \right)=\{x_{2};x_{5}\};\iota\left (c \right)=\{x_{1};x_{6}\};\iota\left (d \right)=\{x_{4}\};\iota\left (e \right)=\{x_{7}\}$. Zatem mamy indeksowaną rodzinę zbiorów zawierającą zbiory: $\\$ $X_{a}=\iota\left (a \right)=\{x_{3}\};X_{b}=\iota\left (b \right)=\{x_{2};x_{5}\};X_{c}=\iota\left (c \right)=\{x_{1};x_{6}\};X_{d}=\iota\left (d \right)=\{x_{4}\};X_{e}=\iota\left (e \right)=\{x_{7}\}$. Jak widać powyższe zbiory są wartościami funkcji $\iota$. Wówczas następujące funkcje będą należały do produktu rodziny zbiorów $\iota=\{X_{a};X_{b};X_{c};X_{d};X_{e}\}$: $\\$
+$f_{1}=\{\left (a;x_{3} \right);\left (b;x_{2} \right);\left (c;x_{1} \right);\left (d;x_{4} \right);\left (e;x_{7}\right)\}$ $\\$
+$f_{2}=\{\left (a;x_{3} \right)\;\left (b;x_{2} \right)\left (c;x_{6} \right);\left (d;x_{4} \right);\left (e;x_{7} \right)\}$ $\\$
+$f_{3}=\{\left (a;x_{3} \right);\left (b;x_{5} \right);\left (c;x_{1} \right);\left (d;x_{4} \right);\left (e;x_{7} \right)\}$ $\\$
+$f_{4}=\{\left (a;x_{3} \right);\left ( b;x_{5}\right);\left (c;x_{6}\right);\left (d;x_{4} \right);\left (e;x_{7} \right)\}$ $\\$
+Wartościami rzutowań na poszczególne zbiory indeksowanej rodziny zbiorów $\iota$ będą następujące elementy:$\\$
+Rzutowanie na zbiór $X_{a}$: $pr_{a}\left (f_{1} \right)=pr_{a}\left (f_{2} \right)=pr_{a}\left (f_{3} \right)=pr_{a}\left (f_{4} \right)=f_{1}\left (a \right)=f_{2}\left (a \right)=f_{3}\left ( a\right)=f_{4}\left (a \right)=x_{3}$ $\\$
+Rzutowanie na zbiór $X_{b}$: $pr_{b}\left (f_{1} \right)=pr_{b}\left(f_{2} \right)=f_{1}\left (b \right)=f_{2}\left (b \right)=x_{2}$ lub $pr_{b}\left (f_{3} \right)=pr_{b}\left (f_{4} \right)=f_{3}\left (b \right)=f_{4}\left (b \right)=x_{5}$ $\\$
+Rzutowanie na zbiór $X_{c}$: $pr_{c}\left (f_{1} \right)=pr_{c}\left (f_{3} \right)=f_{1}\left (c \right)=f_{3}\left (c \right)=x_{1}$ lub $pr_{c}\left (f_{2} \right)=pr_{c}\left (f_{4} \right)=f_{2}\left (c \right)=f_{4}\left (c \right)=x_{6}$ $\\$
+Rzutowanie na zbiór $X_{d}$: $pr_{d}\left (f_{1} \right)=pr_{d}\left (f_{2} \right)=pr_{d}\left(f_{3} \right)=pr_{d}\left (f_{4} \right)=f_{1}\left (d \right)=f_{2}\left (d \right)=f_{3}\left (d \right)=f_{4}\left (d \right)=x_{4}$ $\\$
+Rzutowanie na zbiór $X_{e}$: $pr_{e}\left (f_{1} \right)=pr_{e}\left (f_{2} \right)=pr_{e}\left (f_{3} \right)=pr_{e}\left (f_{4} \right)=f_{1}\left (e \right)=f_{2}\left (e \right)=f_{3}\left(e \right)=f_{4}\left (e \right)=x_{7}$
+\end{exercise}
+\begin{definition}
+Relacja $R\subseteq X\times X$ jest relacją równoważności w zbiorze $X$, gdy dla dowolnych $x_{1},x_{2},x_{3}\in X$ spełnione są następujące warunki:$\\$
+-warunek zwrotności: $\forall x\in X:xRx$. Wówczas przykładowo jeśli $x_{1}\in X$ to $x_{1}$ jest w relacji $R$ z $x_{1}$. Czyli $x_{1}Rx_{1}$.$\\$
+-warunek symetryczności: $\forall x_{1},x_{2}\in X: x_{1}Rx_{2}\Rightarrow x_{2}Rx_{1}$.$\\$
+-warunek przechodniości: $\forall x_{1},x_{2},x_{3}\in X:(x_{1}Rx_{2}\wedge x_{2}Rx_{3})\Rightarrow x_{1}Rx_{3}$.
+\end{definition}
+\begin{remark}
+Zauważmy, że w szczególności każda relacja identycznościowa jest relacją równoważności. Warunek zwrotności spełniony jest z samej definicji, podobnie warunek symetryczności, bo jeżeli $(x,y)\in I_{X}$ to $x=y$, a więc $(y,x)\in I_{X}$. Jeśli natomiast $(x,y),(y,z)\in I_{X}$ to wówczas $x=y$ i $y=z$, a zatem $x=z$. Stąd warunek przechodniości jest także spełniony dla każdej relacji identycznościowej $I_{X}$.
+\end{remark}
+\begin{remark}
+Zauważmy, że w szczególności z warunku zwrotności wynika wprost, że $I_{X}\subseteq R$. Natomiast z symetryczności i przechodniości wynika, że część par uporządkowanych $(x,x)\in  R$ ale może istnieć $x\in X$ dla którego $(x,x)\notin R$.
+\end{remark}
+\begin{definition}
+Relację $R\subseteq X\times X$, która jest symetryczna i przechodnia nazywamy relacją częściowej równoważności. Relacja taka nie musi być zwrotna dla każdego $x\in X$.
+\end{definition}
+\begin{definition}
+Jeżeli $R$ jest relacją równoważności w zbiorze $X$ to zbiór $[x]_{R}=\{y\in X:(y,x)\in R\}$ nazywamy klasą abstrakcji relacji równoważności $R$ w zbiorze $X$ wyznaczoną przez element $x$.$\\$
+Element $x$ nazywamy wówczas reprezentantem klasy abstrakcji.
+\end{definition}
+\begin{remark}
+Zwróćmy uwagę na to, że zwrotność danej relacji jest równoważna temu, że relacja, która jest zwrotna zawiera relację identycznościową. Dana relacja nie musi być relacją równoważności aby była zwrotna. Ale zwrotność danej relacji gwarantuje, że relacja identycznościowa zawiera się w relacji zwrotnej. Bo skoro zwrotność oznacza, że dany element jest w relacji z nim samym to każda taka para uporządkowana z definicji należy do relacji identycznościowej. Zatem $R\subseteq X\times X$ jest relacją zwrotną wtedy i tylko wtedy, gdy $I_{X}\subseteq R$.
+\end{remark}
+\begin{definition}
+Rodzinę wszystkich klas abstrakcji relacji równoważności $R$ w zbiorze $X$ nazywamy zbiorem ilorazowym i określamy jako $X/R=\{[x]_{R}:x\in X\}$.
+\end{definition}
+\begin{exercise}
+Niech $X=\{x_{1},x_{2},x_{3},...,x_{n}\}$. Wówczas każda para uporządkowana $(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),...,(x_{n},x_{n})$ należy do relacji równoważności $R$ w zbiorze $X$. Jest to równoważne temu, że $x_{1}Rx_{1},x_{2}Rx_{2},x_{3}Rx_{3},...,x_{n}Rx_{n}$. Niech $(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),...,(x_{n},x_{n}),(x_{1},x_{2})\in R$. Wówczas z symetryczności relacji równoważności $R$ wynika, że $(x_{2},x_{1})\in R$. Stąd $R=I_{X}\cup\{(x_{1},x_{2}),(x_{2},x_{1})\}$. Z definicji klasy abstrakcji otrzymujemy, że $x_{1}\in[x_{1}]_{R}, x_{2}\in[x_{2}]_{R},x_{3}\in[x_{3}]_{R},...,x_{n}\in[x_{n}]_{R},x_{2}\in[x_{1}]_{R},x_{1}\in[x_{2}]_{R}$. Zatem $[x_{1}]_{R}=\{x_{1},x_{2}\},[x_{2}]_{R}=\{x_{1},x_{2}\},[x_{3}]_{R}=\{x_{3}\},...,[x_{n}]_{R}=\{x_{n}\}$. Tak więc zauważmy, że $[x_{1}]_{R}=[x_{2}]_{R}$, zaś pozostałe klasy są jednoelementowe. Wówczas $[x_{1}]_{R}=[x_{2}]_{R}\ne[x_{3}]_{R}\ne...\ne[x_{n}]_{R},$ czyli wszystkie klasy od $[x_{3}]_{R}$ do $[x_{n}]_{R}$ są parami rozłączne i rzecz jasna wszystkie te klasy są rozłączne z klasami $[x_{1}]_{R}=[x_{2}]_{R}$. Ponadto zgodnie z definicją $[x_{1}]_{R}=[x_{2}]_{R},[x_{3}]_{R},...,[x_{n}]_{R}\in X/R$. Stąd $X/R=\{[x_{1}]_{R},[x_{3}]_{R},...,[x_{n}]_{R}\}$.
+\end{exercise}
+\begin{definition}
+Funkcję $q_{R}:X\rightarrow X/R$ nazywamy rzutem kanonicznym na zbiór ilorazowy $X/R$ i określamy wzorem $q_{R}(x)=[x]_{R}$. Przy czym funkcja $q_{R}$ jest wyznaczona przez relację równoważności $R\subseteq X\times X$.
+\end{definition}
+\begin{exercise}
+Niech $X=\{x_{1},x_{2},x_{3},\ldots,x_{n}\}$. Wówczas
+\[
+(x_{1},x_{1}),\,(x_{2},x_{2}),\,\ldots,\,(x_{n},x_{n})\in R.
+\]
+Niech $(x_{1},x_{2})\in R$. Stąd z symetryczności relacji $R$ wynika,
+że $(x_{2},x_{1})\in R$. Zatem $R= I_{X}\cup\{(x_{1},x_{2}),(x_{2},x_{1})\}$.
+Wiemy już z odpowiedniego twierdzenia, że $[x_{1}]_{R}=[x_{2}]_{R}=\{x_{1},x_{2}\}$.
+Tak więc:
+\begin{align*}
+q_{R}(x_{1}) &= [x_{1}]_{R} = \{x_{1},x_{2}\}, \\
+q_{R}(x_{2}) &= [x_{2}]_{R} = \{x_{1},x_{2}\}, \\
+q_{R}(x_{3}) &= [x_{3}]_{R} = \{x_{3}\}, \\
+&\vdots \\
+q_{R}(x_{n}) &= [x_{n}]_{R} = \{x_{n}\}.
+\end{align*}
+\end{exercise}
+\begin{theorem}
+Niech $R\subseteq X\times X$ będzie relacją równoważności. Dla dowolnych $x_{i},x_{j}\in X$ klasy abstrakcji równoważności $R$ są równe albo rozłączne.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $R$ będzie relacją równoważności w zbiorze $X$. Załóżmy, że $[x_{i}]_{R}\cap[x_{j}]_{R}\ne\emptyset$. Wówczas istnieje $x_{k}\in X$ taki, że $x_{k}\in[x_{i}]_{R}$ i $x_{k}\in[x_{j}]_{R}$. Stąd z definicji klasy abstrakcji wynika, że $(x_{i},x_{k})\in R$ i $(x_{j},x_{k})\in R$. Z symetryczności relacji $R$ otrzymujemy zatem $(x_{k},x_{j})\in R$. Wówczas z przechodniości relacji $R$ dostajemy, że $(x_{i},x_{j})\in R$. Weźmy $z\in[x_{i}]_{R}$. Stąd $(x_{i},z)\in R$. Z symetryczności relacji $R$ mamy $(x_{j},x_{i})\in R$. Tak więc $(x_{j},x_{i})\in R$ i $(x_{i},z)\in R$ co z przechodniości relacji $R$ daje nam $(x_{j},z)\in R$, a zatem definicji klasy abstrakcji $z\in[x_{j}]_{R}$. Wobec tego, że $z\in[x_{i}]_{R}$ został wybrany dowolnie to $[x_{i}]_{R}\subseteq[x_{j}]_{R}$.$\\$
+Załóżmy, że $[x_{i}]_{R}\cap[x_{j}]_{R}\ne\emptyset$. Wówczas z definicji iloczynu zbiorów wynika, że istnieje $x_{k}\in X$ takie, że $(x_{i},x_{k})\in R$ i $(x_{j},x_{k})\in R$. Stąd z warunku symetryczności relacji $R$ otrzymujemy $(x_{k},x_{j})\in R$. Zatem $(x_{i},x_{k})\in R$ i $(x_{k},x_{j})\in R$ co z przechodniości relacji $R$ daje nam $(x_{i},x_{j})\in R$. Weźmy $z\in[x_{j}]_{R}$. Stąd z definicji klasy abstrakcji mamy $(x_{j},z)\in R$. Tak więc $(x_{i},x_{j})\in R$ i $(x_{j},z)\in R$. Wówczas z przechodniości relacji $R$ wynika, że $(x_{i},z)\in R$ co z definicji klasy abstrakcji daje nam $z\in[x_{i}]_{R}$. Wobec dowolności wyboru $z\in[x_{j}]_{R}$ otrzymujemy zatem $[x_{j}]_{R}\subseteq[x_{i}]_{R}$. Ponieważ zachodzą obie inkluzje to zachodzi równość $[x_{i}]_{R}=[x_{j}]_{R}$.$\\$ 
+Zatem $[x_{i}]_{R}\cap[x_{j}]_{R}=[x_{i}]_{R}=[x_{j}]_{R}$. W związku z tym jeżeli klasy abstrakcji danej relacji równoważności mają elementy wspólne to są sobie równe.$\\$
+Zauważmy, że założenie $[x_{i}]_{R}\cap[x_{j}]_{R}=\emptyset$ automatycznie prowadzi do tezy.
+\end{proof}
+\begin{remark}
+Z powyższego twierdzenia wynika wprost, że jeśli klasy abstrakcji relacji równoważności nie są równe to są rozłączne.
+\end{remark}
+\begin{remark}
+Zauważmy, że skoro każdy element $x\in X$ wyznacza klasę abstrakcji relacji równoważności $R\subseteq X\times X$ to żadna klasa abstrakcji nie może być zbiorem pustym.
+Ponadto wynika z tego, że $\bigcup\{[x]_{R}:x\in X\}=X$, a ponieważ z definicji $X/R=\{[x]_{R}:x\in X\}$ to $\bigcup\{[x]_{R}:x\in X\}=\bigcup X/R$.
+Zatem $\bigcup X/R=X$.
+\end{remark}
+\begin{property}
+Niech $R$ będzie relacją równoważności. Funkcja $q_{R}:X\rightarrow X/R$ jest surjekcją.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Niech $R\subseteq X\times X$ będzie relacją równoważności. Z definicji $q_{R}(x)=[x]_{R}$ i $X/R=\{[x]_{R}:x\in X\}$. Wówczas $X/R=\{q_{R}(x):x\in X\}$. Ale $rng(q_{R})=\{q_{R}(x):x\in X\}$. Stąd $rng(q_{R})=X/R$ co z definicji daje nam, że $q_{R}$ jest surjekcją.
+\end{proof}
+\begin{theorem}
+Niech $R\subseteq X\times X$ bedzie relacją równoważności. Wówczas $\forall x\ne y\in X:[x]_{R}\cap[y]_{R}=\emptyset\iff R=I_{X}$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Niech $R$ będzie relacją równoważności w zbiorze $X$. Załóżmy, że $R\ne I_{X}$. Weźmy $x\in X$. Wówczas z definicji relacji równoważności wynika, że $(x,x)\in R$. Stąd z definicji klasy abstrakcji relacji $R$ otrzymujemy $x\in[x]_{R}$. Z założenia $R\ne I_{X}$ wynika, że istnieje $y\in X$ dla którego $(y,x)\in R$ przy czym $y\ne x$. Wówczas z definicji klasy abstrakcji relacji równoważności $R$ mamy $x\in[y]_{R}$. Zatem $x\in[x]_{R}$ i $x\in[y]_{R}$ czyli z definicji przekroju zbiorów $x\in[x]_{R}\cap[y]_{R}$. Tak więc $[x]_{R}\cap[y]_{R}\ne\emptyset$ co jest sprzeczne z założeniem. Stąd przez kontrapozycję doszliśmy do prawdziwości implikacji $\forall x\ne y\in X:[x]_{R}\cap[y]_{R}=\emptyset\Rightarrow R=I_{X}$.$\\$
+Niech $R=I_{X}$. Weźmy $x,y\in X$, przy czym $x\ne y$. Wówczas $(x,x),(y,y)\in R$. Z definicji klasy abstrakcji relacji równoważności $R$ mamy $x\in[x]_{R}$ i $y\in[y]_{R}$. Ponieważ $x\ne y$ to $(x,y)\notin R$ bo z założenia $R=I_{X}$, a $(x,y)\notin I_{X}$. Zatem $(y,x)\notin R$. Stąd $x\notin[y]_{R}$ i $y\notin[x]_{R}$. Czyli z definicji różnicy zbiorów $x\in[x]_{R}\setminus[y]_{R}$ i $y\in[y]_{R}\setminus[x]_{R}$. Tak więc $[x]_{R}\ne[y]_{R}$ co z odpowiedniego twierdzenia daje $[x]_{R}\cap[y]_{R}=\emptyset$. Wobec tego, że $x,y\in X$ zostały wybrane jako dowolne elementy to zachodzi implikacja $R=I_{X}\Rightarrow\forall x\ne y\in X:[x]_{R}\cap[y]_{R}=\emptyset$.
+\end{proof}
+\begin{definition}
+Niech $R\subseteq X\times X$ bedzie relacją równoważności. Zbiór klas abstrakcji relacji równoważności $R$ w niepustym zbiorze $X$ parami rozłącznych, których suma daje zbiór $X$ nazywamy rozbiciem(podziałem) zbioru $X$.
+\end{definition}
+\begin{remark}
+Zauważmy, że rozbiciem(podziałem) zbioru $X$ jest zbiór ilorazowy $X/R$ relacji równoważności $R\subseteq X\times X$. Intuicyjnie wynika to wprost z definicji zbioru ilorazowego i definicji rozbicia. Możemy powiedzieć, że danej relacji równoważności $R$ przyporządkowany jest dokładnie jeden zbiór ilorazowy czyli dokładnie jedno rozbicie zbioru $X$. Z drugiej strony każdy zbiór ilorazowy czyli każde rozbicie zbioru $X$ jest przyporządkowane dokładnie jednej relacji równoważności $R$.
+\end{remark}
+\begin{definition}
+Niech $f:X\rightarrow Y$ będzie dowolną funkcją. Relację $R_{f}\subseteq X\times X$ nazywamy relacją równoważności wyznaczoną przez funkcję $f$, przy czym $(x,x')\in R_{f}\iff f(x)=f(x')$. Formalnie zapisujemy $R_{f}=\{(x,x')\in X\times X\mid f(x)=f(x')\}$.
+\end{definition}
+\begin{remark}
+Zatem jak widzimy relacja $R_{f}$ jest zbiorem takich par uporządkowanych w których parze elementów z dziedziny funkcja $f$ przyporządkowuje tą samą wartość. Relacja $R_{f}$ spełnia wszystkie warunki relacji równoważności. Mianowicie relacja $R_{f}$ jest zwrotna bo dla tego samego $x\in X$ jest $f(x)=f(x)$. Czyli $(x,x)\in R_{f}\iff f(x)=f(x)$. Relacja $R_{f}$ spełnia warunek symetryczności, ponieważ jeśli $(x,x')\in R_{f}\iff f(x)=f(x')$ to $(x',x)\in R_{f}\iff f(x')=f(x)$. Jednocześnie $R_{f}$ jest przechodnia, ponieważ jeśli $(x,x')\in R_{f}$ i $(x',x'')\in R_{f}$ to $(x,x")\in R_{f}\iff f(x)=f(x'')$.
+\end{remark}
+\begin{theorem}
+Niech $f:X\rightarrow Y$ będzie surjekcją, zaś $R_{f}=\{(x,x')\in X\times X\mid f(x)=f(x')\}$ relacją równoważności wyznaczoną przez funkcję $f$. Wówczas istnieje dokładnie jedna bijekcja $g:X/R_{f}\rightarrow Y$ dla której $f=g\circ q_{R_{f}}$.
+\end{theorem}
+\begin{proof}[\textbf{Dowód}]
+Odwzorowanie $g:X/R_{f}\rightarrow Y$ określmy wzorem $g([x]_{R_{f}})=f(x)$. Załóżmy, że $[x]_{R_{f}}=[x']_{R_{f}}$. Wówczas z definicji klasy abstrakcji relacji równoważności $R_{f}$ wynika, że $x\in[x]_{R_{f}}$, bo zawsze $(x,x)\in R_{f}, x\in[x']_{R_{f}},$ czyli $(x',x)\in R_{f}$, a zatem z symetryczności relacji równoważności $(x,x')\in R_{f}$ co z definicji klasy abstrakcji daje $x'\in[x]_{R_{f}}$. Zatem skoro $(x,x')\in R_{f}$ to z definicji relacji równoważności $R_{f}$ wyznaczonej przez funkcję $f$ otrzymujemy, że $f(x)=f(x')$. Ale $f(x)=g([x]_{R_{f}})$. Stąd $f(x')=g([x]_{R_{f}})$. Wobec tego skoro równość $[x]_{R_{f}}=[x']_{R_{f}}$ pociąga $f(x)=f(x')$ to z definicji relacja $g:X/R_{f}\rightarrow Y$ jest jednoznacznie określona, a wówczas $g$ jest funkcją.$\\$
+Z założenia $f:X\rightarrow Y$ jest surkjekcją. Stąd $rng(f)=Y$. Wówczas $rng(g)=rng(f)=Y$ czyli $g$ jest surjekcją.$\\$
+Niech $g([x]_{R_{f}})=g([x']_{R_{f}})$. Wówczas $f(x)=f(x')$. Stąd z definicji relacji równoważności $R_{f}$ wyznaczonej przez funkcję $f$ wynika, że $(x,x')\in R_{f}$. Zatem z definicji klasy abstrakcji relacji równoważności $R_{f}$ otrzymujemy $x'\in[x]_{R_{f}}$. Ponieważ zawsze $x'\in[x']_{R_{f}}$ to $x'\in[x]_{R_{f}}$ i $x'\in[x']_{R_{f}}$ czyli z definicji iloczynu zbiorów $x'\in[x]_{R_{f}}\cap[x']_{R_{f}}$. Z uprzednio udowodnionego twierdzenia dostajemy wówczas $[x]_{R_{f}}=[x']_{R_{f}}$. Zatem z definicji $g$ jest injekcją bo z równości $g([x]_{R_{f}})=g([x']_{R_{f}})$ wynika równość $[x]_{R_{f}}=[x']_{R_{f}}$.$\\$
+Z definicji $q_{R_{f}}(x)=[x]_{R_{f}}$. Wówczas skoro $g([x]_{R_{f}})=f(x)$ to $g(q_{R_{f}}(x))=f(x)$ co jest równoważne temu, że $g\circ q_{R_{f}}=f$.$\\$
+Niech $h:X/R_{f}\rightarrow Y$ będzie funkcją dla której zachodzi $h\circ q_{R_{f}}=f$. Wówczas $h([x]_{R_{f}})=f(x)$. Ale z definicji $[x]_{R_{f}}=q_{R_{f}}(x)$. Stąd $h(q_{R_{f}}(x))=f(x)$ czyli $h\circ q_{R_{f}}=f$. Zatem $h=g$. Wobec tego dla danej surjekcji $f:X\rightarrow Y$ istnieje tylko jedna funkcja $g:X/R_{f}\rightarrow Y$ dla której $g\circ q_{R_{f}}=f$.
+\end{proof}
+\begin{definition}
+Rodzinę indeksowaną, której zbiór indeksów ma postać iloczynu kartezjańskiego dwóch zbiorów nazywamy podwójnie indeksowaną rodziną zbiorów. Niech $I,J$ będą zbiorami indeksów. Wówczas $\tau:I\times J\rightarrow\mathcal{P}(X)$ jest podwójnie indeksowaną rodziną zbiorów co zapisujemy jako $\tau=(X_{i,j}:(i,j)\in I\times J)$.
+\end{definition}
+\begin{exercise}
+Niech $X=\{x_{1},x_{2},x_{3},x_{4},x_{5},x_{6},x_{7}\}$. Wybieramy dowolne podzbiory zbioru $X:\{x_{3}\},\{x_{2},x_{5}\},\{x_{1},x_{6}\},\{x_{4}\},\{x_{7}\}$. Weźmy zbiory $I=\{i_{0},i_{1},i_{2},i_{3},i_{4}\},J=\{j_{0},j_{1},j_{2},j_{3},j_{4}\}$. Wówczas $I\times J=\{(i_{0},j_{0}),$ $(i_{0},j_{1}),$ $(i_{0},j_{2}),$ $(i_{0},j_{3}),$ $(i_{0},j_{4}),$ $(i_{1},j_{0}),$ $(i_{1},j_{1}),$ $(i_{1},j_{2}),$ $(i_{1},j_{3}),$ $(i_{1},j_{4}),$ $(i_{2},j_{0}),$ $(i_{2},j_{1}),$ $(i_{2},j_{2}),$ $(i_{2},j_{3}),$ $(i_{2},j_{4}),$ $(i_{3},j_{0}),$ $(i_{3},j_{1}),$ $(i_{3},j_{2}),$ $(i_{3},j_{3}),$ $(i_{3},j_{4}),$ $(i_{4},j_{0}),$ $(i_{4},j_{1}),$ $(i_{4},j_{2}),$ $(i_{4},j_{3}),$ $(i_{4},j_{4})\}$ jest zbiorem indeksów podwójnie indeksowanej rodziny zbiorów $\tau:I\times J\rightarrow\mathcal{P}(X)$. Wybierzmy kilka przykładowych par uporządkowanych jakie może tworzyć funkcja $\tau$ :$\\$
+$\tau:(i_{0},j_{0})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{0},j_{1})\mapsto\{x_{2},x_{5}\}$$\\$
+$\tau:(i_{0},j_{2})\mapsto\{x_{1},x_{6}\}$$\\$
+$\tau:(i_{0},j_{3})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{0},j_{4})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{1},j_{0})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{1},j_{1})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{1},j_{2})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{1},j_{3})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{1},j_{4})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{2},j_{0})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{2},j_{1})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{2},j_{2})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{2},j_{3})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{2},j_{4})\mapsto\{x_{4}\}$$\\$
+$\tau:(i_{3},j_{0})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{3},j_{1})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{3},j_{2})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{3},j_{3})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{3},j_{4})\mapsto\{x_{7}\}$$\\$
+$\tau:(i_{4},j_{0})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{4},j_{1})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{4},j_{2})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{4},j_{3})\mapsto\{x_{3}\}$$\\$
+$\tau:(i_{4},j_{4})\mapsto\{x_{3}\}$$\\$
+Stąd $\{x_{3}\}=X_{i_{0},j_{0}}=X_{i_{1},j_{0}}=X_{i_{1},j_{1}}=X_{i_{1},j_{2}}=X_{i_{1},j_{3}}=X_{i_{1},j_{4}}=X_{i_{4},j_{0}}=X_{i_{4},j_{1}}=X_{i_{4},j_{2}}=X_{i_{4},j_{3}}=X_{i_{4},j_{4}}=$ $\tau(i_{0},j_{0})=\tau(i_{1},j_{0})=\tau(i_{1},j_{1})=\tau(i_{1},j_{2})=\tau(i_{1},j_{3})=\tau(i_{1},j_{4})=\tau(i_{4},j_{0})=\tau(i_{4},j_{1})=\tau(i_{4},j_{2})=\tau(i_{4},j_{3})=\tau(i_{4},j_{4}),$$\\$$\{x_{2},x_{5}\}=X_{i_{0},j_{1}}=\tau(i_{0},j_{1}),$$\\$$\{x_{1},x_{6}\}=X_{i_{0},j_{2}}=\tau(i_{0},j_{2}),$$\\$$\{x_{4}\}=X_{i_{0},j_{3}}=X_{i_{2},j_{0}}=X_{i_{2},j_{1}}=X_{i_{2},j_{2}}=X_{i_{2},j_{3}}=X_{i_{2},j_{4}}=$ $\tau(i_{0},j_{3})=\tau(i_{2},j_{0})=\tau(i_{2},j_{1})=\tau(i_{2},j_{2})=\tau(i_{2},j_{3})=\tau(i_{2},j_{4}),$$\\$$\{x_{7}\}=X_{i_{0},j_{4}}=X_{i_{3},j_{0}}=X_{i_{3},j_{1}}=X_{i_{3},j_{2}}=X_{i_{3},j_{3}}=X_{i_{3},j_{4}}=$ $\tau(i_{0},j_{4})=\tau(i_{3},j_{0})=\tau(i_{3},j_{1})=\tau(i_{3},j_{2})=\tau(i_{3},j_{3})=\tau(i_{3},j_{4})$.
+\end{exercise}
+\begin{remark}
+Dla każdego $i\in I$ możemy rozważyć sumę $S_{i}=\bigcup_{j\in J}X_{i,j}$. Czyli z podanego przykładu, $S_{i_{0}}=X_{i_{0},j_{0}}\cup X_{i_{0},j_{1}}\cup X_{i_{0},j_{2}}\cup X_{i_{0},j_{3}}\cup X_{i_{0},j_{4}}$. Wówczas $S_{i_{0}}=\{x_{3}\}\cup\{x_{2},x_{5}\}\cup\{x_{1},x_{6}\}\cup\{x_{4}\}\cup\{x_{7}\}=X$. Sumy po kolejnych indeksach $i\in I$:
+$S_{i_{1}}=X_{i_{1},j_{0}}\cup X_{i_{1},j_{1}}\cup X_{i_{1},j_{2}}\cup X_{i_{1},j_{3}}\cup X_{i_{1},j_{4}}=\{x_{3}\}$.$\\$
+$S_{i_{2}}=X_{i_{2},j_{0}}\cup X_{i_{2},j_{1}}\cup X_{i_{2},j_{2}}\cup X_{i_{2},j_{3}}\cup X_{i_{2},j_{4}}=\{x_{4}\}$.$\\$
+$S_{i_{3}}=X_{i_{3},j_{0}}\cup X_{i_{3},j_{1}}\cup X_{i_{3},j_{2}}\cup X_{i_{3},j_{3}}\cup X_{i_{3},j_{4}}=\{x_{7}\}$.$\\$
+$S_{i_{4}}=X_{i_{4},j_{0}}\cup X_{i_{4},j_{1}}\cup X_{i_{4},j_{2}}\cup X_{i_{4},j_{3}}\cup X_{i_{4},j_{4}}=\{x_{3}\}$.$\\$
+Każda z powyższych sum jest jest wartością indeksowanej rodziny zbiorów $S=(S_{i}:i\in I)$. Zatem $S=\{(i_{0},X),(i_{1},\{x_{3}\}),(i_{2},\{x_{4}\}),(i_{3},\{x_{7}\}),(i_{4},\{x_{3}\})\}$. Wówczas zbiór $I$ jest zbiorem indeksów rodziny $(S_{i}:i\in I)$.$\\$
+Równie dobrze możemy rozważyć sumę $T_{j}=\bigcup_{i\in I}X_{i,j}$. Stąd:$\\$
+$T_{j_{0}}=X_{i_{0},j_{0}}\cup X_{i_{1},j_{0}}\cup X_{i_{2},j_{0}}\cup X_{i_{3},j_{0}}\cup X_{i_{4},j_{0}}=$$=\{x_{3}\}\cup\{x_{3}\}\cup\{x_{4}\}\cup\{x_{7}\}\cup\{x_{3}\}=\{x_{3},x_{4},x_{7}\}$.$\\$
+$T_{j_{1}}=X_{i_{0},j_{1}}\cup X_{i_{1},j_{1}}\cup X_{i_{2},j_{1}}\cup X_{i_{3},j_{1}}\cup X_{i_{4},j_{1}}=$$=\{x_{2},x_{5}\}\cup\{x_{3}\}\cup\{x_{4}\}\cup\{x_{7}\}\cup\{x_{3}\}=$ $\{x_{2},x_{3},x_{4},x_{5},x_{7}\}$.$\\$
+$T_{j_{2}}=X_{i_{0},j_{2}}\cup X_{i_{1},j_{2}}\cup X_{i_{2},j_{2}}\cup X_{i_{3},j_{2}}\cup X_{i_{4},j_{2}}=$$\\$
+$=\{x_{1},x_{6}\}\cup\{x_{3}\}\cup\{x_{4}\}\cup\{x_{7}\}\cup\{x_{3}\}=\{x_{1},x_{3},x_{4},x_{6},x_{7}\}$.$\\$
+$T_{j_{3}}=X_{i_{0},j_{3}}\cup X_{i_{1},j_{3}}\cup X_{i_{2},j_{3}}\cup X_{i_{3},j_{3}}\cup X_{i_{4},j_{3}}=$$\\$
+$=\{x_{4}\}\cup\{x_{3}\}\cup\{x_{4}\}\cup\{x_{7}\}\cup\{x_{3}\}=\{x_{3},x_{4},x_{7}\}$.$\\$
+$T_{j_{4}}=X_{i_{0},j_{4}}\cup X_{i_{1},j_{4}}\cup X_{i_{2},j_{4}}\cup X_{i_{3},j_{4}}\cup X_{i_{4},j_{4}}=$$\\$
+$=\{x_{7}\}\cup\{x_{3}\}\cup\{x_{4}\}\cup\{x_{7}\}\cup\{x_{3}\}=\{x_{3},x_{4},x_{7}\}$.$\\$
+Zauważmy, że każda z powyższych sum jest wartością indeksowanej rodziny zbiorów $T=(T_{j}:j\in J)$. Zatem $T=\{(j_{0},\{x_{3},x_{4},x_{7}\}),(j_{1},\{x_{2},x_{3},x_{4},x_{5},x_{7}\}),(j_{2},$$\\$$\{x_{1},x_{3},x_{4},x_{6},x_{7}\}),(j_{3},\{x_{3},x_{4},x_{7}\}),(j_{4},\{x_{3},x_{4},x_{7}\})\}$. Wówczas zbiór $J$ jest zbiorem indeksów rodziny indeksowanej $T=(T_{j}:j\in J)$.$\\$
+W ogólności obie rodziny $S$ i $T$ spełniają kluczową własność. Mianowicie $\bigcup_{i\in I} S_{i}=\bigcup_{j\in J} T_{j}$.$\\$
+Rozważmy iloczyn $P_{i}=\bigcap_{j\in J}X_{i,j}$. Wówczas$\\$
+$P_{i_{0}}=X_{i_{0},j_{0}}\cap X_{i_{0},j_{1}}\cap X_{i_{0},j_{2}}\cap X_{i_{0},j_{3}}\cap X_{i_{0},j_{4}}=$$\\$
+$=\{x_{3}\}\cap\{x_{2},x_{5}\}\cap\{x_{1},x_{6}\}\cap\{x_{4}\}\cap\{x_{7}\}=\emptyset$.$\\$
+$P_{i_{1}}=X_{i_{1},j_{0}}\cap X_{i_{1},j_{1}}\cap X_{i_{1},j_{2}}\cap X_{i_{1},j_{3}}\cap X_{i_{1},j_{4}}=$$\\$
+$=\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}=\{x_{3}\}$.$\\$
+$P_{i_{2}}=X_{i_{2},j_{0}}\cap X_{i_{2},j_{1}}\cap X_{i_{2},j_{2}}\cap X_{i_{2},j_{3}}\cap X_{i_{2},j_{4}}=$$\\$
+$=\{x_{4}\}\cap\{x_{4}\}\cap\{x_{4}\}\cap\{x_{4}\}\cap\{x_{4}\}=\{x_{4}\}$.$\\$
+$P_{i_{3}}=X_{i_{3},j_{0}}\cap X_{i_{3},j_{1}}\cap X_{i_{3},j_{2}}\cap X_{i_{3},j_{3}}\cap X_{i_{3},j_{4}}=$$\\$
+$=\{x_{7}\}\cap\{x_{7}\}\cap\{x_{7}\}\cap\{x_{7}\}\cap\{x_{7}\}=\{x_{7}\}$.$\\$
+$P_{i_{4}}=X_{i_{4},j_{0}}\cap X_{i_{4},j_{1}}\cap X_{i_{4},j_{2}}\cap X_{i_{4},j_{3}}\cap X_{i_{4},j_{4}}=$$\\$
+$=\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}\cap\{x_{3}\}=\{x_{3}\}$.$\\$
+Powyższe iloczyny są wartościami indeksowanej rodziny zbiorów $P=(P_{i}:i\in I)$. Stąd zbiór $I$ jest zbiorem indeksów rodziny $P$. Mamy zatem $P=\{(i_{0},\emptyset),(i_{1},\{x_{3}\}),(i_{2},\{x_{4}\}),(i_{3},\{x_{7}\}),(i_{4},\{x_{3}\})\}$.$\\$
+Rozważmy następnie iloczyn $Q_{j}=\bigcap_{i\in I}X_{i,j}$. Wówczas$\\$
+$Q_{j_{0}}=X_{i_{0},j_{0}}\cap X_{i_{1},j_{0}}\cap X_{i_{2},j_{0}}\cap X_{i_{3},j_{0}}\cap X_{i_{4},j_{0}}=$$\\$
+$=\{x_{3}\}\cap\{x_{3}\}\cap\{x_{4}\}\cap\{x_{7}\}\cap\{x_{3}\}=\emptyset$.$\\$
+$Q_{j_{1}}=X_{i_{0},j_{1}}\cap X_{i_{1},j_{1}}\cap X_{i_{2},j_{1}}\cap X_{i_{3},j_{1}}\cap X_{i_{4},j_{1}}=$$\\$
+$=\{x_{2},x_{5}\}\cap\{x_{3}\}\cap\{x_{4}\}\cap\{x_{7}\}\cap\{x_{3}\}=\emptyset$.$\\$
+$Q_{j_{2}}=X_{i_{0},j_{2}}\cap X_{i_{1},j_{2}}\cap X_{i_{2},j_{2}}\cap X_{i_{3},j_{2}}\cap X_{i_{4},j_{2}}=$$\\$
+$=\{x_{1},x_{6}\}\cap\{x_{3}\}\cap\{x_{4}\}\cap\{x_{7}\}\cap\{x_{3}\}=\emptyset$.$\\$
+$Q_{j_{3}}=X_{i_{0},j_{3}}\cap X_{i_{1},j_{3}}\cap X_{i_{2},j_{3}}\cap X_{i_{3},j_{3}}\cap X_{i_{4},j_{3}}=$$\\$
+$=\{x_{4}\}\cap\{x_{3}\}\cap\{x_{4}\}\cap\{x_{7}\}\cap\{x_{3}\}=\emptyset$.$\\$
+$Q_{j_{4}}=X_{i_{0},j_{4}}\cap X_{i_{1},j_{4}}\cap X_{i_{2},j_{4}}\cap X_{i_{3},j_{4}}\cap X_{i_{4},j_{4}}=$$\\$
+$=\{x_{7}\}\cap\{x_{3}\}\cap\{x_{4}\}\cap\{x_{7}\}\cap\{x_{3}\}=\emptyset$.$\\$
+Każdy z powyższych iloczynów jest wartością indeksowanej rodziny zbiorów $Q=(Q_{j}:j\in J)$. Stąd zbiór $J$ jest zbiorem indeksów rodziny $Q$. Mamy zatem $Q=\{(j_{0},\emptyset),(j_{1},\emptyset),(j_{2},\emptyset),(j_{3},\emptyset),(j_{4},\emptyset)\}$.
+\end{remark}
+\begin{property}
+Dla dowolnej rodziny zbiorów $(X_{i,j}:i\in I,j\in J)$ zachodzi równość $\bigcup\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}=\bigcup\limits_{j\in J}\bigcup\limits_{i\in I}X_{i,j}$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną rodzinę zbiorów $(X_{i,j}:i\in I,j\in J)$. Niech $x\in\bigcup\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}$. Wówczas z definicji sumy zbiorów wynika, że istnieje $i\in I$ i istnieje $j\in J$ dla których $x\in X_{i,j}$. Z przemienności kwantyfikatorów egzystencjalnych mamy, że istnieje $j\in J$ i istnieje $i\in I$ dla których $x\in X_{i,j}$. Stąd z definicji sumy zbiorów $x\in\bigcup\limits_{j\in J}\bigcup\limits_{i\in I}X_{i,j}$. Wobec dowolności wyboru $x$ otrzymujemy wówczas $\bigcup\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}\subseteq\bigcup\limits_{j\in J}\bigcup\limits_{i\in I}X_{i,j}$.$\\$
+Niech $x\in\bigcup\limits_{j\in J}\bigcup\limits_{i\in I}X_{i,j}$. Wówczas z definicji sumy zbiorów wynika, że istnieje $j\in J$ i istnieje $i\in I$ dla których $x\in X_{i,j}$. Z przemienności kwantyfikatorów egzystencjalnych otrzymujemy, że istnieje $i\in I$ i istnieje $j\in J$ dla których $x\in X_{i,j}$. Stąd z definicji sumy zbiorów dostajemy $x\in\bigcup\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}$. Wobec dowolności wyboru $x$ mamy zatem $\bigcup\limits_{j\in J}\bigcup\limits_{i\in I}X_{i,j}\subseteq\bigcup\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}$. Ponieważ zachodzą obie inkluzje to w ogólności zachodzi zadana równość.
+\end{proof}
+\begin{property}
+Dla dowolnej rodziny zbiorów $(X_{i,j}:i\in I,j\in J)$ zachodzi równość $\bigcap\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}=\bigcup\limits_{f\in{}^{I}J}\bigcap\limits_{i\in I}X_{i,f(i)}$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną rodzinę zbiorów $(X_{i,j}:i\in I,j\in J)$. Niech $x\in\bigcup\limits_{f\in{}^{I}J}\bigcap\limits_{i\in I}X_{i,f(i)}$. Wówczas z definicji sumy zbiorów wynika, że istnieje funkcja $f:I\rightarrow J$ taka, że $x\in\bigcap\limits_{i\in I}X_{i,f(i)}$. Stąd z definicji iloczynu zbiorów otrzymujemy, że dla każdego $i\in I$ jest $x\in X_{i,f(i)}$. Z zapisu $f:I\rightarrow J$ wynika wprost $I=dom(f)$. Zatem dla każdego $i\in I$ istnieje $j=f(i)\in J$. Stąd dla każdego $i\in I$ istnieje $j\in J$ dla którego $x\in X_{i,j}$. Wówczas z definicji sumy zbiorów mamy, że dla każdego $i\in I$ jest $x\in\bigcup\limits_{j\in J}X_{i,j}$ co z definicji iloczynu zbiorów daje nam $x\in\bigcap\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}$. Wobec dowolności wyboru elementu $x$ otrzymujemy zatem $\bigcup\limits_{f\in{}^{I}J}\bigcap\limits_{i\in I}X_{i,f(i)}\subseteq\bigcap\limits_{i\in I}\bigcup\limits_{j\in J}X_{i,j}$.
+\end{proof}
+\begin{remark}
+Dowód inkluzji przeciwnej wymaga użycia funkcji wyboru, którą nie będę się zajmował.
+\end{remark}
+\begin{property}
+Dla dowolnej rodziny zbiorów $(X_{i,j}:i\in I,j\in J)$ zachodzi równość $\bigcup\limits_{i\in I}\bigcap\limits_{j\in J}X_{i,j}=\bigcap\limits_{f\in{}^{I}J}\bigcup\limits_{i\in I}X_{i,f(i)}$.
+\end{property}
+\begin{proof}[\textbf{Dowód}]
+Weźmy dowolną rodzinę zbiorów $(X_{i,j}:i\in I,j\in J)$. Niech $x\in\bigcup\limits_{i\in I}\bigcap\limits_{j\in J}X_{i,j}$. Wówczas z definicji sumy zbiorów wynika, że istnieje $i_{0}\in I$ dla którego $x\in\bigcap\limits_{j\in J}X_{i,j}$. Stąd z definicji iloczynu zbiorów otrzymujemy, że istnieje $i_{0}\in I$, że dla każdego $j\in J$ jest $x\in X_{i_{0},j}$. Z prawa przeniesienia kwantyfikatora egzystencjalnego za kwantyfikator ogólny dostajemy, że dla każdego $j\in J$ istnieje $i_{0}\in I$ takie, że $x\in X_{i_{0},j}$. Weźmy dowolną funkcję $f\in{}^{I}J$. Wówczas dla każdego $i\in I$ mamy $f(i)=j\in J$. Zatem $f(i_{0})\in J$. Ponieważ dla każdego $j\in J$ mamy $x\in X_{i_{0},j}$ to dla $j=f(i_{0})$ jest $x\in X_{i_{0},f(i_{0})}$. Stąd z definicji sumy zbiorów dostajemy, że $x\in\bigcup\limits_{i\in I}X_{i,f(i)}$. Ponieważ $f$ została wybrana dowolnie to dla każdej funkcji $f\in{}^{I}J$ jest $x\in\bigcup\limits_{i\in I}X_{i,f(i)}$ co z definicji iloczynu zbiorów daje nam $x\in\bigcap\limits_{f\in{}^{I}J}\bigcup\limits_{i\in I}X_{i,f(i)}$. Wobec dowolności wyboru $x$ otrzymujemy wówczas $\bigcup\limits_{i\in I}\bigcap\limits_{j\in J}X_{i,j}\subseteq\bigcap\limits_{f\in{}^{I}J}\bigcup\limits_{i\in I}X_{i,f(i)}$.
+\end{proof}
+\begin{remark}
+Ponieważ wykazanie inkluzji przeciwnej wymaga użycia funkcji wyboru, którą nie będę się zajmował to jej dowód pominę.
 \end{remark}

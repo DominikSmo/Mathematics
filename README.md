@@ -22,6 +22,7 @@ Kompleksowe notatki z matematyki na poziomie pierwszych lat studiów. Przeznaczo
 | | Iloczyn kartezjański | ✅ |
 | | Relacje | ✅ |
 | | Funkcje | 🟡 |
+| | Zbiory uporządkowane i liniowo uporządkowane | 🟡 |
 | **Analiza matematyczna** | Ciągi liczbowe | 🟡 |
 | | Granica ciągu stałego | 🟡 |
 | | Granica sumy ciągów | 🟡 |
