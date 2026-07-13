@@ -1,22 +1,196 @@
-% ═══════════════════════════════════════════════════════
-% Plik: zbiory_uporzadkowane_i_liniowo_uporzadkowane.tex
-% Rozdział: Teoria mnogości
-% Status: 🟡 W TRAKCIE
-% ═══════════════════════════════════════════════════════
-
-% ⚠️ Ta sekcja jest w trakcie opracowywania.
-% Treść zostanie uzupełniona w kolejnych aktualizacjach.
-
-
-% ─── Miejsce na definicje, twierdzenia, przykłady ───
-% \begin{definition}
-%     ...
-% \end{definition}
-
-% \begin{theorem}
-%     ...
-% \end{theorem}
-
-% \begin{proof}
-%     ...
-% \end{proof}
+\begin{definition}
+Relacja $R\subseteq X\times X$ jest relacją częściowo porządkującą zbiór $X$ lub $R$ jest porządkiem częściowym w zbiorze $X$, gdy dla dowolnych elementów $x_{1},x_{2},x_{3}\in X$ spełnione są następujące trzy warunki:$\\$
+-warunek zwrotności:$\forall x\in X:xRx$. Wówczas jeśli przykładowo $x_{1}\in X$ to $x_{1}$ jest w relacji $R$ z $x_{1}$, czyli $x_{1}Rx_{1}$.$\\$
+-warunek antysymetryczności:$\forall x_{1},x_{2}\in X:(x_{1}Rx_{2}\wedge x_{2}Rx_{1})\Rightarrow x_{1}=x_{2}$.$\\$
+-warunek przechodniości:$\forall x_{1},x_{2},x_{3}\in X:(x_{1}Rx_{2}\wedge x_{2}Rx_{3})\Rightarrow x_{1}Rx_{3}$.
+\end{definition}
+\begin{remark}
+Z definicji częściowego porządku wynika, że podobnie jak relacja równoważności w zbiorze $X$ także relacja częściowo porządkująca zbiór $X$ zawiera w sobie pełną relację identycznościową $I_{X}\subseteq X\times X$. W związku z tym dla każdego $x\in X$ jest $(x,x)\in R$, gdzie $R$ jest relacją porządkującą zbiór $X$.
+\end{remark}
+\begin{remark}
+Warto także zauważyć, że relacja równoważności i relacja częściowo porządkująca mają elementy wspólne. To znaczy, obie spełniają warunek zwrotności i warunek przechodniości.
+\end{remark}
+\begin{definition}
+Relację spełniającą warunek zwrotności i przechodniości (bez warunku symetrii bądź antysymetrii) nazywamy preporządkiem.
+\end{definition}
+\begin{remark}
+Gdy do relacji będącej preporządkiem dodamy warunek symetrii to otrzymamy relację równoważności, gdy natomiast do preporządku dodamy warunek antysymetrii otrzymamy relację częściowo
+porządkującą.
+\end{remark}
+\begin{exercise}
+Podstawiając $\leq$ za $R$ w definicji relacji częściowo porządkującej warunki spełniane przez tą relację przyjmują postać:$\\$
+-warunek zwrotności: $x_{1}\leq x_{1}\iff x_{1}< x_{1}\vee x_{1}=x_{1}$, a ponieważ $x_{1}=x_{1}$ to alternatywa $x_{1}< x_{1}\vee x_{1}=x_{1}$ jest prawdziwa.$\\$
+-warunek antysymetryczności:$[(x_{1},x_{2})\in\leq)\wedge(x_{2},x_{1})\in\leq)]\iff[(x_{1}< x_{2})\vee(x_{1}=x_{2})]$$\wedge[(x_{2}< x_{1})\vee(x_{2}=x_{1})]$. Wówczas z rozdzielności alternatywy względem koniunkcji wynika, że $(x_{1}< x_{2})\wedge(x_{2}< x_{1})$ lub $(x_{1}< x_{2})\wedge(x_{2}=x_{1})$ lub $(x_{1}=x_{2})\wedge(x_{2}< x_{1})$ lub $(x_{1}=x_{2})\wedge(x_{2}=x_{1})$. Łatwo wywnioskować, że prawdziwa jest tylko ostatnia koniunkcja, czyli $(x_{1}=x_{2})\wedge(x_{2}=x_{1})$ co jest równoważne temu, że $x_{1}=x_{2}$.$\\$
+-warunek przechodniości:$(x_{1},x_{2})\in\leq\wedge(x_{2},x_{3})\in\leq\iff[(x_{1}< x_{2})\vee(x_{1}=x_{2})]\wedge$$[(x_{2}< x_{3})\vee(x_{2}=x_{3})]$. Z rozdzielności alternatywy względem koniunkcji wynika, że $(x_{1}< x_{2})\wedge(x_{2}< x_{3})$ lub $(x_{1}< x_{2})\wedge(x_{2}=x_{3})$ lub $(x_{1}=x_{2})\wedge(x_{2}< x_{3})$ lub $(x_{1}=x_{2})\wedge(x_{2}=x_{3})$. Z pierwszej koniunkcji mamy wówczas $x_{1}< x_{3}$, z drugiej koniunkcji jest $x_{1}< x_{3}$, z trzeciej $x_{1}< x_{3}$ i z czwartej koniunkcji $x_{1}=x_{3}$. Zatem otrzymujemy alternatywę $x_{1}< x_{3}\vee x_{1}< x_{3}\vee x_{1}< x_{3}\vee x_{1}=x_{3}$ co daje nam $x_{1}< x_{3}\vee x_{1}=x_{3}$. Stąd $x_{1}\leq x_{3}$ czyli $(x_{1},x_{3})\in\leq$.
+\end{exercise}
+\begin{definition}
+Jeśli $R$ jest relacją porządkującą zbiór $X$ to para $(X,R)$ jest zbiorem uporządkowanym.
+\end{definition}
+\begin{remark}
+Często zamiast $R$ zapisujemy symbol relacji porządku $\leq$ lub $\preceq$. Wówczas zbiór uporządkowany to para uporządkowana $(X,\leq)$ lub $(X,\preceq)$. Ściślej-wg powyższej definicji są to zbiory częściowo uporządkowane.
+\end{remark}
+\begin{definition}
+Silnym (ostrym) porządkiem w zbiorze $X$ nazywamy relację $R\subseteq X\times X$, która dla dowolnych elementów $x_{1},x_{2},x_{3}\in X$ spełnia następujące dwa warunki:
+\- warunek antyzwrotności: $\forall x\in X:\neg(xRx)$, czyli dla każdego $x\in X$ zachodzi $(x,x)\notin R$.\
+\- warunek przechodniości: $\forall x_{1},x_{2},x_{3}\in X:\ (x_{1}R x_{2}\wedge x_{2}R x_{3})\Rightarrow x_{1}R x_{3}$.\
+\end{definition}
+\begin{remark}
+Z definicji silnego porządku wynika zatem, że nie każda relacja porządkująca musi być zwrotna. Silny porządek nie jest relacją zwrotną, zaś porządek częściowy(porządek słaby) $\leq$ czy $\preceq$ jest relacją zwrotną. Zatem skoro silny porządek nie jest relacją zwrotną to nie zawiera on relacji identycznościowej.
+\end{remark}
+\begin{remark}
+Z warunku zwrotności częściowego porządku wynika wprost, że $dom(R)=X$. Należy przy tym dodać, że pojęcie zwrotności odnosi się wyłącznie do relacji dwuargumentowych na tym samym zbiorze, czyli np. do relacji $R\subseteq X\times X$. Funkcja $f:X\rightarrow Y$ jest także relacją dwuargumentową i $dom(f)=X$ ale wynika to z definicji funkcji, nie z warunku zwrotności bo taki warunek nie istnieje dla funkcji $f$. Zauważmy również, że silny porządek jest relacją $R\subseteq X\times X$. Ale z warunku antyzwrotności tej relacji wynika wprost, że dziedzina silnego porządku nie musi być określona na całym zbiorze $X$.
+Podsumowując, jeśli $R\subseteq X\times X$ jest relacją zwrotną to wówczas $dom(R)=X$. Stąd jeśli $R$ jest relacją równoważności w zbiorze $X$ to dla niej również $dom(R)=X$, bo relacja równoważności jest zwrotna.
+\end{remark}
+\begin{exercise}
+Weźmy dowolny zbiór $X=\{x_{1},x_{2},x_{3},...,x_{n}\}$. Niech $R=\{(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),...$$(x_{n},x_{n}),(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}$ będzie relacją częściowego porządku w zbiorze $X$, zaś $R_{1}\subseteq R$ silnym porządkiem w zbiorze $X$. Wówczas z definicji $R_{1}=\{(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}$. Stąd $dom(R_{1})=\{x_{1},x_{2}\}$, zaś $dom(R)=X$.
+\end{exercise}
+\begin{definition}
+Relację porządkującą, która nie jest silnym porządkiem, a więc relację $\leq$ lub $\preceq$ określamy wzorem $x_{1}\leq x_{2}\iff x_{1}< x_{2}\vee x_{1}=x_{2}$. Czyli $(x_{1},x_{2}\in\leq)\iff x_{1}< x_{2}\vee x_{1}=x_{2}$. Porządek nie będący silnym porządkiem jest zwrotny, antysymetryczny i przechodni.
+\end{definition}
+\begin{definition}
+Relację będącą silnym porządkiem definiujemy wzorem:$\\$
+$(x_{1}\leq x_{2}\wedge x_{1}\ne x_{2})\iff x_{1}< x_{2}$. Jest to równoważne temu, że $(x_{1},x_{2})\in<\iff x_{1}< x_{2}$.
+\end{definition}
+\begin{remark}
+W związku z powyższą definicją łatwo zauważyć, że porządek silny $<$ zawiera się w porządku $\leq$ czyli $\preceq$. W porządku $\leq$ lub $\preceq$ zachodzą relacje $<$ lub $=$. Natomiast w silnym porządku zachodzi wyłącznie relacja $<$. Dlatego też relacja $\leq$ czyli $\preceq$ zawiera pełną relację identycznościową, zaś silny porządek nie może zawierać żadnej pary uporządkowanej, w której oba elementy są sobie równe.
+\end{remark}
+\begin{exercise}
+Zauważmy, że silny porządek w danym zbiorze jest wyznaczony przez porządek częściowy w tym zbiorze i porządek częściowy w danym zbiorze jest wyznaczony przez silny porządek w tym zbiorze. Czyli porządki $(X,\leq)$ i $(X,<)$ wzajemnie się wyznaczają. Z definicji dla dowolnych $x,y\in X$ mamy $x\leq y\iff x=y\vee x< y$ oraz $x< y\iff x\ne y\wedge x\leq y$. Wówczas $x< y\iff x\ne y\wedge(x=y\vee x< y)\iff$$(x\ne y\wedge x=y)\vee(x\ne y\wedge x< y)$. Ponieważ koniunkcja $x=y\wedge x\ne y$ jest fałszywa to otrzymujemy $x< y\iff x\ne y\wedge x< y\iff x< y$. Równocześnie $x\leq y\iff x=y\vee(x\ne y\wedge x\leq y)\iff(x=y\vee x\ne y)\wedge$$(x=y\vee x\leq y)\iff(x=y\vee x\ne y)\wedge$$[x=y\vee(x=y\vee x< y)]\iff$$(x=y\vee x\ne y)\wedge(x=y\vee x< y)$.$\\$ Z prawa wyłączonego środka wiemy, że $x=y\vee x\ne y$ jest zawsze prawdziwe. Wówczas jeśli $x=y$ to zdanie $x=y\vee x< y$ jest także prawdziwe z definicji alternatywy dwóch zdań. Jeżeli zaś jest $x\ne y$ to otrzymujemy finalnie $x< y$ ale zdanie $x=y\vee x< y$ jest nadal prawdziwe. Zatem w tym wypadku również otrzymujemy tautologię czyli $x\leq y\iff x\leq y$. Dlatego też mówimy, że porządki częściowy i silny wzajemnie się wyznaczają.
+\end{exercise}
+Ponieważ silny porządek jest jednoznacznie wyznaczony przez porządek częściowy i odwrotnie, nie będę już rozgraniczał między sobą tych pojęć o ile nie będzie to konieczne. Dla uproszczenia dla obu porządków będę przyjmował oznaczenie $(X,\leq)$ jako zbioru uporządkowanego.
+\begin{exercise}
+Podstawiając $<$ za $R$ w definicji relacji silnego porządku warunki spełniane przez tą relację przyjmują postać:$\\$
+-warunek antyzwrotności:$\neg x_{1}< x_{1}\iff x_{1}\not< x_{1}$.$\\$
+-warunek przechodniości:$[(x_{1}< x_{2})\wedge(x_{2}< x_{3})]\Rightarrow x_{1}< x_{3}$.
+\end{exercise}
+\begin{definition}
+Przedziałem otwartym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$(a,b)=\{x\in X:a< x< b\}$. Przy czym $a,b\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem domkniętym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$[a,b]=\{x\in X:a\leq x\leq b\}$. Przy czym $a,b\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem lewostronnie domkniętym\\
+(prawostronnie otwartym) wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$[a,b)=\{x\in X:a\leq x< b\}$.$\\$Przy czym $a,b\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem prawostronnie domkniętym $\\$ (lewostronnie otwartym) wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$(a,b]=\{x\in X:a< x\leq b\}$.$\\$Przy czym $a,b\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem lewostronnie nieograniczonym prawostronnie otwartym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$(\leftarrow,a)=\{x\in X:x< a\}$. Przy czym $a\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem prawostronnie nieograniczonym lewostronnie otwartym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$(b,\rightarrow)=\{x\in X: b< x\}$ lub $[b,\rightarrow)$. Przy czym $b\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem lewostronnie nieograniczonym prawostronnie domkniętym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$(\leftarrow,a]=\{x\in X:x\leq a \}$. Przy czym $a\in X$.
+\end{definition}
+\begin{definition}
+Przedziałem prawostronnie nieograniczonym lewostronnie domkniętym wyznaczonym przez relację porządkującą zbiór $X$ nazywamy zbiór:$\\$
+$[b,\rightarrow)=\{x\in X:b\leq x \}$. Przy czym $b\in X$.
+\end{definition}
+\begin{definition}
+Zbiór nieograniczony jest także przedziałem otwartym.$\\$ Określamy go jako $X=(\leftarrow,\rightarrow)$.
+\end{definition}
+\begin{remark}
+Zauważmy, że każdy z przedziałów wyznaczonych przez relacją porządkującą zbiór $X$ jest podzbiorem zbioru $X$. Wówczas z definicji każdy z takich przedziałów należy do zbioru potęgowego zbioru $X$.
+\end{remark}
+\begin{definition}
+Relacja $\leq$ porządkująca zbiór $X$ jest relacją liniowo uporządkowaną lub porządkiem liniowym, gdy dla dowolnych $x_{1},x_{2}\in X$ spełniony jest warunek:$\\$
+-warunek liniowości:$\forall x_{1},x_{2}\in X: x_{1}\leq x_{2}\vee x_{2}\leq x_{1}$.
+\end{definition}
+\begin{remark}
+Definicja porządku liniowego mówi o tym, że jeśli dowolne dwa elementy danego zbioru da się porównować względem danej relacji porządkującej
+to wówczas dana relacja porządkująca spełnia warunek liniowości, a zatem jest relacją liniowo uporządkowaną w tym zbiorze. Z definicji tej wynika wówczas, że jeżeli
+istnieje choćby para elementów danego zbioru, których nie daje się porównać względem danej relacji porządkującej to nie jest ona porządkiem liniowym w tym zbiorze.
+Należy podkreślić, że pojęcie porządku liniowego nie jest pojęciem ogólnym w tym sensie, że nie odnosi się do dowolnej relacji porządkującej.
+Pojęcie to jest ściśle powiązane z częściowym i silnym porządkiem. Relacje porządkujące nie będące częściowym bądź silnym porządkiem nie mogą być liniowo uporządkowanymi relacjami.
+\end{remark}
+\begin{definition}
+Dwa elementy $x,x'\in X$ nazywamy porównywalnymi względem porządku $R\subseteq X\times X$, gdy zachodzi $xRx'\vee x'Rx$ (dla $R=\leq$) lub $xRx'\vee x'Rx\vee x=x'$ (dla $R=<$). W przeciwnym razie mówimy, że $x$ i $x'$ są nieporównywalne względem relacji $R$ i oznaczamy $x\parallel x'$.
+\end{definition}
+\begin{definition}
+Para $(X,\leq)$ spełniająca warunek liniowości jest zbiorem liniowo uporządkowanym czyli łańcuchem.
+\end{definition}
+\begin{definition}
+Niech $\preceq$ będzie relacją porządkującą zbiór $X_{1}$, zaś $\leq$ relacją porządkującą zbiór $X$. Przedłużeniem porządku $\preceq$ w zbiorze $X_{1}$ jest porządek $\leq$ w zbiorze $X$, gdy dla dowolnych $x,x'\in X_{1}$ zachodzi $x\preceq x'\Rightarrow x\leq x'$.
+\end{definition}
+\begin{remark}
+Z definicji przedłużenia porządku ze zbioru $X_{1}$ na zbiór $X$ wynika, że $X_{1}\subseteq X$ i $\preceq\subseteq\leq$. W ogólności zachodzi również $\preceq\subseteq\leq\Rightarrow X_{1}\subseteq X$.
+\end{remark}
+\begin{exercise}
+Niech $(X_{1},\preceq)$ i $(X,\leq)$ będą zbiorami uporządkowanymi. Weźmy $x\in X_{1}$. Wówczas ze zwrotności częściowego porządku wynika, że $(x,x)\in\preceq$. Ale z założenia $\preceq\subseteq\leq$. Stąd $(x,x)\in\leq$, a zatem $x\in X$, bo skoro $(X,\leq)$ jest zbiorem uporządkowanym to z definicji relacji  porządkującej zbiór $X$ wynika, że $\leq\subseteq X\times X$. Wobec tego, że $x\in X_{1}$ został wybrany dowolnie to zachodzi $X_{1}\subseteq X$.
+\end{exercise}
+\begin{exercise}
+Załóżmy, że $(X_{1},\preceq)$ oraz $(X,\leq)$ są zbiorami uporządkowanymi. Niech $\preceq\subseteq\leq$. Ustalmy zbiór $X_{1}=\{x_{1},x_{2},x_{3},...,x_{n}\}$. Weźmy $\preceq=\{(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),...,$$(x_{n},x_{n}),(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}$.$\\$ Z założenia $\preceq\subseteq\leq$ wynika,$\\$ że $(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),...,$$(x_{n},x_{n}),(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\in\leq$.
+\end{exercise}
+\begin{definition}
+Niech $\preceq$ będzie relacją porządkującą zbiór $X_{1}$, zaś $\leq$ relacją porządkującą zbiór $X$. Porządek $\preceq$ w zbiorze $X_{1}$ jest dziedziczony lub indukowany przez porządek $\leq$ w zbiorze $X$, gdy dla dowolnych $x,x'\in X_{1}$ zachodzi równoważność $x\preceq x'\iff x\leq x'$.
+\end{definition}
+\begin{remark}
+Z definicji porządku indukowanego wynika, że $\preceq=\leq\cap(X_{1}\times X_{1})$.
+\end{remark}
+\begin{remark}
+Z definicji porządku indukowanego mamy
+\[
+\preceq=\leq\cap(X_{1}\times X_{1})\iff
+\preceq\subseteq\leq\cap(X_{1}\times X_{1})\wedge\leq\cap(X_{1}\times X_{1})\subseteq\preceq.
+\]
+Ponieważ z definicji relacji $\preceq\subseteq X_{1}\times X_{1}$ to możemy równoważnie zapisać, że
+\[
+\preceq=\leq\cap(X_{1}\times X_{1})\iff
+\preceq\subseteq\leq\wedge\leq\cap(X_{1}\times X_{1})\subseteq\preceq.
+\]
+Z definicji inkluzja $\preceq\subseteq\leq$ oznacza, że porządek $\leq$ w zbiorze $X$ jest przedłużeniem porządku $\preceq$ w zbiorze $X_{1}$. A więc z tego, że porządek $\preceq$ w zbiorze $X_{1}$ jest indukowany przez porządek $\leq$ w zbiorze $X$ wynika, że porządek $\leq$ w zbiorze $X$ jest przedłużeniem porządku $\preceq$ w zbiorze $X_{1}$, bo z tego, że $\preceq=\leq\cap(X_{1}\times X_{1})$ wynika inkluzja $\preceq\subseteq\leq$. Natomiast z tego, że zachodzi inkluzja $\preceq\subseteq\leq$ nie wynika, że zachodzi równość $\preceq=\leq\cap(X_{1}\times X_{1})$. Stąd z tego, że $\leq$ jest przedłużeniem porządku $\preceq$ nie wynika, że $\preceq$ jest indukowany przez porządek $\leq$.
+\end{remark}
+\begin{remark}
+Fakt, że porządek $\leq$ w zbiorze $X$ jest przedłużeniem porządku $\preceq$ w zbiorze $X_{1}$ zapisujemy jako $(X_{1},\preceq)\sqsubseteq(X,\leq)$, zaś fakt, że porządek $\preceq$ w zbiorze $X_{1}$ jest indukowany przez porządek $\leq$ w zbiorze $X$ jako $(X_{1},\preceq)\sqsubseteq_{i}(X,\leq)$.
+\end{remark}
+\begin{exercise}
+Niech
+\[
+S=\bigcup\{A\subseteq X:\exists\preceq:(A,\preceq)\in\mathcal{R}\}
+\]
+oraz niech $A_{1}=\{x_{0},x_{1},x_{2},x_{3}\}$ i $A_{2}=\{x_{1},x_{2},x_{3},x_{4}\}$. Weźmy
+\[
+\preceq_{1}=\{(x_{0},x_{0}),(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}
+\]
+oraz
+\[
+\preceq_{2}=\{(x_{1},x_{1}),(x_{2},x_{2}),(x_{3},x_{3}),(x_{4},x_{4}),(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}
+\]
+Ustalmy $\mathcal{R}=\{(A_{1},\preceq_{1}),(A_{2},\preceq_{2})\}$. Wówczas $S=A_{1}\cup A_{2}=\{x_{0},x_{1},x_{2},x_{3},x_{4}\}$.
+Niech
+\[
+\preceq_{S}=\bigcup\{\preceq:\exists A\subseteq X:(A,\preceq)\in\mathcal{R}\}.
+\]
+Zatem
+\[
+\begin{aligned}
+\preceq_{S}=\preceq_{1}\cup\preceq_{2}=&\{(x_{0},x_{0}),(x_{1},x_{1}),(x_{2},x_{2}),\\
+&(x_{3},x_{3}),(x_{4},x_{4}),\\
+&(x_{1},x_{2}),(x_{2},x_{3}),(x_{1},x_{3})\}.
+\end{aligned}
+\]
+\end{exercise}
+\begin{exercise}
+Niech $\mathcal{R}=\{(A_{1},\preceq_{1}),(A_{2},\preceq_{2}),(A_{3},\preceq_{3}),...,(A_{n},\preceq_{n})\}$. Przy czym dla jak najprostszego zilustrowania przykładu ustalamy, że $A_{1}\subseteq A_{2}\subseteq A_{3}\subseteq...\subseteq A_{n}$ oraz $\preceq_{1}\subseteq\preceq_{2}\subseteq\preceq_{3}\subseteq...\subseteq\preceq_{n}$. Relacja $\sqsubseteq$ porządkuje liniowo rodzinę $\mathcal{R}$, gdy zachodzi $(A_{1},\preceq_{1})\sqsubseteq(A_{2},\preceq_{2})\sqsubseteq(A_{3},\preceq_{3})\sqsubseteq...\sqsubseteq(A_{n},\preceq_{n})$. Stąd z przechodniości relacji porządkującej wynika, że każde dwa elementy $(A,\preceq)\in\mathcal{R}$ są porównywalne, a zatem zgodnie z definicją $\mathcal{R}$ jest łańcuchem.
+\end{exercise}
+\begin{lemma}
+Niech $\mathcal{R}$ będzie rodziną zbiorów uporządkowanych oraz niech $S=\bigcup\{A\subseteq X:\exists\preceq:(A,\preceq)\in\mathcal{R}\}$ i $\preceq_{S}=\bigcup\{\preceq:\exists A\subseteq X:(A,\preceq)\in\mathcal{R}\}$.$\\$
+Jeśli $\sqsubseteq$ jest porządkiem liniowym w rodzinie $\mathcal{R}$ to $\preceq_{S}$ jest porządkiem w zbiorze $S$ i $(A,\preceq)\sqsubseteq(S,\preceq_{S})$ dla każdego $(A,\preceq)\in\mathcal{R}$.
+\end{lemma}
+\begin{proof}[\textbf{Dowód}]
+Niech $\mathcal{R}=\{A\subseteq X:(A,\preceq)\}$ będzie rodziną zbiorów uporządkowanych oraz $S=\bigcup\{A\subseteq X:\exists\preceq:(A,\preceq)\in\mathcal{R}\}$ i $\preceq_{S}=\bigcup\{\preceq:\exists A\subseteq X:(A,\preceq)\in\mathcal{R}\}$. Weźmy $x\in S$. Wówczas z definicji zbioru $S$ wynika, że istnieje $A\subseteq X$ takie, że $x\in A$ oraz istnieje $\preceq$ dla którego $(A,\preceq)\in\mathcal{R}$. Ponieważ z definicji $\preceq$ jest zwrotna to $x\preceq x$. Z definicji $\preceq_{S}$ wynika, że $\preceq\subseteq\preceq_{S}$. Stąd $(x,x)\in\preceq_{S}$, a zatem $x\preceq_{S}x$. Wobec tego, że $x\in S$ został wybrany dowolnie to relacja $\preceq_{S}$ jest zwrotna. $\\$
+Niech $x,x'\in S$. Załóżmy, że $(x,x'),(x',x)\in\preceq_{S}$. Wówczas $x\preceq_{S}x'$ i $x'\preceq_{S}x$. Skoro $x\preceq_{S}x'$ to z definicji zbioru $S$ i z definicji relacji $\preceq_{S}$ wynika, że istnieje zbiór uporządkowany $(A,\preceq)\in\mathcal{R}$ dla którego $x\preceq x'$. Podobnie, skoro $x'\preceq_{S}x$ to z definicji zbioru $S$ i relacji $\preceq_{S}$ otrzymujemy, że istnieje taki zbiór uporządkowany $(A',\preceq')\in\mathcal{R}$, dla którego $x'\preceq'x$. Z założenia relacja $\sqsubseteq$ porządkuje liniowo rodzinę $\mathcal{R}$. Stąd każde dwie dowolne pary zbiorów uporządkowanych $(A,\preceq),(A',\preceq')\in\mathcal{R}$ są porównywalne. Wówczas zachodzi $(A,\preceq)\sqsubseteq(A',\preceq')$ lub $(A',\preceq')\sqsubseteq(A,\preceq)$. Bez straty ogólności przyjmijmy $(A,\preceq)\sqsubseteq(A',\preceq')$. Zatem porządek $\preceq'$ w zbiorze $A'$ jest przedłużeniem porządku $\preceq$ w zbiorze $A$. Stąd $A\subseteq A'$ i $\preceq\subseteq\preceq'$. Z inkluzji $\preceq\subseteq\preceq'$ dostajemy $(x,x')\in\preceq'$ co jest równoważne z $x\preceq'x'$. Ale $x'\preceq'x$. A ponieważ para $(A',\preceq')$ jest zbiorem uporządkowanym to relacja $\preceq'$ jest porządkiem w zbiorze $A'$. Dlatego też relacja $\preceq'$ jest antysymetryczna czyli skoro $x\preceq'x'$ i $x'\preceq'x$ to $x=x'$. Ale z założenia dla dowolnych $x,x'\in S$ mamy $x\preceq_{S}x'$ i $x'\preceq_{S}x$ co wobec równości $x=x'$ daje nam, że relacja $\preceq_{S}$ jest antysymetryczna.$\\$
+Niech $x,x',x''\in S$. Załóżmy, że $x\preceq_{S}x'$ i $x'\preceq_{S}x''$. Skoro $x\preceq_{S}x'$ to z definicji zbioru $S$ i relacji $\preceq_{S}$ wynika, że istnieje zbiór uporządkowany $(A,\preceq)\in\mathcal{R}$ dla którego $x\preceq x'$. Podobnie, skoro $x'\preceq_{S}x''$ to z definicji zbioru $S$ i relacji $\preceq_{S}$ otrzymujemy, że istnieje zbiór uporządkowany $(A',\preceq')\in\mathcal{R}$ dla którego $x'\preceq'x''$. Z założenia relacja $\sqsubseteq$ jest porządkiem liniowym w rodzinie $\mathcal{R}$. Z definicji oznacza to, że dla każdych dwóch zbiorów uporządkowanych $(A,\preceq),(A',\preceq')\in\mathcal{R}$ zachodzi $(A,\preceq)\sqsubseteq(A',\preceq')$ lub $(A',\preceq')\sqsubseteq(A,\preceq)$. Bez straty ogólności przyjmijmy, że $(A,\preceq)\sqsubseteq(A',\preceq')$. Wówczas porządek $\preceq'$ w zbiorze $A'$ jest przedłużeniem porządku $\preceq$ w zbiorze $A$. Stąd $A\subseteq A'$ i $\preceq\subseteq\preceq'$. Z inkluzji $\preceq\subseteq\preceq'$ dostajemy $(x,x')\in\preceq'$ czyli $x\preceq'x'$. Jednocześnie $x'\preceq'x''$, a ponieważ relacja $\preceq'$ porządkuje zbiór $A'$ to spełnia warunek przechodniości. Zatem $(x,x'')\in\preceq'$ czyli $x\preceq'x''$. Ale z definicji relacji $\preceq_{S}$ wynika, że $\preceq'\subseteq\preceq_{S}$. Pokazaliśmy, że wobec dowolności wyboru elementów $x,x',x''\in S$ z tego, że $x\preceq_{S}x'$ i $x'\preceq_{S}x''$ wynika $x\preceq_{S}x''$ co dowodzi, że relacja $\preceq_{S}$ jest przechodnia.$\\$
+Ponieważ relacja $\preceq_{S}$ jest zwrotna, antysymetryczna i przechodnia to relacja ta jest porządkiem w zbiorze $S$. Wówczas zbiór $(S,\preceq_{S})$ jest zbiorem uporządkowanym.$\\$
+Z założenia $\sqsubseteq$ jest porządkiem liniowym rodziny $\mathcal{R}$. Z definicji zbioru $S$ wynika, że dla każdego $(A,\preceq)\in\mathcal{R}$ jest $A\subseteq S$. Jednocześnie z definicji relacji $\preceq_{S}$ mamy $\preceq\subseteq\preceq_{S}$ dla każdego $(A,\preceq)\in\mathcal{R}$. Z tych warunków otrzymujemy, że dla każdego $(A,\preceq)\in\mathcal{R}$ jest $(A,\preceq)\sqsubseteq(S,\preceq_{S})$.
+\end{proof}
