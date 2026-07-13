@@ -21,12 +21,12 @@ Kompleksowe notatki z matematyki na poziomie pierwszych lat studiów. Przeznaczo
 | | Rodzina zbiorów | ✅ |
 | | Iloczyn kartezjański | ✅ |
 | | Relacje | ✅ |
-| | Funkcje | 🟡 |
-| | Zbiory uporządkowane i liniowo uporządkowane | 🟡 |
+| | Funkcje | ✅ |
+| | Zbiory uporządkowane i liniowo uporządkowane | ✅ |
 | **Analiza matematyczna** | Ciągi liczbowe | 🟡 |
-| | Granica ciągu stałego | 🟡 |
-| | Granica sumy ciągów | 🟡 |
-| | Granica iloczynu ciągów | 🟡 |
+| | Granica ciągu stałego | ✅ |
+| | Granica sumy ciągów | ✅ |
+| | Granica iloczynu ciągów | ✅ |
 
 **Legenda:**
 - ✅ Gotowe
